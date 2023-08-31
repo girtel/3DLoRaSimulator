@@ -1,6 +1,6 @@
 package inet.simulations;
 
-import inet.applications.udpapp.UDPBasicApp;
+import inet.applications.udpapp.UdpBasicApp;
 import inet.node.inet.Router;
 import inet.node.internetcloud.InternetCloud;
 
@@ -9,7 +9,7 @@ import inet.LoRaPhy.OpalLoRaRadioMedium;
 import inet.LoraNode.OpalLoRaNode;
 import inet.LoraNode.OpalLoRaGW;
 import inet.node.inet.StandardHost;
-import inet.networklayer.configurator.ipv4.IPv4NetworkConfigurator;
+import inet.networklayer.configurator.ipv4.Ipv4NetworkConfigurator;
 import inet.node.ethernet.Eth1G;
 
 @license(LGPL);
@@ -37,7 +37,7 @@ network CartagenaOPAL
             parameters:
                 @display("p=618,27");
         }
-        configurator: IPv4NetworkConfigurator {
+        configurator: Ipv4NetworkConfigurator {
             parameters:
                 assignDisjunctSubnetAddresses = false;
                 @display("p=792,27");

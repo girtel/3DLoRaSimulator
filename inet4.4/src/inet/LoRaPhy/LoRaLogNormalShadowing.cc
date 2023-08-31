@@ -44,24 +44,30 @@ std::ostream& LoRaLogNormalShadowing::printToStream(std::ostream& stream, int le
     return stream;
 }
 
-double LoRaLogNormalShadowing::computePathLoss(mps propagationSpeed, Hz frequency, m distance) const
+double LoRaLogNormalShadowing::computePathLoss(mps propagationSpeed, Hz frequency, m distance, double transmitterHeight, double receiverHeight) const
 {
     // parameters taken from paper "Do LoRa Low-Power Wide-Area Networks Scale?"
-    double PL_d0_db = 127.41;
-    double PL_db = PL_d0_db + 10 * gamma * log10(unit(distance / d0).get()) + normal(0.0, sigma);
-    return math::dB2fraction(-PL_db);
+    double PL_d0_db = -91.74;
+    //    double PL_db = PL_d0_db + 10 * gamma * log10(unit(distance / d0).get()) + normal(14.33, sigma);
+    //    double PL_db = PL_d0_db + 10 * gamma * log10(unit(distance / d0).get()) + normal(0.0, sigma);
+    // double PL_db = - 10 * gamma * log10(distance.get()) + normal(0.0, sigma) - 57.1769779;
+    // double PL_db = -65.1709 - 10 * gamma * log10(distance.get()) + normal(0.0, sigma) - 64.8435;
+
+    double PL_db = -14 - 10 * gamma * log10(distance.get()) - 5.881 + normal(0.0, sigma);
+    // double PL_db = PL_d0_db + 10 * gamma * log10(unit(distance / d0).get()) + normal(0.0, sigma);
+    // std::cout << PL_db << std::endl;
+    return math::dB2fraction(PL_db);
 }
 
 m LoRaLogNormalShadowing::computeRange(W transmissionPower) const
 {
     // parameters taken from paper "Do LoRa Low-Power Wide-Area Networks Scale?"
-    double PL_d0_db = 127.41;
+    double PL_d0_db = 91.74;
     double max_sensitivity = -137;
-    double trans_power_db = round(10 * log10(transmissionPower.get()*1000));
+    double trans_power_db = round(10 * log10(transmissionPower.get() * 1000));
     EV << "LoRaLogNormalShadowing transmissionPower in W = " << transmissionPower << " in dBm = " << trans_power_db << endl;
-    double rhs = (trans_power_db - PL_d0_db - max_sensitivity)/(10 * gamma);
+    double rhs = (trans_power_db - PL_d0_db - max_sensitivity) / (10 * gamma);
     double distance = d0.get() * pow(10, rhs);
     return m(distance);
 }
-
 }

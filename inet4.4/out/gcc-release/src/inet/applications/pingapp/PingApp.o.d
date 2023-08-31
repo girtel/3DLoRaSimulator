@@ -1,12 +1,11 @@
 ../out/gcc-release/src/inet/applications/pingapp/PingApp.o: \
- inet/applications/pingapp/PingApp.cc inet/common/precompiled_release.h \
- inet/common/precompiled.h /opt/omnetpp-6.0.1/include/omnetpp.h \
- inet/applications/pingapp/PingApp.h \
+ inet/applications/pingapp/PingApp.cc inet/applications/pingapp/PingApp.h \
  inet/applications/base/ApplicationBase.h \
  inet/common/lifecycle/ModuleOperations.h \
  inet/common/lifecycle/LifecycleOperation.h inet/common/INETDefs.h \
- inet/common/precompiled_release.h inet/opp_defines.h inet/features.h \
- inet/common/Compat.h inet/common/InitStages.h \
+ inet/common/precompiled_release.h inet/common/precompiled.h \
+ inet/opp_defines.h inet/features.h inet/common/Compat.h \
+ /opt/omnetpp-6.0.1/include/omnetpp.h inet/common/InitStages.h \
  inet/common/InitStageRegistry.h inet/common/lifecycle/OperationalBase.h \
  inet/common/lifecycle/OperationalMixin.h \
  inet/common/lifecycle/ILifecycle.h inet/common/Protocol.h \
@@ -72,12 +71,6 @@
  inet/networklayer/icmpv6/Icmpv6Header_m.h \
  inet/networklayer/ipv6/Ipv6InterfaceData.h
 
-inet/common/precompiled_release.h:
-
-inet/common/precompiled.h:
-
-/opt/omnetpp-6.0.1/include/omnetpp.h:
-
 inet/applications/pingapp/PingApp.h:
 
 inet/applications/base/ApplicationBase.h:
@@ -90,11 +83,15 @@ inet/common/INETDefs.h:
 
 inet/common/precompiled_release.h:
 
+inet/common/precompiled.h:
+
 inet/opp_defines.h:
 
 inet/features.h:
 
 inet/common/Compat.h:
+
+/opt/omnetpp-6.0.1/include/omnetpp.h:
 
 inet/common/InitStages.h:
 
