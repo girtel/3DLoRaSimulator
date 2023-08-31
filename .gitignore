@@ -5,3 +5,4 @@
 /inet4.4/out/gcc-release/src/libINET.so
 /inet4.4/src/inet/common/precompiled_release.h.gch
 /inet4.4/examples/opal/scenarios/waz_scene2.json
+updateModules.sh
