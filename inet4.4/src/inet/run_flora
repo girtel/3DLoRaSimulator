@@ -1,0 +1,8 @@
+#!/bin/bash
+if [ "$INET_ROOT" = "" ]; then
+  INET_ROOT=$(dirname $0)/../../inet4.3
+fi
+
+PATH=$INET_ROOT/src:$PATH
+
+opp_run -l ../src/flora -n .:../src:$INET_ROOT/src "$@"

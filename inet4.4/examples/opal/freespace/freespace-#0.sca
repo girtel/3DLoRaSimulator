@@ -1,0 +1,2139 @@
+version 3
+run freespace-0-20230830-13:08:37-296406
+attr configname freespace
+attr datetime 20230830-13:08:37
+attr datetimef 20230830-130837
+attr experiment freespace
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network inet.examples.opal.OpalTest
+attr processid 296406
+attr repetition 0
+attr replication #0
+attr resultdir freespace
+attr runnumber 0
+attr seedset 0
+config image-path ../../images
+config sim-time-limit 1s
+config result-dir freespace
+config *.*.mobility.initFromDisplayString false
+config *.node[0].generatorType "\"inet.veneris.opal.test.OpalTest\""
+config *.node[1].mobilityType "\"StationaryMobility\""
+config *.node[0].mobilityType "\"LinearMobility\""
+config *.node[0].mobility.initialMovementHeading 0deg
+config *.node[0].mobility.speed 10mps
+config *.node[0].mobility.updateDisplayString false
+config *.node[1].generatorType "\"inet.veneris.opal.test.OpalTestPeriodicGenerator\""
+config *.node[0].initialX 0m
+config *.node[1].initialX 10m
+config *.node[*].initialZ 0m
+config *.node[*].initialY 10m
+config *.radioMedium.typename inet.veneris.opal.OpalRadioMedium
+config *.radioMedium.useJson false
+config check-signals false
+config *.radioMedium.useExtendedCallback true
+config *.radioMedium.isStatic true
+config network inet.examples.opal.OpalTest
+config sim-time-limit 0.2s
+config *.node[*].wlan.bitrate 6Mbps
+config *.node[*].wlan.mac.dcf.rateSelection.multicastFrameBitrate 6Mbps
+config *.node[*].wlan.mac.dcf.rateSelection.dataFrameBitrate 6Mbps
+config *.node[*].wlan.mac.dcf.rateSelection.dataFrameBandwidth 20MHz
+config *.*.wlan.mac.dcf.channelAccess.contention.initialChannelBusy false
+config *.*.wlan.radio.bandName "\"5.9 GHz\""
+config *.node[*].wlan.radio.centerFrequency 5.9GHz
+config *.radioMedium.mediumLimitCache.centerFrequency 5.9GHz
+config *.radioMedium.mediumLimitCache.maxTransmissionDuration 0.5s
+config *.node[*].wlan.radio.transmitter.power 1W
+
+par OpalTest.node[0].generator.lowerLayerOut.channel typename "\"ned.IdealChannel\""
+par OpalTest.node[0].wlan.upperLayerOut.channel typename "\"ned.IdealChannel\""
+par OpalTest.node[0].radioIn.channel typename "\"ned.IdealChannel\""
+par OpalTest.node[0].interfaceTable typename "\"inet.networklayer.common.InterfaceTable\""
+par OpalTest.node[0].interfaceTable displayAddresses false
+par OpalTest.node[0].mobility typename "\"inet.mobility.single.LinearMobility\""
+par OpalTest.node[0].mobility subjectModule "\"^\""
+par OpalTest.node[0].mobility coordinateSystemModule "\"\""
+par OpalTest.node[0].mobility displayStringTextFormat "\"p: %p\\nv: %v\""
+attr mutable ""
+par OpalTest.node[0].mobility updateDisplayString false
+par OpalTest.node[0].mobility constraintAreaMinX "-inf m"
+attr unit m
+par OpalTest.node[0].mobility constraintAreaMinY "-inf m"
+attr unit m
+par OpalTest.node[0].mobility constraintAreaMinZ "-inf m"
+attr unit m
+par OpalTest.node[0].mobility constraintAreaMaxX "inf m"
+attr unit m
+par OpalTest.node[0].mobility constraintAreaMaxY "inf m"
+attr unit m
+par OpalTest.node[0].mobility constraintAreaMaxZ "inf m"
+attr unit m
+par OpalTest.node[0].mobility updateInterval 0.1s
+attr unit s
+par OpalTest.node[0].mobility faceForward true
+par OpalTest.node[0].mobility initialX 0m
+attr unit m
+par OpalTest.node[0].mobility initialY 10m
+attr unit m
+par OpalTest.node[0].mobility initialZ 0m
+attr unit m
+par OpalTest.node[0].mobility initFromDisplayString false
+par OpalTest.node[0].mobility speed 10mps
+attr unit mps
+par OpalTest.node[0].mobility initialMovementHeading 0deg
+attr unit deg
+par OpalTest.node[0].mobility initialMovementElevation 0deg
+attr unit deg
+par OpalTest.node[0].generator typename "\"inet.veneris.opal.test.OpalTest\""
+par OpalTest.node[0].generator packetBytes 500B
+attr unit B
+par OpalTest.node[0].vehicleTable typename "\"inet.veneris.opal.test.VehicleTable\""
+par OpalTest.node[0].vehicleTable updateTime 1s
+attr unit s
+scalar OpalTest.node[0].vehicleTable irt:mean 0.099999996664375
+attr recordingmode mean
+attr source irt
+attr title "irt, mean"
+scalar OpalTest.node[0].vehicleTable neighbors:timeavg 0.88866006961623
+attr recordingmode timeavg
+attr source neighbors
+attr title "neighbors, timeavg"
+par OpalTest.node[0].wlan.radioIn.channel typename "\"ned.IdealChannel\""
+par OpalTest.node[0].wlan.llc.upperLayerOut.channel typename "\"ned.IdealChannel\""
+par OpalTest.node[0].wlan.upperLayerIn.channel typename "\"ned.IdealChannel\""
+par OpalTest.node[0].wlan.mib typename "\"inet.linklayer.ieee80211.mib.Ieee80211Mib\""
+par OpalTest.node[0].wlan.llc typename "\"inet.linklayer.ieee80211.llc.Ieee80211LlcEpd\""
+par OpalTest.node[0].wlan.mgmt typename "\"inet.linklayer.ieee80211.mgmt.Ieee80211MgmtAdhoc\""
+par OpalTest.node[0].wlan.mgmt mibModule "\"OpalTest.node[0].wlan.mib\""
+par OpalTest.node[0].wlan.mgmt macModule "\"OpalTest.node[0].wlan.mac\""
+par OpalTest.node[0].wlan.mgmt interfaceTableModule "\"OpalTest.node[0].interfaceTable\""
+par OpalTest.node[0].wlan.mac.dcf.channelAccess.pendingQueue typename "\"inet.linklayer.ieee80211.mac.queue.PendingQueue\""
+par OpalTest.node[0].wlan.mac.dcf.channelAccess.pendingQueue displayStringTextFormat "\"contains %p pk (%l) pushed %u\\npulled %o removed %r dropped %d\""
+par OpalTest.node[0].wlan.mac.dcf.channelAccess.pendingQueue packetCapacity 100
+par OpalTest.node[0].wlan.mac.dcf.channelAccess.pendingQueue dataCapacity -1b
+attr unit b
+par OpalTest.node[0].wlan.mac.dcf.channelAccess.pendingQueue dropperClass "\"inet::queueing::PacketAtCollectionEndDropper\""
+par OpalTest.node[0].wlan.mac.dcf.channelAccess.pendingQueue comparatorClass "\"inet::ieee80211::MgmtOverDataComparator\""
+par OpalTest.node[0].wlan.mac.dcf.channelAccess.pendingQueue bufferModule "\"\""
+scalar OpalTest.node[0].wlan.mac.dcf.channelAccess.pendingQueue queueLength:last nan
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode last
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length, last"
+attr unit pk
+scalar OpalTest.node[0].wlan.mac.dcf.channelAccess.pendingQueue queueLength:max -nan
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode max
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length, max"
+attr unit pk
+scalar OpalTest.node[0].wlan.mac.dcf.channelAccess.pendingQueue queueLength:timeavg -nan
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length, timeavg"
+attr unit pk
+scalar OpalTest.node[0].wlan.mac.dcf.channelAccess.pendingQueue queueBitLength:last nan
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode last
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length, last"
+attr unit b
+scalar OpalTest.node[0].wlan.mac.dcf.channelAccess.pendingQueue queueBitLength:max -nan
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode max
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length, max"
+attr unit b
+scalar OpalTest.node[0].wlan.mac.dcf.channelAccess.pendingQueue queueBitLength:timeavg -nan
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length, timeavg"
+attr unit b
+statistic OpalTest.node[0].wlan.mac.dcf.channelAccess.pendingQueue queueingTime:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr recordingmode histogram
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar OpalTest.node[0].wlan.mac.dcf.channelAccess.pendingQueue outgoingPackets:count 0
+attr recordingmode count
+attr source packetPulled
+attr title "outgoing packets, count"
+attr unit pk
+scalar OpalTest.node[0].wlan.mac.dcf.channelAccess.pendingQueue outgoingPacketLengths:sum 0
+attr interpolationmode none
+attr recordingmode sum
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths, sum"
+attr unit b
+statistic OpalTest.node[0].wlan.mac.dcf.channelAccess.pendingQueue outgoingPacketLengths:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr recordingmode histogram
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic OpalTest.node[0].wlan.mac.dcf.channelAccess.pendingQueue flowQueueingTime:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr recordingmode histogram
+attr source queueingTime(demuxFlow(packetPulled))
+attr title "flow queueing times"
+attr unit s
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar OpalTest.node[0].wlan.mac.dcf.channelAccess.pendingQueue incomingPackets:count 0
+attr recordingmode count
+attr source packetPushStarted
+attr title "incoming packets, count"
+attr unit pk
+scalar OpalTest.node[0].wlan.mac.dcf.channelAccess.pendingQueue incomingPacketLengths:sum 0
+attr interpolationmode none
+attr recordingmode sum
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths, sum"
+attr unit b
+statistic OpalTest.node[0].wlan.mac.dcf.channelAccess.pendingQueue incomingPacketLengths:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr recordingmode histogram
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar OpalTest.node[0].wlan.mac.dcf.channelAccess.pendingQueue droppedPacketsQueueOverflow:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "dropped packets: queue overflow, count"
+attr unit pk
+scalar OpalTest.node[0].wlan.mac.dcf.channelAccess.pendingQueue droppedPacketLengthsQueueOverflow:sum 0
+attr interpolationmode none
+attr recordingmode sum
+attr source packetLength(packetDropReasonIsQueueOverflow(packetDropped))
+attr title "dropped packet lengths: queue overflow, sum"
+attr unit b
+par OpalTest.node[0].wlan.mac.dcf.channelAccess.inProgressFrames typename "\"inet.linklayer.ieee80211.mac.queue.InProgressFrames\""
+par OpalTest.node[0].wlan.mac.dcf.channelAccess.inProgressFrames pendingQueueModule "\"^.pendingQueue\""
+par OpalTest.node[0].wlan.mac.dcf.channelAccess.inProgressFrames originatorMacDataServiceModule "\"^.^.originatorMacDataService\""
+par OpalTest.node[0].wlan.mac.dcf.channelAccess.inProgressFrames ackHandlerModule "\"^.^.ackHandler\""
+statistic OpalTest.node[0].wlan.mac.dcf.channelAccess.inProgressFrames queueingTime:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr recordingmode histogram
+attr source queueingTime(packetDequeued)
+attr title "queueing times"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar OpalTest.node[0].wlan.mac.dcf.channelAccess.inProgressFrames queueLength:max 0
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode max
+attr source "warmup(count(packetEnqueued) - count(packetDequeued))"
+attr title "queue length, max"
+scalar OpalTest.node[0].wlan.mac.dcf.channelAccess.inProgressFrames queueLength:timeavg 0
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr source "warmup(count(packetEnqueued) - count(packetDequeued))"
+attr title "queue length, timeavg"
+par OpalTest.node[0].wlan.mac.dcf.channelAccess.contention typename "\"inet.linklayer.ieee80211.mac.contention.Contention\""
+par OpalTest.node[0].wlan.mac.dcf.channelAccess.contention initialChannelBusy false
+par OpalTest.node[0].wlan.mac.dcf.channelAccess.contention backoffOptimization true
+scalar OpalTest.node[0].wlan.mac.dcf.channelAccess.contention channelAccessGranted:count 0
+attr recordingmode count
+attr title "channel access granted, count"
+scalar OpalTest.node[0].wlan.mac.dcf.channelAccess.contention stateChanged:count 38
+attr enum IDLE,DEFER,IFS_AND_BACKOFF
+attr interpolationmode none
+attr recordingmode count
+attr title "contention state changed, count"
+attr type enum
+par OpalTest.node[0].wlan.mac.dcf.channelAccess typename "\"inet.linklayer.ieee80211.mac.channelaccess.Dcaf\""
+par OpalTest.node[0].wlan.mac.dcf.channelAccess difsn -1
+par OpalTest.node[0].wlan.mac.dcf.channelAccess cwMin -1
+par OpalTest.node[0].wlan.mac.dcf.channelAccess cwMax -1
+par OpalTest.node[0].wlan.mac.dcf.channelAccess rxModule "\"^.^.rx\""
+scalar OpalTest.node[0].wlan.mac.dcf.channelAccess channelOwnershipChanged:count 0
+attr interpolationmode sample-hold
+attr recordingmode count
+attr title "channel ownership, count"
+par OpalTest.node[0].wlan.mac.dcf.originatorMacDataService.fragmentationPolicy typename "\"inet.linklayer.ieee80211.mac.fragmentation.BasicFragmentationPolicy\""
+par OpalTest.node[0].wlan.mac.dcf.originatorMacDataService.fragmentationPolicy fragmentationThreshold 1500B
+attr unit B
+par OpalTest.node[0].wlan.mac.dcf.originatorMacDataService typename "\"inet.linklayer.ieee80211.mac.originator.OriginatorMacDataService\""
+scalar OpalTest.node[0].wlan.mac.dcf.originatorMacDataService packetAggregated:count 0
+attr recordingmode count
+attr title "packets aggregated, count"
+scalar OpalTest.node[0].wlan.mac.dcf.originatorMacDataService packetFragmented:count 0
+attr recordingmode count
+attr title "packets fragmented, count"
+par OpalTest.node[0].wlan.mac.dcf.recipientMacDataService typename "\"inet.linklayer.ieee80211.mac.recipient.RecipientMacDataService\""
+scalar OpalTest.node[0].wlan.mac.dcf.recipientMacDataService packetDeaggregated:count 0
+attr recordingmode count
+attr title "packets deaggregated, count"
+scalar OpalTest.node[0].wlan.mac.dcf.recipientMacDataService packetDefragmented:count 9
+attr recordingmode count
+attr title "packets defragmented, count"
+scalar OpalTest.node[0].wlan.mac.dcf.recipientMacDataService packetDropDuplicateDetected:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, count"
+scalar OpalTest.node[0].wlan.mac.dcf.recipientMacDataService packetDropDuplicateDetected:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, sum(packetBytes)"
+par OpalTest.node[0].wlan.mac.dcf.rateSelection typename "\"inet.linklayer.ieee80211.mac.rateselection.RateSelection\""
+par OpalTest.node[0].wlan.mac.dcf.rateSelection rateControlModule "\"^.rateControl\""
+par OpalTest.node[0].wlan.mac.dcf.rateSelection multicastFrameBitrate 6e+06bps
+attr unit bps
+par OpalTest.node[0].wlan.mac.dcf.rateSelection responseAckFrameBitrate -1bps
+attr unit bps
+par OpalTest.node[0].wlan.mac.dcf.rateSelection responseCtsFrameBitrate -1bps
+attr unit bps
+par OpalTest.node[0].wlan.mac.dcf.rateSelection dataFrameBitrate 6e+06bps
+attr unit bps
+par OpalTest.node[0].wlan.mac.dcf.rateSelection dataFrameBandwidth 2e+07Hz
+attr unit Hz
+par OpalTest.node[0].wlan.mac.dcf.rateSelection dataFrameNumSpatialStreams -1
+par OpalTest.node[0].wlan.mac.dcf.rateSelection mgmtFrameBitrate -1bps
+attr unit bps
+par OpalTest.node[0].wlan.mac.dcf.rateSelection controlFrameBitrate -1bps
+attr unit bps
+par OpalTest.node[0].wlan.mac.dcf.recoveryProcedure typename "\"inet.linklayer.ieee80211.mac.originator.NonQosRecoveryProcedure\""
+par OpalTest.node[0].wlan.mac.dcf.recoveryProcedure cwCalculatorModule "\"^.channelAccess\""
+par OpalTest.node[0].wlan.mac.dcf.recoveryProcedure rtsPolicyModule "\"^.rtsPolicy\""
+par OpalTest.node[0].wlan.mac.dcf.recoveryProcedure shortRetryLimit 7
+par OpalTest.node[0].wlan.mac.dcf.recoveryProcedure longRetryLimit 4
+scalar OpalTest.node[0].wlan.mac.dcf.recoveryProcedure retryLimitReached:count 0
+attr recordingmode count
+attr title "retry limit reached, count"
+par OpalTest.node[0].wlan.mac.dcf.originatorProtectionMechanism typename "\"inet.linklayer.ieee80211.mac.protectionmechanism.OriginatorProtectionMechanism\""
+par OpalTest.node[0].wlan.mac.dcf.originatorProtectionMechanism rateSelectionModule "\"^.rateSelection\""
+par OpalTest.node[0].wlan.mac.dcf.ackHandler typename "\"inet.linklayer.ieee80211.mac.originator.AckHandler\""
+par OpalTest.node[0].wlan.mac.dcf.originatorAckPolicy typename "\"inet.linklayer.ieee80211.mac.originator.OriginatorAckPolicy\""
+par OpalTest.node[0].wlan.mac.dcf.originatorAckPolicy rateSelectionModule "\"^.rateSelection\""
+par OpalTest.node[0].wlan.mac.dcf.originatorAckPolicy ackTimeout -1s
+attr unit s
+par OpalTest.node[0].wlan.mac.dcf.recipientAckPolicy typename "\"inet.linklayer.ieee80211.mac.recipient.RecipientAckPolicy\""
+par OpalTest.node[0].wlan.mac.dcf.recipientAckPolicy rateSelectionModule "\"^.rateSelection\""
+par OpalTest.node[0].wlan.mac.dcf.rtsPolicy typename "\"inet.linklayer.ieee80211.mac.originator.RtsPolicy\""
+par OpalTest.node[0].wlan.mac.dcf.rtsPolicy rateSelectionModule "\"^.rateSelection\""
+par OpalTest.node[0].wlan.mac.dcf.rtsPolicy ctsTimeout -1s
+attr unit s
+par OpalTest.node[0].wlan.mac.dcf.rtsPolicy rtsThreshold 2346B
+attr unit B
+par OpalTest.node[0].wlan.mac.dcf.ctsPolicy typename "\"inet.linklayer.ieee80211.mac.recipient.CtsPolicy\""
+par OpalTest.node[0].wlan.mac.dcf.ctsPolicy rxModule "\"^.^.rx\""
+par OpalTest.node[0].wlan.mac.dcf.ctsPolicy rateSelectionModule "\"^.rateSelection\""
+par OpalTest.node[0].wlan.mac.dcf typename "\"inet.linklayer.ieee80211.mac.coordinationfunction.Dcf\""
+par OpalTest.node[0].wlan.mac.dcf rxModule "\"^.rx\""
+par OpalTest.node[0].wlan.mac.dcf txModule "\"^.tx\""
+scalar OpalTest.node[0].wlan.mac.dcf frameSequenceFinished:count 0
+attr recordingmode count
+attr title "finished frame sequences, count"
+statistic OpalTest.node[0].wlan.mac.dcf frameSequenceDuration:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr recordingmode histogram
+attr source frameSequenceDuration(frameSequenceFinished)
+attr title "frame sequence durations"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic OpalTest.node[0].wlan.mac.dcf frameSequenceNumPackets:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr recordingmode histogram
+attr source frameSequenceNumPackets(frameSequenceFinished)
+attr title "frame sequences: number of packets"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar OpalTest.node[0].wlan.mac.dcf packetReceivedFromPeer:count 9
+attr interpolationmode none
+attr recordingmode count
+attr title "packets received, count"
+scalar OpalTest.node[0].wlan.mac.dcf packetReceivedFromPeer:sum(packetBytes) 4770
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr title "packets received, sum(packetBytes)"
+scalar OpalTest.node[0].wlan.mac.dcf packetReceivedFromPeerUnicast:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211Unicast(packetReceivedFromPeer)
+attr title "packets received: unicast, count"
+scalar OpalTest.node[0].wlan.mac.dcf packetReceivedFromPeerUnicast:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211Unicast(packetReceivedFromPeer)
+attr title "packets received: unicast, sum(packetBytes)"
+scalar OpalTest.node[0].wlan.mac.dcf packetReceivedFromPeerMulticast:count 9
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211Multicast(packetReceivedFromPeer)
+attr title "packets received: multicast, count"
+scalar OpalTest.node[0].wlan.mac.dcf packetReceivedFromPeerMulticast:sum(packetBytes) 4770
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211Multicast(packetReceivedFromPeer)
+attr title "packets received: multicast, sum(packetBytes)"
+scalar OpalTest.node[0].wlan.mac.dcf packetReceivedFromPeerBroadcast:count 9
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211Broadcast(packetReceivedFromPeer)
+attr title "packets received: broadcast, count"
+scalar OpalTest.node[0].wlan.mac.dcf packetReceivedFromPeerBroadcast:sum(packetBytes) 4770
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211Broadcast(packetReceivedFromPeer)
+attr title "packets received: broadcast, sum(packetBytes)"
+scalar OpalTest.node[0].wlan.mac.dcf packetReceivedFromPeerWithRetry:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211Retry(packetReceivedFromPeer)
+attr title "packets received: with retry, count"
+scalar OpalTest.node[0].wlan.mac.dcf packetReceivedFromPeerWithRetry:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211Retry(packetReceivedFromPeer)
+attr title "packets received: with retry, sum(packetBytes)"
+scalar OpalTest.node[0].wlan.mac.dcf packetReceivedFromPeerWithoutRetry:count 9
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, count"
+scalar OpalTest.node[0].wlan.mac.dcf packetReceivedFromPeerWithoutRetry:sum(packetBytes) 4770
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, sum(packetBytes)"
+scalar OpalTest.node[0].wlan.mac.dcf packetSentToPeer:count 0
+attr interpolationmode none
+attr recordingmode count
+attr title "packets sent, count"
+scalar OpalTest.node[0].wlan.mac.dcf packetSentToPeer:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr title "packets sent, sum(packetBytes)"
+scalar OpalTest.node[0].wlan.mac.dcf packetSentToPeerUnicast:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211Unicast(packetSentToPeer)
+attr title "packets sent: unicast, count"
+scalar OpalTest.node[0].wlan.mac.dcf packetSentToPeerUnicast:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211Unicast(packetSentToPeer)
+attr title "packets sent: unicast, sum(packetBytes)"
+scalar OpalTest.node[0].wlan.mac.dcf packetSentToPeerMulticast:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211Multicast(packetSentToPeer)
+attr title "packets sent: multicast, count"
+scalar OpalTest.node[0].wlan.mac.dcf packetSentToPeerMulticast:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211Multicast(packetSentToPeer)
+attr title "packets sent: multicast, sum(packetBytes)"
+scalar OpalTest.node[0].wlan.mac.dcf packetSentToPeerBroadcast:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211Broadcast(packetSentToPeer)
+attr title "packets sent: broadcast , count"
+scalar OpalTest.node[0].wlan.mac.dcf packetSentToPeerBroadcast:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211Broadcast(packetSentToPeer)
+attr title "packets sent: broadcast , sum(packetBytes)"
+scalar OpalTest.node[0].wlan.mac.dcf packetSentToPeerWithRetry:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211Retry(packetSentToPeer)
+attr title "packets sent: with retry, count"
+scalar OpalTest.node[0].wlan.mac.dcf packetSentToPeerWithRetry:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211Retry(packetSentToPeer)
+attr title "packets sent: with retry, sum(packetBytes)"
+scalar OpalTest.node[0].wlan.mac.dcf packetSentToPeerWithoutRetry:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211NotRetry(packetSentToPeer)
+attr title "packets sent: without retry, count"
+scalar OpalTest.node[0].wlan.mac.dcf packetSentToPeerWithoutRetry:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211NotRetry(packetSentToPeer)
+attr title "packets sent: without retry, sum(packetBytes)"
+scalar OpalTest.node[0].wlan.mac.dcf packetDrop:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropped
+attr title "packet drops, count"
+scalar OpalTest.node[0].wlan.mac.dcf packetDrop:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropped
+attr title "packet drops, sum(packetBytes)"
+scalar OpalTest.node[0].wlan.mac.dcf packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, count"
+scalar OpalTest.node[0].wlan.mac.dcf packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, sum(packetBytes)"
+scalar OpalTest.node[0].wlan.mac.dcf packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar OpalTest.node[0].wlan.mac.dcf packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar OpalTest.node[0].wlan.mac.dcf packetDropRetryLimitReached:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, count"
+scalar OpalTest.node[0].wlan.mac.dcf packetDropRetryLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, sum(packetBytes)"
+scalar OpalTest.node[0].wlan.mac.dcf linkBroken:count 0
+attr interpolationmode none
+attr recordingmode count
+attr title "link breaks, count"
+par OpalTest.node[0].wlan.mac.ds typename "\"inet.linklayer.ieee80211.mac.Ds\""
+par OpalTest.node[0].wlan.mac.ds mibModule "\"OpalTest.node[0].wlan.mib\""
+par OpalTest.node[0].wlan.mac.rx typename "\"inet.linklayer.ieee80211.mac.Rx\""
+par OpalTest.node[0].wlan.mac.tx typename "\"inet.linklayer.ieee80211.mac.Tx\""
+par OpalTest.node[0].wlan.mac.tx rxModule "\"^.rx\""
+par OpalTest.node[0].wlan.mac typename "\"inet.linklayer.ieee80211.mac.Ieee80211Mac\""
+par OpalTest.node[0].wlan.mac interfaceTableModule "\"OpalTest.node[0].interfaceTable\""
+par OpalTest.node[0].wlan.mac mibModule "\"OpalTest.node[0].wlan.mib\""
+par OpalTest.node[0].wlan.mac modeSet "\"p\""
+attr enum a,b,g(erp),g(mixed),n(mixed-2.4Ghz),p,ac
+par OpalTest.node[0].wlan.mac fcsMode "\"declared\""
+attr enum declared,computed
+par OpalTest.node[0].wlan.mac initialRadioMode "\"receiver\""
+attr enum off,sleep,receiver,transmitter,transceiver
+par OpalTest.node[0].wlan.mac mtu 2304B
+attr unit B
+par OpalTest.node[0].wlan.mac qosStation false
+scalar OpalTest.node[0].wlan.mac packetReceivedFromLower:count 9
+attr interpolationmode none
+attr recordingmode count
+attr title "packets received from lower layer, count"
+scalar OpalTest.node[0].wlan.mac packetReceivedFromLower:sum(packetBytes) 4770
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr title "packets received from lower layer, sum(packetBytes)"
+scalar OpalTest.node[0].wlan.mac packetSentToLower:count 0
+attr interpolationmode none
+attr recordingmode count
+attr title "packets sent to lower layer, count"
+scalar OpalTest.node[0].wlan.mac packetSentToLower:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr title "packets sent to lower layer, sum(packetBytes)"
+scalar OpalTest.node[0].wlan.mac packetReceivedFromUpper:count 0
+attr interpolationmode none
+attr recordingmode count
+attr title "packets received from upper layer, count"
+scalar OpalTest.node[0].wlan.mac packetReceivedFromUpper:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr title "packets received from upper layer, sum(packetBytes)"
+scalar OpalTest.node[0].wlan.mac packetSentToUpper:count 9
+attr interpolationmode none
+attr recordingmode count
+attr title "packets sent to upper layer, count"
+scalar OpalTest.node[0].wlan.mac packetSentToUpper:sum(packetBytes) 4518
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr title "packets sent to upper layer, sum(packetBytes)"
+scalar OpalTest.node[0].wlan.mac packetDrop:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropped
+attr title "packet drops, count"
+scalar OpalTest.node[0].wlan.mac packetDrop:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropped
+attr title "packet drops, sum(packetBytes)"
+scalar OpalTest.node[0].wlan.mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drops: incorrectly received, count"
+scalar OpalTest.node[0].wlan.mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drops: incorrectly received, sum(packetBytes)"
+scalar OpalTest.node[0].wlan.mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, count"
+scalar OpalTest.node[0].wlan.mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, sum(packetBytes)"
+scalar OpalTest.node[0].wlan.mac packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar OpalTest.node[0].wlan.mac packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar OpalTest.node[0].wlan.mac packetDropRetryLimitReached:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, count"
+scalar OpalTest.node[0].wlan.mac packetDropRetryLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, sum(packetBytes)"
+scalar OpalTest.node[0].wlan.mac packetDropDuplicateDetected:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, count"
+scalar OpalTest.node[0].wlan.mac packetDropDuplicateDetected:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, sum(packetBytes)"
+scalar OpalTest.node[0].wlan.mac packetDropOther:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsOther(packetDropped)
+attr title "packet drops: other, count"
+scalar OpalTest.node[0].wlan.mac packetDropOther:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsOther(packetDropped)
+attr title "packet drops: other, sum(packetBytes)"
+scalar OpalTest.node[0].wlan.mac linkBroken:count 0
+attr interpolationmode none
+attr recordingmode count
+attr title "link breaks, count"
+par OpalTest.node[0].wlan.radio.antenna typename "\"inet.veneris.opal.OpalLinearPolarizationAntenna\""
+par OpalTest.node[0].wlan.radio.antenna mobilityModule "\"OpalTest.node[0].mobility\""
+par OpalTest.node[0].wlan.radio.antenna numAntennas 1
+par OpalTest.node[0].wlan.radio.antenna polarizationX 0
+par OpalTest.node[0].wlan.radio.antenna polarizationY 1
+par OpalTest.node[0].wlan.radio.antenna polarizationZ 0
+par OpalTest.node[0].wlan.radio.antenna useAntennaGain false
+par OpalTest.node[0].wlan.radio.antenna gainFilePath "\"\""
+par OpalTest.node[0].wlan.radio.transmitter typename "\"inet.physicallayer.wireless.ieee80211.packetlevel.Ieee80211ScalarTransmitter\""
+par OpalTest.node[0].wlan.radio.transmitter preambleDuration -1s
+attr unit s
+par OpalTest.node[0].wlan.radio.transmitter headerLength 192b
+attr unit b
+par OpalTest.node[0].wlan.radio.transmitter bitrate 6e+06bps
+attr unit bps
+par OpalTest.node[0].wlan.radio.transmitter power 1W
+attr unit W
+par OpalTest.node[0].wlan.radio.transmitter centerFrequency 5.9e+09Hz
+attr unit Hz
+par OpalTest.node[0].wlan.radio.transmitter bandwidth "nan Hz"
+attr unit Hz
+par OpalTest.node[0].wlan.radio.transmitter codeRate 1
+par OpalTest.node[0].wlan.radio.transmitter modulation "\"BPSK\""
+par OpalTest.node[0].wlan.radio.transmitter opMode "\"p\""
+attr enum a,b,g(erp),g(mixed),n(mixed-2.4Ghz),p,ac
+par OpalTest.node[0].wlan.radio.transmitter bandName "\"5.9 GHz\""
+attr enum "2.4 GHz,5 GHz,5 GHz (20 MHz),5 GHz (40 MHz),5 GHz (80 MHz),5 GHz (160 MHz),5.9 GHz"
+par OpalTest.node[0].wlan.radio.transmitter channelNumber 1
+par OpalTest.node[0].wlan.radio.receiver.errorModel typename "\"inet.physicallayer.wireless.ieee80211.packetlevel.errormodel.Ieee80211NistErrorModel\""
+par OpalTest.node[0].wlan.radio.receiver.errorModel corruptionMode "\"packet\""
+attr enum packet,chunk,byte,bit
+par OpalTest.node[0].wlan.radio.receiver.errorModel snirMode "\"min\""
+attr enum min,mean
+par OpalTest.node[0].wlan.radio.receiver.errorModel snirOffset 0dB
+attr unit dB
+par OpalTest.node[0].wlan.radio.receiver typename "\"inet.physicallayer.wireless.ieee80211.packetlevel.Ieee80211ScalarReceiver\""
+par OpalTest.node[0].wlan.radio.receiver snirThreshold 4dB
+attr unit dB
+par OpalTest.node[0].wlan.radio.receiver snirThresholdMode "\"min\""
+attr enum min,mean
+par OpalTest.node[0].wlan.radio.receiver energyDetection -85dBm
+attr unit dBm
+par OpalTest.node[0].wlan.radio.receiver sensitivity -85dBm
+attr unit dBm
+par OpalTest.node[0].wlan.radio.receiver centerFrequency 5.9e+09Hz
+attr unit Hz
+par OpalTest.node[0].wlan.radio.receiver bandwidth 2.2e+07Hz
+attr unit Hz
+par OpalTest.node[0].wlan.radio.receiver modulation "\"BPSK\""
+par OpalTest.node[0].wlan.radio.receiver opMode "\"p\""
+attr enum a,b,g(erp),g(mixed),n(mixed-2.4Ghz),p,ac
+par OpalTest.node[0].wlan.radio.receiver bandName "\"5.9 GHz\""
+attr enum "2.4 GHz,5 GHz,5 GHz (20 MHz),5 GHz (40 MHz),5 GHz (80 MHz),5 GHz (160 MHz),5.9 GHz"
+par OpalTest.node[0].wlan.radio.receiver channelNumber 1
+par OpalTest.node[0].wlan.radio typename "\"inet.physicallayer.wireless.ieee80211.packetlevel.Ieee80211ScalarRadio\""
+par OpalTest.node[0].wlan.radio radioMediumModule "\"radioMedium\""
+par OpalTest.node[0].wlan.radio energySourceModule "\"\""
+par OpalTest.node[0].wlan.radio initialRadioMode "\"off\""
+attr enum off,sleep,receiver,transmitter,transceiver
+par OpalTest.node[0].wlan.radio switchingTimes "\"ms 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0\""
+par OpalTest.node[0].wlan.radio sendRawBytes false
+par OpalTest.node[0].wlan.radio separateTransmissionParts false
+par OpalTest.node[0].wlan.radio separateReceptionParts false
+par OpalTest.node[0].wlan.radio displayCommunicationRange false
+par OpalTest.node[0].wlan.radio displayInterferenceRange false
+par OpalTest.node[0].wlan.radio centerFrequency 5.9e+09Hz
+attr unit Hz
+par OpalTest.node[0].wlan.radio bandwidth "nan Hz"
+attr unit Hz
+par OpalTest.node[0].wlan.radio signalAnalogRepresentation "\"scalar\""
+attr enum scalar,dimensional
+par OpalTest.node[0].wlan.radio opMode "\"p\""
+attr enum a,b,g(erp),g(mixed),n(mixed-2.4Ghz),p,ac
+par OpalTest.node[0].wlan.radio bandName "\"5.9 GHz\""
+attr enum "2.4 GHz,5 GHz,5 GHz (20 MHz),5 GHz (40 MHz),5 GHz (80 MHz),5 GHz (160 MHz),5.9 GHz"
+par OpalTest.node[0].wlan.radio channelNumber 1
+par OpalTest.node[0].wlan.radio crcMode "\"declared\""
+attr enum declared,computed
+statistic OpalTest.node[0].wlan.radio radioChannel:histogram
+field count 1
+field mean 1
+field stddev -nan
+field min 1
+field max 1
+field sum 1
+field sqrsum 1
+attr interpolationmode sample-hold
+attr recordingmode histogram
+attr source radioChannelChanged
+attr title "Radio channel"
+bin	-inf	0
+bin	0	0
+bin	1	1
+bin	2	0
+scalar OpalTest.node[0].wlan.radio radioMode:count 3
+attr interpolationmode sample-hold
+attr recordingmode count
+attr source radioModeChanged
+attr title "Radio mode, count"
+scalar OpalTest.node[0].wlan.radio receptionState:count 19
+attr interpolationmode sample-hold
+attr recordingmode count
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar OpalTest.node[0].wlan.radio transmissionState:count 0
+attr interpolationmode sample-hold
+attr recordingmode count
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
+statistic OpalTest.node[0].wlan.radio minSnir:histogram
+field count 9
+field mean 287484110.11748
+field stddev 540327629.79565
+field min 20441859.760467
+field max 1688618249.3181
+field sum 2587356991.0573
+field sqrsum 3.079455602295e+18
+attr recordingmode histogram
+attr source minimumSnir(packetSentToUpper)
+attr title "Min SNIR"
+bin	-inf	0
+bin	0	4
+bin	50000000	1
+bin	100000000	1
+bin	150000000	1
+bin	200000000	0
+bin	250000000	0
+bin	300000000	0
+bin	350000000	0
+bin	400000000	1
+bin	450000000	0
+bin	500000000	0
+bin	550000000	0
+bin	600000000	0
+bin	650000000	0
+bin	700000000	0
+bin	750000000	0
+bin	800000000	0
+bin	850000000	0
+bin	900000000	0
+bin	950000000	0
+bin	1000000000	0
+bin	1050000000	0
+bin	1100000000	0
+bin	1150000000	0
+bin	1200000000	0
+bin	1250000000	0
+bin	1300000000	0
+bin	1350000000	0
+bin	1400000000	0
+bin	1450000000	0
+bin	1500000000	0
+bin	1550000000	0
+bin	1600000000	0
+bin	1650000000	1
+bin	1700000000	0
+bin	1750000000	0
+bin	1800000000	0
+bin	1850000000	0
+bin	1900000000	0
+bin	1950000000	0
+bin	2000000000	0
+bin	2050000000	0
+bin	2100000000	0
+bin	2150000000	0
+statistic OpalTest.node[0].wlan.radio packetErrorRate:histogram
+field count 9
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr recordingmode histogram
+attr source packetErrorRate(packetSentToUpper)
+attr title "Packet error rate"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	9
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+statistic OpalTest.node[0].wlan.radio bitErrorRate:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr recordingmode histogram
+attr source bitErrorRate(packetSentToUpper)
+attr title "Bit error rate"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic OpalTest.node[0].wlan.radio symbolErrorRate:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr recordingmode histogram
+attr source symbolErrorRate(packetSentToUpper)
+attr title "Symbol error rate"
+bin	-inf	0
+bin	0	0
+bin	1	0
+par OpalTest.node[0].wlan typename "\"inet.linklayer.ieee80211.Ieee80211Interface\""
+par OpalTest.node[0].wlan displayStringTextFormat "\"%a (%i)\\n%m\""
+par OpalTest.node[0].wlan recordPcap false
+par OpalTest.node[0].wlan numPcapRecorders 0
+par OpalTest.node[0].wlan interfaceTableModule "\"OpalTest.node[0].interfaceTable\""
+par OpalTest.node[0].wlan energySourceModule "\"\""
+par OpalTest.node[0].wlan opMode "\"p\""
+attr enum a,b,g(erp),g(mixed),n(mixed-2.4Ghz),p,ac
+par OpalTest.node[0].wlan address "\"0A-AA-00-00-00-01\""
+attr mutable ""
+par OpalTest.node[0].wlan protocol "\"\""
+par OpalTest.node[0].wlan bitrate 6e+06bps
+attr unit bps
+scalar OpalTest.node[0].wlan packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drops: interface down, count"
+scalar OpalTest.node[0].wlan packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drops: interface down, sum(packetBytes)"
+scalar OpalTest.node[0].wlan packetDropNoCarrier:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNoCarrier(packetDropped)
+attr title "packet drops: no carrier, count"
+scalar OpalTest.node[0].wlan packetDropNoCarrier:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsNoCarrier(packetDropped)
+attr title "packet drops: no carrier, sum(packetBytes)"
+par OpalTest.node[0] typename "\"inet.veneris.opal.OpalNode\""
+par OpalTest.node[0] id 0
+attr mutable ""
+par OpalTest.node[0] initialX 0m
+attr mutable ""
+attr unit m
+par OpalTest.node[0] initialY 10m
+attr mutable ""
+attr unit m
+par OpalTest.node[0] initialZ 0m
+attr mutable ""
+attr unit m
+par OpalTest.node[0] receptionRadius 1
+attr mutable ""
+par OpalTest.node[0] mobilityType "\"LinearMobility\""
+par OpalTest.node[0] generatorType "\"inet.veneris.opal.test.OpalTest\""
+par OpalTest.node[1].generator.lowerLayerOut.channel typename "\"ned.IdealChannel\""
+par OpalTest.node[1].wlan.upperLayerOut.channel typename "\"ned.IdealChannel\""
+par OpalTest.node[1].radioIn.channel typename "\"ned.IdealChannel\""
+par OpalTest.node[1].interfaceTable typename "\"inet.networklayer.common.InterfaceTable\""
+par OpalTest.node[1].interfaceTable displayAddresses false
+par OpalTest.node[1].mobility typename "\"inet.mobility.static.StationaryMobility\""
+par OpalTest.node[1].mobility subjectModule "\"^\""
+par OpalTest.node[1].mobility coordinateSystemModule "\"\""
+par OpalTest.node[1].mobility displayStringTextFormat "\"p: %p\\nv: %v\""
+attr mutable ""
+par OpalTest.node[1].mobility updateDisplayString true
+par OpalTest.node[1].mobility constraintAreaMinX "-inf m"
+attr unit m
+par OpalTest.node[1].mobility constraintAreaMinY "-inf m"
+attr unit m
+par OpalTest.node[1].mobility constraintAreaMinZ "-inf m"
+attr unit m
+par OpalTest.node[1].mobility constraintAreaMaxX "inf m"
+attr unit m
+par OpalTest.node[1].mobility constraintAreaMaxY "inf m"
+attr unit m
+par OpalTest.node[1].mobility constraintAreaMaxZ "inf m"
+attr unit m
+par OpalTest.node[1].mobility initialX 10m
+attr unit m
+par OpalTest.node[1].mobility initialY 10m
+attr unit m
+par OpalTest.node[1].mobility initialZ 0m
+attr unit m
+par OpalTest.node[1].mobility initialLatitude "nan deg"
+attr unit deg
+par OpalTest.node[1].mobility initialLongitude "nan deg"
+attr unit deg
+par OpalTest.node[1].mobility initialAltitude 0m
+attr unit m
+par OpalTest.node[1].mobility initialHeading 0deg
+attr unit deg
+par OpalTest.node[1].mobility initialElevation 0deg
+attr unit deg
+par OpalTest.node[1].mobility initialBank 0deg
+attr unit deg
+par OpalTest.node[1].mobility initFromDisplayString false
+par OpalTest.node[1].mobility updateFromDisplayString true
+par OpalTest.node[1].generator typename "\"inet.veneris.opal.test.OpalTestPeriodicGenerator\""
+par OpalTest.node[1].generator packetBytes 500B
+attr unit B
+par OpalTest.node[1].generator transmitTime 0.1s
+attr unit s
+par OpalTest.node[1].generator transmitWhenPositionChanges false
+par OpalTest.node[1].generator beaconFrequency 10
+par OpalTest.node[1].vehicleTable typename "\"inet.veneris.opal.test.VehicleTable\""
+par OpalTest.node[1].vehicleTable updateTime 1s
+attr unit s
+scalar OpalTest.node[1].vehicleTable irt:mean -nan
+attr recordingmode mean
+attr source irt
+attr title "irt, mean"
+scalar OpalTest.node[1].vehicleTable neighbors:timeavg -nan
+attr recordingmode timeavg
+attr source neighbors
+attr title "neighbors, timeavg"
+par OpalTest.node[1].wlan.radioIn.channel typename "\"ned.IdealChannel\""
+par OpalTest.node[1].wlan.llc.upperLayerOut.channel typename "\"ned.IdealChannel\""
+par OpalTest.node[1].wlan.upperLayerIn.channel typename "\"ned.IdealChannel\""
+par OpalTest.node[1].wlan.mib typename "\"inet.linklayer.ieee80211.mib.Ieee80211Mib\""
+par OpalTest.node[1].wlan.llc typename "\"inet.linklayer.ieee80211.llc.Ieee80211LlcEpd\""
+par OpalTest.node[1].wlan.mgmt typename "\"inet.linklayer.ieee80211.mgmt.Ieee80211MgmtAdhoc\""
+par OpalTest.node[1].wlan.mgmt mibModule "\"OpalTest.node[1].wlan.mib\""
+par OpalTest.node[1].wlan.mgmt macModule "\"OpalTest.node[1].wlan.mac\""
+par OpalTest.node[1].wlan.mgmt interfaceTableModule "\"OpalTest.node[1].interfaceTable\""
+par OpalTest.node[1].wlan.mac.dcf.channelAccess.pendingQueue typename "\"inet.linklayer.ieee80211.mac.queue.PendingQueue\""
+par OpalTest.node[1].wlan.mac.dcf.channelAccess.pendingQueue displayStringTextFormat "\"contains %p pk (%l) pushed %u\\npulled %o removed %r dropped %d\""
+par OpalTest.node[1].wlan.mac.dcf.channelAccess.pendingQueue packetCapacity 100
+par OpalTest.node[1].wlan.mac.dcf.channelAccess.pendingQueue dataCapacity -1b
+attr unit b
+par OpalTest.node[1].wlan.mac.dcf.channelAccess.pendingQueue dropperClass "\"inet::queueing::PacketAtCollectionEndDropper\""
+par OpalTest.node[1].wlan.mac.dcf.channelAccess.pendingQueue comparatorClass "\"inet::ieee80211::MgmtOverDataComparator\""
+par OpalTest.node[1].wlan.mac.dcf.channelAccess.pendingQueue bufferModule "\"\""
+scalar OpalTest.node[1].wlan.mac.dcf.channelAccess.pendingQueue queueLength:last 0
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode last
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length, last"
+attr unit pk
+scalar OpalTest.node[1].wlan.mac.dcf.channelAccess.pendingQueue queueLength:max 1
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode max
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length, max"
+attr unit pk
+scalar OpalTest.node[1].wlan.mac.dcf.channelAccess.pendingQueue queueLength:timeavg 0
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length, timeavg"
+attr unit pk
+scalar OpalTest.node[1].wlan.mac.dcf.channelAccess.pendingQueue queueBitLength:last 0
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode last
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length, last"
+attr unit b
+scalar OpalTest.node[1].wlan.mac.dcf.channelAccess.pendingQueue queueBitLength:max 4240
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode max
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length, max"
+attr unit b
+scalar OpalTest.node[1].wlan.mac.dcf.channelAccess.pendingQueue queueBitLength:timeavg 0
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length, timeavg"
+attr unit b
+statistic OpalTest.node[1].wlan.mac.dcf.channelAccess.pendingQueue queueingTime:histogram
+field count 9
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr recordingmode histogram
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	9
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar OpalTest.node[1].wlan.mac.dcf.channelAccess.pendingQueue outgoingPackets:count 9
+attr recordingmode count
+attr source packetPulled
+attr title "outgoing packets, count"
+attr unit pk
+scalar OpalTest.node[1].wlan.mac.dcf.channelAccess.pendingQueue outgoingPacketLengths:sum 38160
+attr interpolationmode none
+attr recordingmode sum
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths, sum"
+attr unit b
+statistic OpalTest.node[1].wlan.mac.dcf.channelAccess.pendingQueue outgoingPacketLengths:histogram
+field count 9
+field mean 4240
+field stddev 0
+field min 4240
+field max 4240
+field sum 38160
+field sqrsum 161798400
+attr interpolationmode none
+attr recordingmode histogram
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+bin	-inf	0
+bin	4239	0
+bin	4240	9
+bin	4241	0
+statistic OpalTest.node[1].wlan.mac.dcf.channelAccess.pendingQueue flowQueueingTime:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr recordingmode histogram
+attr source queueingTime(demuxFlow(packetPulled))
+attr title "flow queueing times"
+attr unit s
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar OpalTest.node[1].wlan.mac.dcf.channelAccess.pendingQueue incomingPackets:count 9
+attr recordingmode count
+attr source packetPushStarted
+attr title "incoming packets, count"
+attr unit pk
+scalar OpalTest.node[1].wlan.mac.dcf.channelAccess.pendingQueue incomingPacketLengths:sum 38160
+attr interpolationmode none
+attr recordingmode sum
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths, sum"
+attr unit b
+statistic OpalTest.node[1].wlan.mac.dcf.channelAccess.pendingQueue incomingPacketLengths:histogram
+field count 9
+field mean 4240
+field stddev 0
+field min 4240
+field max 4240
+field sum 38160
+field sqrsum 161798400
+attr interpolationmode none
+attr recordingmode histogram
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+bin	-inf	0
+bin	4239	0
+bin	4240	9
+bin	4241	0
+scalar OpalTest.node[1].wlan.mac.dcf.channelAccess.pendingQueue droppedPacketsQueueOverflow:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "dropped packets: queue overflow, count"
+attr unit pk
+scalar OpalTest.node[1].wlan.mac.dcf.channelAccess.pendingQueue droppedPacketLengthsQueueOverflow:sum 0
+attr interpolationmode none
+attr recordingmode sum
+attr source packetLength(packetDropReasonIsQueueOverflow(packetDropped))
+attr title "dropped packet lengths: queue overflow, sum"
+attr unit b
+par OpalTest.node[1].wlan.mac.dcf.channelAccess.inProgressFrames typename "\"inet.linklayer.ieee80211.mac.queue.InProgressFrames\""
+par OpalTest.node[1].wlan.mac.dcf.channelAccess.inProgressFrames pendingQueueModule "\"^.pendingQueue\""
+par OpalTest.node[1].wlan.mac.dcf.channelAccess.inProgressFrames originatorMacDataServiceModule "\"^.^.originatorMacDataService\""
+par OpalTest.node[1].wlan.mac.dcf.channelAccess.inProgressFrames ackHandlerModule "\"^.^.ackHandler\""
+statistic OpalTest.node[1].wlan.mac.dcf.channelAccess.inProgressFrames queueingTime:histogram
+field count 9
+field mean 0.000752
+field stddev 0
+field min 0.000752
+field max 0.000752
+field sum 0.006768
+field sqrsum 5.089536e-06
+attr interpolationmode none
+attr recordingmode histogram
+attr source queueingTime(packetDequeued)
+attr title "queueing times"
+bin	-inf	0
+bin	0	9
+bin	0.01	0
+bin	0.02	0
+bin	0.03	0
+bin	0.04	0
+bin	0.05	0
+bin	0.06	0
+bin	0.07	0
+bin	0.08	0
+bin	0.09	0
+bin	0.1	0
+bin	0.11	0
+bin	0.12	0
+bin	0.13	0
+bin	0.14	0
+bin	0.15	0
+bin	0.16	0
+bin	0.17	0
+bin	0.18	0
+bin	0.19	0
+bin	0.2	0
+bin	0.21	0
+bin	0.22	0
+bin	0.23	0
+bin	0.24	0
+bin	0.25	0
+bin	0.26	0
+bin	0.27	0
+bin	0.28	0
+bin	0.29	0
+bin	0.3	0
+bin	0.31	0
+bin	0.32	0
+bin	0.33	0
+bin	0.34	0
+bin	0.35	0
+bin	0.36	0
+bin	0.37	0
+bin	0.38	0
+bin	0.39	0
+bin	0.4	0
+bin	0.41	0
+bin	0.42	0
+bin	0.43	0
+bin	0.44	0
+bin	0.45	0
+bin	0.46	0
+bin	0.47	0
+bin	0.48	0
+bin	0.49	0
+bin	0.5	0
+bin	0.51	0
+scalar OpalTest.node[1].wlan.mac.dcf.channelAccess.inProgressFrames queueLength:max 1
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode max
+attr source "warmup(count(packetEnqueued) - count(packetDequeued))"
+attr title "queue length, max"
+scalar OpalTest.node[1].wlan.mac.dcf.channelAccess.inProgressFrames queueLength:timeavg 0.006768
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode timeavg
+attr source "warmup(count(packetEnqueued) - count(packetDequeued))"
+attr title "queue length, timeavg"
+par OpalTest.node[1].wlan.mac.dcf.channelAccess.contention typename "\"inet.linklayer.ieee80211.mac.contention.Contention\""
+par OpalTest.node[1].wlan.mac.dcf.channelAccess.contention initialChannelBusy false
+par OpalTest.node[1].wlan.mac.dcf.channelAccess.contention backoffOptimization true
+scalar OpalTest.node[1].wlan.mac.dcf.channelAccess.contention channelAccessGranted:count 9
+attr recordingmode count
+attr title "channel access granted, count"
+scalar OpalTest.node[1].wlan.mac.dcf.channelAccess.contention stateChanged:count 74
+attr enum IDLE,DEFER,IFS_AND_BACKOFF
+attr interpolationmode none
+attr recordingmode count
+attr title "contention state changed, count"
+attr type enum
+par OpalTest.node[1].wlan.mac.dcf.channelAccess typename "\"inet.linklayer.ieee80211.mac.channelaccess.Dcaf\""
+par OpalTest.node[1].wlan.mac.dcf.channelAccess difsn -1
+par OpalTest.node[1].wlan.mac.dcf.channelAccess cwMin -1
+par OpalTest.node[1].wlan.mac.dcf.channelAccess cwMax -1
+par OpalTest.node[1].wlan.mac.dcf.channelAccess rxModule "\"^.^.rx\""
+scalar OpalTest.node[1].wlan.mac.dcf.channelAccess channelOwnershipChanged:count 18
+attr interpolationmode sample-hold
+attr recordingmode count
+attr title "channel ownership, count"
+par OpalTest.node[1].wlan.mac.dcf.originatorMacDataService.fragmentationPolicy typename "\"inet.linklayer.ieee80211.mac.fragmentation.BasicFragmentationPolicy\""
+par OpalTest.node[1].wlan.mac.dcf.originatorMacDataService.fragmentationPolicy fragmentationThreshold 1500B
+attr unit B
+par OpalTest.node[1].wlan.mac.dcf.originatorMacDataService typename "\"inet.linklayer.ieee80211.mac.originator.OriginatorMacDataService\""
+scalar OpalTest.node[1].wlan.mac.dcf.originatorMacDataService packetAggregated:count 0
+attr recordingmode count
+attr title "packets aggregated, count"
+scalar OpalTest.node[1].wlan.mac.dcf.originatorMacDataService packetFragmented:count 0
+attr recordingmode count
+attr title "packets fragmented, count"
+par OpalTest.node[1].wlan.mac.dcf.recipientMacDataService typename "\"inet.linklayer.ieee80211.mac.recipient.RecipientMacDataService\""
+scalar OpalTest.node[1].wlan.mac.dcf.recipientMacDataService packetDeaggregated:count 0
+attr recordingmode count
+attr title "packets deaggregated, count"
+scalar OpalTest.node[1].wlan.mac.dcf.recipientMacDataService packetDefragmented:count 0
+attr recordingmode count
+attr title "packets defragmented, count"
+scalar OpalTest.node[1].wlan.mac.dcf.recipientMacDataService packetDropDuplicateDetected:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, count"
+scalar OpalTest.node[1].wlan.mac.dcf.recipientMacDataService packetDropDuplicateDetected:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, sum(packetBytes)"
+par OpalTest.node[1].wlan.mac.dcf.rateSelection typename "\"inet.linklayer.ieee80211.mac.rateselection.RateSelection\""
+par OpalTest.node[1].wlan.mac.dcf.rateSelection rateControlModule "\"^.rateControl\""
+par OpalTest.node[1].wlan.mac.dcf.rateSelection multicastFrameBitrate 6e+06bps
+attr unit bps
+par OpalTest.node[1].wlan.mac.dcf.rateSelection responseAckFrameBitrate -1bps
+attr unit bps
+par OpalTest.node[1].wlan.mac.dcf.rateSelection responseCtsFrameBitrate -1bps
+attr unit bps
+par OpalTest.node[1].wlan.mac.dcf.rateSelection dataFrameBitrate 6e+06bps
+attr unit bps
+par OpalTest.node[1].wlan.mac.dcf.rateSelection dataFrameBandwidth 2e+07Hz
+attr unit Hz
+par OpalTest.node[1].wlan.mac.dcf.rateSelection dataFrameNumSpatialStreams -1
+par OpalTest.node[1].wlan.mac.dcf.rateSelection mgmtFrameBitrate -1bps
+attr unit bps
+par OpalTest.node[1].wlan.mac.dcf.rateSelection controlFrameBitrate -1bps
+attr unit bps
+par OpalTest.node[1].wlan.mac.dcf.recoveryProcedure typename "\"inet.linklayer.ieee80211.mac.originator.NonQosRecoveryProcedure\""
+par OpalTest.node[1].wlan.mac.dcf.recoveryProcedure cwCalculatorModule "\"^.channelAccess\""
+par OpalTest.node[1].wlan.mac.dcf.recoveryProcedure rtsPolicyModule "\"^.rtsPolicy\""
+par OpalTest.node[1].wlan.mac.dcf.recoveryProcedure shortRetryLimit 7
+par OpalTest.node[1].wlan.mac.dcf.recoveryProcedure longRetryLimit 4
+scalar OpalTest.node[1].wlan.mac.dcf.recoveryProcedure retryLimitReached:count 0
+attr recordingmode count
+attr title "retry limit reached, count"
+par OpalTest.node[1].wlan.mac.dcf.originatorProtectionMechanism typename "\"inet.linklayer.ieee80211.mac.protectionmechanism.OriginatorProtectionMechanism\""
+par OpalTest.node[1].wlan.mac.dcf.originatorProtectionMechanism rateSelectionModule "\"^.rateSelection\""
+par OpalTest.node[1].wlan.mac.dcf.ackHandler typename "\"inet.linklayer.ieee80211.mac.originator.AckHandler\""
+par OpalTest.node[1].wlan.mac.dcf.originatorAckPolicy typename "\"inet.linklayer.ieee80211.mac.originator.OriginatorAckPolicy\""
+par OpalTest.node[1].wlan.mac.dcf.originatorAckPolicy rateSelectionModule "\"^.rateSelection\""
+par OpalTest.node[1].wlan.mac.dcf.originatorAckPolicy ackTimeout -1s
+attr unit s
+par OpalTest.node[1].wlan.mac.dcf.recipientAckPolicy typename "\"inet.linklayer.ieee80211.mac.recipient.RecipientAckPolicy\""
+par OpalTest.node[1].wlan.mac.dcf.recipientAckPolicy rateSelectionModule "\"^.rateSelection\""
+par OpalTest.node[1].wlan.mac.dcf.rtsPolicy typename "\"inet.linklayer.ieee80211.mac.originator.RtsPolicy\""
+par OpalTest.node[1].wlan.mac.dcf.rtsPolicy rateSelectionModule "\"^.rateSelection\""
+par OpalTest.node[1].wlan.mac.dcf.rtsPolicy ctsTimeout -1s
+attr unit s
+par OpalTest.node[1].wlan.mac.dcf.rtsPolicy rtsThreshold 2346B
+attr unit B
+par OpalTest.node[1].wlan.mac.dcf.ctsPolicy typename "\"inet.linklayer.ieee80211.mac.recipient.CtsPolicy\""
+par OpalTest.node[1].wlan.mac.dcf.ctsPolicy rxModule "\"^.^.rx\""
+par OpalTest.node[1].wlan.mac.dcf.ctsPolicy rateSelectionModule "\"^.rateSelection\""
+par OpalTest.node[1].wlan.mac.dcf typename "\"inet.linklayer.ieee80211.mac.coordinationfunction.Dcf\""
+par OpalTest.node[1].wlan.mac.dcf rxModule "\"^.rx\""
+par OpalTest.node[1].wlan.mac.dcf txModule "\"^.tx\""
+scalar OpalTest.node[1].wlan.mac.dcf frameSequenceFinished:count 9
+attr recordingmode count
+attr title "finished frame sequences, count"
+statistic OpalTest.node[1].wlan.mac.dcf frameSequenceDuration:histogram
+field count 9
+field mean 0.000752
+field stddev 0
+field min 0.000752
+field max 0.000752
+field sum 0.006768
+field sqrsum 5.089536e-06
+attr recordingmode histogram
+attr source frameSequenceDuration(frameSequenceFinished)
+attr title "frame sequence durations"
+bin	-inf	0
+bin	0	9
+bin	0.01	0
+bin	0.02	0
+bin	0.03	0
+bin	0.04	0
+bin	0.05	0
+bin	0.06	0
+bin	0.07	0
+bin	0.08	0
+bin	0.09	0
+bin	0.1	0
+bin	0.11	0
+bin	0.12	0
+bin	0.13	0
+bin	0.14	0
+bin	0.15	0
+bin	0.16	0
+bin	0.17	0
+bin	0.18	0
+bin	0.19	0
+bin	0.2	0
+bin	0.21	0
+bin	0.22	0
+bin	0.23	0
+bin	0.24	0
+bin	0.25	0
+bin	0.26	0
+bin	0.27	0
+bin	0.28	0
+bin	0.29	0
+bin	0.3	0
+bin	0.31	0
+bin	0.32	0
+bin	0.33	0
+bin	0.34	0
+bin	0.35	0
+bin	0.36	0
+bin	0.37	0
+bin	0.38	0
+bin	0.39	0
+bin	0.4	0
+bin	0.41	0
+bin	0.42	0
+bin	0.43	0
+bin	0.44	0
+bin	0.45	0
+bin	0.46	0
+bin	0.47	0
+bin	0.48	0
+bin	0.49	0
+bin	0.5	0
+bin	0.51	0
+statistic OpalTest.node[1].wlan.mac.dcf frameSequenceNumPackets:histogram
+field count 9
+field mean 1
+field stddev 0
+field min 1
+field max 1
+field sum 9
+field sqrsum 9
+attr recordingmode histogram
+attr source frameSequenceNumPackets(frameSequenceFinished)
+attr title "frame sequences: number of packets"
+bin	-inf	0
+bin	0	0
+bin	1	9
+bin	2	0
+scalar OpalTest.node[1].wlan.mac.dcf packetReceivedFromPeer:count 0
+attr interpolationmode none
+attr recordingmode count
+attr title "packets received, count"
+scalar OpalTest.node[1].wlan.mac.dcf packetReceivedFromPeer:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr title "packets received, sum(packetBytes)"
+scalar OpalTest.node[1].wlan.mac.dcf packetReceivedFromPeerUnicast:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211Unicast(packetReceivedFromPeer)
+attr title "packets received: unicast, count"
+scalar OpalTest.node[1].wlan.mac.dcf packetReceivedFromPeerUnicast:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211Unicast(packetReceivedFromPeer)
+attr title "packets received: unicast, sum(packetBytes)"
+scalar OpalTest.node[1].wlan.mac.dcf packetReceivedFromPeerMulticast:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211Multicast(packetReceivedFromPeer)
+attr title "packets received: multicast, count"
+scalar OpalTest.node[1].wlan.mac.dcf packetReceivedFromPeerMulticast:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211Multicast(packetReceivedFromPeer)
+attr title "packets received: multicast, sum(packetBytes)"
+scalar OpalTest.node[1].wlan.mac.dcf packetReceivedFromPeerBroadcast:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211Broadcast(packetReceivedFromPeer)
+attr title "packets received: broadcast, count"
+scalar OpalTest.node[1].wlan.mac.dcf packetReceivedFromPeerBroadcast:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211Broadcast(packetReceivedFromPeer)
+attr title "packets received: broadcast, sum(packetBytes)"
+scalar OpalTest.node[1].wlan.mac.dcf packetReceivedFromPeerWithRetry:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211Retry(packetReceivedFromPeer)
+attr title "packets received: with retry, count"
+scalar OpalTest.node[1].wlan.mac.dcf packetReceivedFromPeerWithRetry:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211Retry(packetReceivedFromPeer)
+attr title "packets received: with retry, sum(packetBytes)"
+scalar OpalTest.node[1].wlan.mac.dcf packetReceivedFromPeerWithoutRetry:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, count"
+scalar OpalTest.node[1].wlan.mac.dcf packetReceivedFromPeerWithoutRetry:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211NotRetry(packetReceivedFromPeer)
+attr title "packets received: without retry, sum(packetBytes)"
+scalar OpalTest.node[1].wlan.mac.dcf packetSentToPeer:count 9
+attr interpolationmode none
+attr recordingmode count
+attr title "packets sent, count"
+scalar OpalTest.node[1].wlan.mac.dcf packetSentToPeer:sum(packetBytes) 4770
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr title "packets sent, sum(packetBytes)"
+scalar OpalTest.node[1].wlan.mac.dcf packetSentToPeerUnicast:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211Unicast(packetSentToPeer)
+attr title "packets sent: unicast, count"
+scalar OpalTest.node[1].wlan.mac.dcf packetSentToPeerUnicast:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211Unicast(packetSentToPeer)
+attr title "packets sent: unicast, sum(packetBytes)"
+scalar OpalTest.node[1].wlan.mac.dcf packetSentToPeerMulticast:count 9
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211Multicast(packetSentToPeer)
+attr title "packets sent: multicast, count"
+scalar OpalTest.node[1].wlan.mac.dcf packetSentToPeerMulticast:sum(packetBytes) 4770
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211Multicast(packetSentToPeer)
+attr title "packets sent: multicast, sum(packetBytes)"
+scalar OpalTest.node[1].wlan.mac.dcf packetSentToPeerBroadcast:count 9
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211Broadcast(packetSentToPeer)
+attr title "packets sent: broadcast , count"
+scalar OpalTest.node[1].wlan.mac.dcf packetSentToPeerBroadcast:sum(packetBytes) 4770
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211Broadcast(packetSentToPeer)
+attr title "packets sent: broadcast , sum(packetBytes)"
+scalar OpalTest.node[1].wlan.mac.dcf packetSentToPeerWithRetry:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211Retry(packetSentToPeer)
+attr title "packets sent: with retry, count"
+scalar OpalTest.node[1].wlan.mac.dcf packetSentToPeerWithRetry:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211Retry(packetSentToPeer)
+attr title "packets sent: with retry, sum(packetBytes)"
+scalar OpalTest.node[1].wlan.mac.dcf packetSentToPeerWithoutRetry:count 9
+attr interpolationmode none
+attr recordingmode count
+attr source ieee80211NotRetry(packetSentToPeer)
+attr title "packets sent: without retry, count"
+scalar OpalTest.node[1].wlan.mac.dcf packetSentToPeerWithoutRetry:sum(packetBytes) 4770
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source ieee80211NotRetry(packetSentToPeer)
+attr title "packets sent: without retry, sum(packetBytes)"
+scalar OpalTest.node[1].wlan.mac.dcf packetDrop:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropped
+attr title "packet drops, count"
+scalar OpalTest.node[1].wlan.mac.dcf packetDrop:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropped
+attr title "packet drops, sum(packetBytes)"
+scalar OpalTest.node[1].wlan.mac.dcf packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, count"
+scalar OpalTest.node[1].wlan.mac.dcf packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, sum(packetBytes)"
+scalar OpalTest.node[1].wlan.mac.dcf packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar OpalTest.node[1].wlan.mac.dcf packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar OpalTest.node[1].wlan.mac.dcf packetDropRetryLimitReached:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, count"
+scalar OpalTest.node[1].wlan.mac.dcf packetDropRetryLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, sum(packetBytes)"
+scalar OpalTest.node[1].wlan.mac.dcf linkBroken:count 0
+attr interpolationmode none
+attr recordingmode count
+attr title "link breaks, count"
+par OpalTest.node[1].wlan.mac.ds typename "\"inet.linklayer.ieee80211.mac.Ds\""
+par OpalTest.node[1].wlan.mac.ds mibModule "\"OpalTest.node[1].wlan.mib\""
+par OpalTest.node[1].wlan.mac.rx typename "\"inet.linklayer.ieee80211.mac.Rx\""
+par OpalTest.node[1].wlan.mac.tx typename "\"inet.linklayer.ieee80211.mac.Tx\""
+par OpalTest.node[1].wlan.mac.tx rxModule "\"^.rx\""
+par OpalTest.node[1].wlan.mac typename "\"inet.linklayer.ieee80211.mac.Ieee80211Mac\""
+par OpalTest.node[1].wlan.mac interfaceTableModule "\"OpalTest.node[1].interfaceTable\""
+par OpalTest.node[1].wlan.mac mibModule "\"OpalTest.node[1].wlan.mib\""
+par OpalTest.node[1].wlan.mac modeSet "\"p\""
+attr enum a,b,g(erp),g(mixed),n(mixed-2.4Ghz),p,ac
+par OpalTest.node[1].wlan.mac fcsMode "\"declared\""
+attr enum declared,computed
+par OpalTest.node[1].wlan.mac initialRadioMode "\"receiver\""
+attr enum off,sleep,receiver,transmitter,transceiver
+par OpalTest.node[1].wlan.mac mtu 2304B
+attr unit B
+par OpalTest.node[1].wlan.mac qosStation false
+scalar OpalTest.node[1].wlan.mac packetReceivedFromLower:count 0
+attr interpolationmode none
+attr recordingmode count
+attr title "packets received from lower layer, count"
+scalar OpalTest.node[1].wlan.mac packetReceivedFromLower:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr title "packets received from lower layer, sum(packetBytes)"
+scalar OpalTest.node[1].wlan.mac packetSentToLower:count 9
+attr interpolationmode none
+attr recordingmode count
+attr title "packets sent to lower layer, count"
+scalar OpalTest.node[1].wlan.mac packetSentToLower:sum(packetBytes) 4770
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr title "packets sent to lower layer, sum(packetBytes)"
+scalar OpalTest.node[1].wlan.mac packetReceivedFromUpper:count 9
+attr interpolationmode none
+attr recordingmode count
+attr title "packets received from upper layer, count"
+scalar OpalTest.node[1].wlan.mac packetReceivedFromUpper:sum(packetBytes) 4518
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr title "packets received from upper layer, sum(packetBytes)"
+scalar OpalTest.node[1].wlan.mac packetSentToUpper:count 0
+attr interpolationmode none
+attr recordingmode count
+attr title "packets sent to upper layer, count"
+scalar OpalTest.node[1].wlan.mac packetSentToUpper:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr title "packets sent to upper layer, sum(packetBytes)"
+scalar OpalTest.node[1].wlan.mac packetDrop:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropped
+attr title "packet drops, count"
+scalar OpalTest.node[1].wlan.mac packetDrop:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropped
+attr title "packet drops, sum(packetBytes)"
+scalar OpalTest.node[1].wlan.mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drops: incorrectly received, count"
+scalar OpalTest.node[1].wlan.mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drops: incorrectly received, sum(packetBytes)"
+scalar OpalTest.node[1].wlan.mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, count"
+scalar OpalTest.node[1].wlan.mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drops: not addressed to us, sum(packetBytes)"
+scalar OpalTest.node[1].wlan.mac packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, count"
+scalar OpalTest.node[1].wlan.mac packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drops: queue overflow, sum(packetBytes)"
+scalar OpalTest.node[1].wlan.mac packetDropRetryLimitReached:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, count"
+scalar OpalTest.node[1].wlan.mac packetDropRetryLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drops: retry limit reached, sum(packetBytes)"
+scalar OpalTest.node[1].wlan.mac packetDropDuplicateDetected:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, count"
+scalar OpalTest.node[1].wlan.mac packetDropDuplicateDetected:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsDuplicateDetected(packetDropped)
+attr title "packet drops: duplicate detected, sum(packetBytes)"
+scalar OpalTest.node[1].wlan.mac packetDropOther:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsOther(packetDropped)
+attr title "packet drops: other, count"
+scalar OpalTest.node[1].wlan.mac packetDropOther:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsOther(packetDropped)
+attr title "packet drops: other, sum(packetBytes)"
+scalar OpalTest.node[1].wlan.mac linkBroken:count 0
+attr interpolationmode none
+attr recordingmode count
+attr title "link breaks, count"
+par OpalTest.node[1].wlan.radio.antenna typename "\"inet.veneris.opal.OpalLinearPolarizationAntenna\""
+par OpalTest.node[1].wlan.radio.antenna mobilityModule "\"OpalTest.node[1].mobility\""
+par OpalTest.node[1].wlan.radio.antenna numAntennas 1
+par OpalTest.node[1].wlan.radio.antenna polarizationX 0
+par OpalTest.node[1].wlan.radio.antenna polarizationY 1
+par OpalTest.node[1].wlan.radio.antenna polarizationZ 0
+par OpalTest.node[1].wlan.radio.antenna useAntennaGain false
+par OpalTest.node[1].wlan.radio.antenna gainFilePath "\"\""
+par OpalTest.node[1].wlan.radio.transmitter typename "\"inet.physicallayer.wireless.ieee80211.packetlevel.Ieee80211ScalarTransmitter\""
+par OpalTest.node[1].wlan.radio.transmitter preambleDuration -1s
+attr unit s
+par OpalTest.node[1].wlan.radio.transmitter headerLength 192b
+attr unit b
+par OpalTest.node[1].wlan.radio.transmitter bitrate 6e+06bps
+attr unit bps
+par OpalTest.node[1].wlan.radio.transmitter power 1W
+attr unit W
+par OpalTest.node[1].wlan.radio.transmitter centerFrequency 5.9e+09Hz
+attr unit Hz
+par OpalTest.node[1].wlan.radio.transmitter bandwidth "nan Hz"
+attr unit Hz
+par OpalTest.node[1].wlan.radio.transmitter codeRate 1
+par OpalTest.node[1].wlan.radio.transmitter modulation "\"BPSK\""
+par OpalTest.node[1].wlan.radio.transmitter opMode "\"p\""
+attr enum a,b,g(erp),g(mixed),n(mixed-2.4Ghz),p,ac
+par OpalTest.node[1].wlan.radio.transmitter bandName "\"5.9 GHz\""
+attr enum "2.4 GHz,5 GHz,5 GHz (20 MHz),5 GHz (40 MHz),5 GHz (80 MHz),5 GHz (160 MHz),5.9 GHz"
+par OpalTest.node[1].wlan.radio.transmitter channelNumber 1
+par OpalTest.node[1].wlan.radio.receiver.errorModel typename "\"inet.physicallayer.wireless.ieee80211.packetlevel.errormodel.Ieee80211NistErrorModel\""
+par OpalTest.node[1].wlan.radio.receiver.errorModel corruptionMode "\"packet\""
+attr enum packet,chunk,byte,bit
+par OpalTest.node[1].wlan.radio.receiver.errorModel snirMode "\"min\""
+attr enum min,mean
+par OpalTest.node[1].wlan.radio.receiver.errorModel snirOffset 0dB
+attr unit dB
+par OpalTest.node[1].wlan.radio.receiver typename "\"inet.physicallayer.wireless.ieee80211.packetlevel.Ieee80211ScalarReceiver\""
+par OpalTest.node[1].wlan.radio.receiver snirThreshold 4dB
+attr unit dB
+par OpalTest.node[1].wlan.radio.receiver snirThresholdMode "\"min\""
+attr enum min,mean
+par OpalTest.node[1].wlan.radio.receiver energyDetection -85dBm
+attr unit dBm
+par OpalTest.node[1].wlan.radio.receiver sensitivity -85dBm
+attr unit dBm
+par OpalTest.node[1].wlan.radio.receiver centerFrequency 5.9e+09Hz
+attr unit Hz
+par OpalTest.node[1].wlan.radio.receiver bandwidth 2.2e+07Hz
+attr unit Hz
+par OpalTest.node[1].wlan.radio.receiver modulation "\"BPSK\""
+par OpalTest.node[1].wlan.radio.receiver opMode "\"p\""
+attr enum a,b,g(erp),g(mixed),n(mixed-2.4Ghz),p,ac
+par OpalTest.node[1].wlan.radio.receiver bandName "\"5.9 GHz\""
+attr enum "2.4 GHz,5 GHz,5 GHz (20 MHz),5 GHz (40 MHz),5 GHz (80 MHz),5 GHz (160 MHz),5.9 GHz"
+par OpalTest.node[1].wlan.radio.receiver channelNumber 1
+par OpalTest.node[1].wlan.radio typename "\"inet.physicallayer.wireless.ieee80211.packetlevel.Ieee80211ScalarRadio\""
+par OpalTest.node[1].wlan.radio radioMediumModule "\"radioMedium\""
+par OpalTest.node[1].wlan.radio energySourceModule "\"\""
+par OpalTest.node[1].wlan.radio initialRadioMode "\"off\""
+attr enum off,sleep,receiver,transmitter,transceiver
+par OpalTest.node[1].wlan.radio switchingTimes "\"ms 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0\""
+par OpalTest.node[1].wlan.radio sendRawBytes false
+par OpalTest.node[1].wlan.radio separateTransmissionParts false
+par OpalTest.node[1].wlan.radio separateReceptionParts false
+par OpalTest.node[1].wlan.radio displayCommunicationRange false
+par OpalTest.node[1].wlan.radio displayInterferenceRange false
+par OpalTest.node[1].wlan.radio centerFrequency 5.9e+09Hz
+attr unit Hz
+par OpalTest.node[1].wlan.radio bandwidth "nan Hz"
+attr unit Hz
+par OpalTest.node[1].wlan.radio signalAnalogRepresentation "\"scalar\""
+attr enum scalar,dimensional
+par OpalTest.node[1].wlan.radio opMode "\"p\""
+attr enum a,b,g(erp),g(mixed),n(mixed-2.4Ghz),p,ac
+par OpalTest.node[1].wlan.radio bandName "\"5.9 GHz\""
+attr enum "2.4 GHz,5 GHz,5 GHz (20 MHz),5 GHz (40 MHz),5 GHz (80 MHz),5 GHz (160 MHz),5.9 GHz"
+par OpalTest.node[1].wlan.radio channelNumber 1
+par OpalTest.node[1].wlan.radio crcMode "\"declared\""
+attr enum declared,computed
+statistic OpalTest.node[1].wlan.radio radioChannel:histogram
+field count 1
+field mean 1
+field stddev -nan
+field min 1
+field max 1
+field sum 1
+field sqrsum 1
+attr interpolationmode sample-hold
+attr recordingmode histogram
+attr source radioChannelChanged
+attr title "Radio channel"
+bin	-inf	0
+bin	0	0
+bin	1	1
+bin	2	0
+scalar OpalTest.node[1].wlan.radio radioMode:count 21
+attr interpolationmode sample-hold
+attr recordingmode count
+attr source radioModeChanged
+attr title "Radio mode, count"
+scalar OpalTest.node[1].wlan.radio receptionState:count 19
+attr interpolationmode sample-hold
+attr recordingmode count
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar OpalTest.node[1].wlan.radio transmissionState:count 36
+attr interpolationmode sample-hold
+attr recordingmode count
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
+statistic OpalTest.node[1].wlan.radio minSnir:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr recordingmode histogram
+attr source minimumSnir(packetSentToUpper)
+attr title "Min SNIR"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic OpalTest.node[1].wlan.radio packetErrorRate:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr recordingmode histogram
+attr source packetErrorRate(packetSentToUpper)
+attr title "Packet error rate"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic OpalTest.node[1].wlan.radio bitErrorRate:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr recordingmode histogram
+attr source bitErrorRate(packetSentToUpper)
+attr title "Bit error rate"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic OpalTest.node[1].wlan.radio symbolErrorRate:histogram
+field count 0
+field mean -nan
+field stddev -nan
+field min -nan
+field max -nan
+field sum 0
+field sqrsum 0
+attr recordingmode histogram
+attr source symbolErrorRate(packetSentToUpper)
+attr title "Symbol error rate"
+bin	-inf	0
+bin	0	0
+bin	1	0
+par OpalTest.node[1].wlan typename "\"inet.linklayer.ieee80211.Ieee80211Interface\""
+par OpalTest.node[1].wlan displayStringTextFormat "\"%a (%i)\\n%m\""
+par OpalTest.node[1].wlan recordPcap false
+par OpalTest.node[1].wlan numPcapRecorders 0
+par OpalTest.node[1].wlan interfaceTableModule "\"OpalTest.node[1].interfaceTable\""
+par OpalTest.node[1].wlan energySourceModule "\"\""
+par OpalTest.node[1].wlan opMode "\"p\""
+attr enum a,b,g(erp),g(mixed),n(mixed-2.4Ghz),p,ac
+par OpalTest.node[1].wlan address "\"0A-AA-00-00-00-02\""
+attr mutable ""
+par OpalTest.node[1].wlan protocol "\"\""
+par OpalTest.node[1].wlan bitrate 6e+06bps
+attr unit bps
+scalar OpalTest.node[1].wlan packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drops: interface down, count"
+scalar OpalTest.node[1].wlan packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drops: interface down, sum(packetBytes)"
+scalar OpalTest.node[1].wlan packetDropNoCarrier:count 0
+attr interpolationmode none
+attr recordingmode count
+attr source packetDropReasonIsNoCarrier(packetDropped)
+attr title "packet drops: no carrier, count"
+scalar OpalTest.node[1].wlan packetDropNoCarrier:sum(packetBytes) 0
+attr interpolationmode none
+attr recordingmode sum(packetBytes)
+attr source packetDropReasonIsNoCarrier(packetDropped)
+attr title "packet drops: no carrier, sum(packetBytes)"
+par OpalTest.node[1] typename "\"inet.veneris.opal.OpalNode\""
+par OpalTest.node[1] id 1
+attr mutable ""
+par OpalTest.node[1] initialX 10m
+attr mutable ""
+attr unit m
+par OpalTest.node[1] initialY 10m
+attr mutable ""
+attr unit m
+par OpalTest.node[1] initialZ 0m
+attr mutable ""
+attr unit m
+par OpalTest.node[1] receptionRadius 1
+attr mutable ""
+par OpalTest.node[1] mobilityType "\"StationaryMobility\""
+par OpalTest.node[1] generatorType "\"inet.veneris.opal.test.OpalTestPeriodicGenerator\""
+par OpalTest.radioMedium.propagation typename "\"inet.physicallayer.wireless.common.propagation.ConstantSpeedPropagation\""
+par OpalTest.radioMedium.propagation propagationSpeed 2.99792e+08mps
+attr unit mps
+par OpalTest.radioMedium.propagation ignoreMovementDuringTransmission true
+par OpalTest.radioMedium.propagation ignoreMovementDuringPropagation true
+par OpalTest.radioMedium.propagation ignoreMovementDuringReception true
+scalar OpalTest.radioMedium.propagation "Arrival computation count" 9
+par OpalTest.radioMedium.analogModel typename "\"inet.physicallayer.wireless.common.analogmodel.packetlevel.ScalarAnalogModel\""
+par OpalTest.radioMedium.analogModel ignorePartialInterference false
+par OpalTest.radioMedium.backgroundNoise typename "\"inet.physicallayer.wireless.common.backgroundnoise.IsotropicScalarBackgroundNoise\""
+par OpalTest.radioMedium.backgroundNoise power -110dBm
+attr unit dBm
+par OpalTest.radioMedium.backgroundNoise bandwidth "nan Hz"
+attr unit Hz
+par OpalTest.radioMedium.pathLoss typename "\"inet.physicallayer.wireless.common.pathloss.FreeSpacePathLoss\""
+par OpalTest.radioMedium.pathLoss alpha 2
+par OpalTest.radioMedium.pathLoss systemLoss 0dB
+attr unit dB
+par OpalTest.radioMedium.mediumLimitCache typename "\"inet.physicallayer.wireless.common.medium.MediumLimitCache\""
+par OpalTest.radioMedium.mediumLimitCache centerFrequency 5.9e+09Hz
+attr unit Hz
+par OpalTest.radioMedium.mediumLimitCache maxSpeed "nan mps"
+attr unit mps
+par OpalTest.radioMedium.mediumLimitCache maxTransmissionPower "nan W"
+attr unit W
+par OpalTest.radioMedium.mediumLimitCache minInterferencePower -110dBm
+attr unit dBm
+par OpalTest.radioMedium.mediumLimitCache minReceptionPower -85dBm
+attr unit dBm
+par OpalTest.radioMedium.mediumLimitCache maxAntennaGain 0dB
+attr unit dB
+par OpalTest.radioMedium.mediumLimitCache minInterferenceTime 1e-12s
+attr unit s
+par OpalTest.radioMedium.mediumLimitCache maxTransmissionDuration 0.5s
+attr unit s
+par OpalTest.radioMedium.mediumLimitCache maxCommunicationRange "nan m"
+attr unit m
+par OpalTest.radioMedium.mediumLimitCache maxInterferenceRange "nan m"
+attr unit m
+par OpalTest.radioMedium.communicationCache typename "\"inet.physicallayer.wireless.common.communicationcache.VectorCommunicationCache\""
+par OpalTest.radioMedium typename "\"inet.veneris.opal.OpalRadioMedium\""
+par OpalTest.radioMedium physicalEnvironmentModule "\"physicalEnvironment\""
+par OpalTest.radioMedium signalAnalogRepresentation "\"scalar\""
+attr enum unitDisk,scalar,dimensional
+par OpalTest.radioMedium rangeFilter "\"\""
+par OpalTest.radioMedium radioModeFilter false
+par OpalTest.radioMedium listeningFilter false
+par OpalTest.radioMedium macAddressFilter false
+par OpalTest.radioMedium recordTransmissionLog false
+par OpalTest.radioMedium recordReceptionLog false
+par OpalTest.radioMedium simulationType "\"Depolarization\""
+par OpalTest.radioMedium useDiffraction true
+par OpalTest.radioMedium computeMode "\"Voltage\""
+par OpalTest.radioMedium maxNumberOfReflections 10
+par OpalTest.radioMedium carrierFrequency 5.9e+09Hz
+attr unit Hz
+par OpalTest.radioMedium receptionRadius 1m
+attr unit m
+par OpalTest.radioMedium logTrace false
+par OpalTest.radioMedium useExactSpeedOfLight true
+par OpalTest.radioMedium generateRaysOnLaunch true
+par OpalTest.radioMedium enableMultiGPU true
+par OpalTest.radioMedium depolarization true
+par OpalTest.radioMedium enableFastMath true
+par OpalTest.radioMedium useAntennaGain false
+par OpalTest.radioMedium antennaGainFilePaths "\"\""
+par OpalTest.radioMedium rdnRays 1000
+par OpalTest.radioMedium rdnFiltering 2
+par OpalTest.radioMedium rdnExecutionMode 1
+par OpalTest.radioMedium initAzimuth 0
+par OpalTest.radioMedium azimuthDelta 0.1
+par OpalTest.radioMedium endAzimuth 360
+par OpalTest.radioMedium initElevation 0
+par OpalTest.radioMedium elevationDelta 0.1
+par OpalTest.radioMedium endElevation 180
+par OpalTest.radioMedium useDecimalDegreeDelta false
+par OpalTest.radioMedium useServer false
+par OpalTest.radioMedium switchCoordinates false
+par OpalTest.radioMedium useExtendedCallback true
+par OpalTest.radioMedium useJson false
+par OpalTest.radioMedium jsonFilePath "\"\""
+par OpalTest.radioMedium loadMeshesFromFile false
+par OpalTest.radioMedium loadEdgesFromFile false
+par OpalTest.radioMedium meshesPath "\"\""
+par OpalTest.radioMedium meshesFileList "\"\""
+par OpalTest.radioMedium meshes "\"\""
+par OpalTest.radioMedium edgesPath "\"\""
+par OpalTest.radioMedium edgesFileList "\"\""
+par OpalTest.radioMedium isStatic true
+par OpalTest.radioMedium minEpsilon 0.001
+scalar OpalTest.radioMedium "transmission count" 9
+scalar OpalTest.radioMedium "signal send count" 9
+scalar OpalTest.radioMedium "reception computation count" 9
+scalar OpalTest.radioMedium "interference computation count" 40
+scalar OpalTest.radioMedium "reception decision computation count" 9
+scalar OpalTest.radioMedium "listening decision computation count" 22
+scalar OpalTest.radioMedium "reception cache hit" 87.5
+attr unit %
+scalar OpalTest.radioMedium "interference cache hit" 66.666666666667
+attr unit %
+scalar OpalTest.radioMedium "noise cache hit" 0
+attr unit %
+scalar OpalTest.radioMedium "snir cache hit" 50
+attr unit %
+scalar OpalTest.radioMedium "reception decision cache hit" 50
+attr unit %
+scalar OpalTest.radioMedium "reception result cache hit" 0
+attr unit %
+par OpalTest typename "\"inet.examples.opal.OpalTest\""
+par OpalTest nodes 2
+
