@@ -1,9 +1,9 @@
 /.metadata/
-/inet4.4/simulations/results/
+**/inet4.4/simulations/results/*
 /inet4.4/log.txt
 /inet4.4/elog.txt
 **/inet4.4/out/*
 *.so
-/inet4.4/src/inet/common/precompiled_release.h.gch
-/inet4.4/examples/opal/scenarios/waz_scene2.json
+*.gch
+*.json
 updateModules.sh
