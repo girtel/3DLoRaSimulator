@@ -1,9 +1,9 @@
 ../out/gcc-release/src/inet/LoRa/LoRaGWMac.o: inet/LoRa/LoRaGWMac.cc \
+ inet/LoRa/LoRaGWMac.h inet/common/INETDefs.h \
  inet/common/precompiled_release.h inet/common/precompiled.h \
- /opt/omnetpp-6.0.1/include/omnetpp.h inet/LoRa/LoRaGWMac.h \
- inet/common/INETDefs.h inet/common/precompiled_release.h \
  inet/opp_defines.h inet/features.h inet/common/Compat.h \
- inet/common/InitStages.h inet/common/InitStageRegistry.h \
+ /opt/omnetpp-6.0.1/include/omnetpp.h inet/common/InitStages.h \
+ inet/common/InitStageRegistry.h \
  inet/physicallayer/wireless/common/contract/packetlevel/IRadio.h \
  inet/physicallayer/wireless/common/contract/packetlevel/IWirelessSignal.h \
  inet/physicallayer/wireless/common/contract/packetlevel/IArrival.h \
@@ -90,23 +90,21 @@
  inet/LoRa/../LoRaPhy/LoRaPhyPreamble_m.h inet/common/ProtocolTag_m.h \
  inet/common/Protocol_m.h
 
-inet/common/precompiled_release.h:
-
-inet/common/precompiled.h:
-
-/opt/omnetpp-6.0.1/include/omnetpp.h:
-
 inet/LoRa/LoRaGWMac.h:
 
 inet/common/INETDefs.h:
 
 inet/common/precompiled_release.h:
 
+inet/common/precompiled.h:
+
 inet/opp_defines.h:
 
 inet/features.h:
 
 inet/common/Compat.h:
+
+/opt/omnetpp-6.0.1/include/omnetpp.h:
 
 inet/common/InitStages.h:
 

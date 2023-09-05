@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <buildspec version="4.0">
     <dir path="." type="custom"/>
-    <dir makemake-options="--make-so --deep -o INET -O out -pINET -I/opt/optix-6.5/include -I/opt/optix-6.5/SDK/opal -I/usr/local/cuda-10.2/include --meta:export-include-path --meta:export-library --meta:use-exported-libs --meta:feature-cflags --meta:feature-ldflags" path="src" type="makemake"/>
+    <dir makemake-options="--make-so --deep -o INET -O out -pINET -I/opt/optix-6.5/include -I/opt/optix-6.5/SDK/opal -I/usr/local/cuda-10.2/include -lopal_s -lboost_system --meta:export-include-path --meta:export-library --meta:use-exported-libs --meta:feature-cflags --meta:feature-ldflags" path="src" type="makemake"/>
 </buildspec>

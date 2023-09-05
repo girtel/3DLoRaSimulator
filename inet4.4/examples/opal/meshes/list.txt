@@ -1,5 +1,0 @@
-Unity coordinates: Y is up, Z i forward, X is right
-
-Plane: 100X100 m Z-X plane  in 0,0,0 
-Cube-(NW,NE,SE,SW): 40x40x40 m cube in -30,20,80, 30,20,80, 30,20,20, -30,20,20
-Large-Plane: 2000x2000 m Z-X plane in 0.0,50

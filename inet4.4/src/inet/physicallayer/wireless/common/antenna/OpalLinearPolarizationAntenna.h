@@ -20,9 +20,8 @@
 #include "inet/common/INETDefs.h"
 #include "inet/physicallayer/wireless/common/base/packetlevel/AntennaBase.h"
 
-using namespace omnetpp;
-using namespace inet::physicallayer;
 namespace inet {
+namespace physicallayer {
 
 /**
  * TODO - Generated class
@@ -62,6 +61,6 @@ class INET_API OpalLinearPolarizationAntenna : public AntennaBase, public cListe
 
 };
 
-} //namespace
+}}//namespace
 
 #endif

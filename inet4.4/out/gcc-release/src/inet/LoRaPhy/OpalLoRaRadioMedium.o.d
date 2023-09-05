@@ -1,12 +1,11 @@
 ../out/gcc-release/src/inet/LoRaPhy/OpalLoRaRadioMedium.o: \
- inet/LoRaPhy/OpalLoRaRadioMedium.cc inet/common/precompiled_release.h \
- inet/common/precompiled.h /opt/omnetpp-6.0.1/include/omnetpp.h \
- inet/LoRaPhy/OpalLoRaRadioMedium.h \
+ inet/LoRaPhy/OpalLoRaRadioMedium.cc inet/LoRaPhy/OpalLoRaRadioMedium.h \
+ /opt/omnetpp-6.0.1/include/omnetpp.h \
  inet/physicallayer/wireless/common/medium/RadioMedium.h \
  inet/common/IntervalTree.h inet/common/INETDefs.h \
- inet/common/precompiled_release.h inet/opp_defines.h inet/features.h \
- inet/common/Compat.h inet/common/InitStages.h \
- inet/common/InitStageRegistry.h \
+ inet/common/precompiled_release.h inet/common/precompiled.h \
+ inet/opp_defines.h inet/features.h inet/common/Compat.h \
+ inet/common/InitStages.h inet/common/InitStageRegistry.h \
  inet/environment/contract/IMaterialRegistry.h \
  inet/environment/common/Material.h inet/environment/contract/IMaterial.h \
  inet/common/Units.h inet/common/INETMath.h \
@@ -91,7 +90,16 @@
  inet/common/lifecycle/ModuleOperations.h \
  inet/common/lifecycle/LifecycleOperation.h \
  inet/physicallayer/wireless/common/signal/WirelessSignal.h \
- inet/physicallayer/common/Signal.h \
+ inet/physicallayer/common/Signal.h inet/LoRaPhy/LoRaMedium.h \
+ inet/LoRa/LoRaRadio.h \
+ inet/physicallayer/wireless/common/base/packetlevel/NarrowbandRadioBase.h \
+ inet/LoRaPhy/../LoRa/LoRaMacFrame_m.h \
+ inet/linklayer/common/MacAddress_m.h inet/common/packet/chunk/Chunk_m.h \
+ inet/common/packet/chunk/BitCountChunk.h \
+ inet/common/packet/chunk/ByteCountChunk.h \
+ inet/common/packet/chunk/cPacketChunk.h \
+ inet/common/packet/chunk/EncryptedChunk.h \
+ inet/common/packet/chunk/FieldsChunk.h \
  inet/physicallayer/wireless/common/analogmodel/packetlevel/ScalarReception.h \
  inet/physicallayer/wireless/common/base/packetlevel/FlatReceptionBase.h \
  inet/physicallayer/wireless/common/base/packetlevel/NarrowbandReceptionBase.h \
@@ -607,7 +615,7 @@
  /opt/optix-6.5/SDK/opal/curvedMeshSimulation.h \
  /opt/optix-6.5/SDK/opal/singleDiffraction.h \
  /opt/optix-6.5/SDK/opal/util.h /opt/optix-6.5/SDK/opal/json.hpp \
- inet/veneris/opal/OpalLinearPolarizationAntenna.h \
+ inet/physicallayer/wireless/common/antenna/OpalLinearPolarizationAntenna.h \
  inet/physicallayer/wireless/common/base/packetlevel/AntennaBase.h \
  inet/mobility/base/MobilityBase.h inet/common/StringFormat.h \
  inet/common/geometry/common/CanvasProjection.h \
@@ -616,13 +624,9 @@
  inet/physicallayer/wireless/common/base/packetlevel/NarrowbandTransmissionBase.h \
  inet/physicallayer/wireless/common/base/packetlevel/TransmissionBase.h
 
-inet/common/precompiled_release.h:
-
-inet/common/precompiled.h:
+inet/LoRaPhy/OpalLoRaRadioMedium.h:
 
 /opt/omnetpp-6.0.1/include/omnetpp.h:
-
-inet/LoRaPhy/OpalLoRaRadioMedium.h:
 
 inet/physicallayer/wireless/common/medium/RadioMedium.h:
 
@@ -631,6 +635,8 @@ inet/common/IntervalTree.h:
 inet/common/INETDefs.h:
 
 inet/common/precompiled_release.h:
+
+inet/common/precompiled.h:
 
 inet/opp_defines.h:
 
@@ -841,6 +847,28 @@ inet/common/lifecycle/LifecycleOperation.h:
 inet/physicallayer/wireless/common/signal/WirelessSignal.h:
 
 inet/physicallayer/common/Signal.h:
+
+inet/LoRaPhy/LoRaMedium.h:
+
+inet/LoRa/LoRaRadio.h:
+
+inet/physicallayer/wireless/common/base/packetlevel/NarrowbandRadioBase.h:
+
+inet/LoRaPhy/../LoRa/LoRaMacFrame_m.h:
+
+inet/linklayer/common/MacAddress_m.h:
+
+inet/common/packet/chunk/Chunk_m.h:
+
+inet/common/packet/chunk/BitCountChunk.h:
+
+inet/common/packet/chunk/ByteCountChunk.h:
+
+inet/common/packet/chunk/cPacketChunk.h:
+
+inet/common/packet/chunk/EncryptedChunk.h:
+
+inet/common/packet/chunk/FieldsChunk.h:
 
 inet/physicallayer/wireless/common/analogmodel/packetlevel/ScalarReception.h:
 
@@ -1884,7 +1912,7 @@ inet/physicallayer/wireless/common/base/packetlevel/ReceptionBase.h:
 
 /opt/optix-6.5/SDK/opal/json.hpp:
 
-inet/veneris/opal/OpalLinearPolarizationAntenna.h:
+inet/physicallayer/wireless/common/antenna/OpalLinearPolarizationAntenna.h:
 
 inet/physicallayer/wireless/common/base/packetlevel/AntennaBase.h:
 

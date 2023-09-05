@@ -1,12 +1,11 @@
 ../out/gcc-release/src/inet/LoRaApp/SimpleLoRaApp.o: \
- inet/LoRaApp/SimpleLoRaApp.cc inet/common/precompiled_release.h \
- inet/common/precompiled.h /opt/omnetpp-6.0.1/include/omnetpp.h \
- inet/LoRaApp/SimpleLoRaApp.h inet/common/lifecycle/ILifecycle.h \
+ inet/LoRaApp/SimpleLoRaApp.cc inet/LoRaApp/SimpleLoRaApp.h \
+ /opt/omnetpp-6.0.1/include/omnetpp.h inet/common/lifecycle/ILifecycle.h \
  inet/common/INETDefs.h inet/common/precompiled_release.h \
- inet/opp_defines.h inet/features.h inet/common/Compat.h \
- inet/common/InitStages.h inet/common/InitStageRegistry.h \
- inet/common/lifecycle/NodeStatus.h inet/common/ModuleAccess.h \
- inet/common/lifecycle/LifecycleOperation.h \
+ inet/common/precompiled.h inet/opp_defines.h inet/features.h \
+ inet/common/Compat.h inet/common/InitStages.h \
+ inet/common/InitStageRegistry.h inet/common/lifecycle/NodeStatus.h \
+ inet/common/ModuleAccess.h inet/common/lifecycle/LifecycleOperation.h \
  inet/LoRaApp/LoRaAppPacket_m.h inet/common/INETDefs_m.h \
  inet/common/packet/chunk/Chunk_m.h inet/common/Units_m.h \
  inet/common/Units.h inet/common/INETMath.h \
@@ -103,19 +102,17 @@
  inet/common/geometry/common/CanvasProjection.h \
  inet/LoRaApp/../LoRa/LoRaTagInfo_m.h inet/common/TagBase_m.h
 
-inet/common/precompiled_release.h:
-
-inet/common/precompiled.h:
+inet/LoRaApp/SimpleLoRaApp.h:
 
 /opt/omnetpp-6.0.1/include/omnetpp.h:
-
-inet/LoRaApp/SimpleLoRaApp.h:
 
 inet/common/lifecycle/ILifecycle.h:
 
 inet/common/INETDefs.h:
 
 inet/common/precompiled_release.h:
+
+inet/common/precompiled.h:
 
 inet/opp_defines.h:
 

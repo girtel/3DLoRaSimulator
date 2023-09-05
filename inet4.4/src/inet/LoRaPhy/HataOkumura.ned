@@ -27,5 +27,5 @@ module HataOkumura extends FreeSpacePathLoss
         int suburban = default(0); // 0 if is a Urban area, 1 if is a suburban area, 2 if is a Opan Rural Area
         int GW = default(11);
         int Node = default(2);
-        @class(physicallayer::HataOkumura);
+        @class(HataOkumura);
 }

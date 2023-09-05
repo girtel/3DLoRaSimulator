@@ -1,14 +1,13 @@
 ../out/gcc-release/src/inet/LoRaPhy/LoRaTransmitter.o: \
- inet/LoRaPhy/LoRaTransmitter.cc inet/common/precompiled_release.h \
- inet/common/precompiled.h /opt/omnetpp-6.0.1/include/omnetpp.h \
- inet/LoRaPhy/LoRaTransmitter.h \
+ inet/LoRaPhy/LoRaTransmitter.cc inet/LoRaPhy/LoRaTransmitter.h \
  inet/physicallayer/wireless/common/base/packetlevel/FlatTransmitterBase.h \
  inet/physicallayer/wireless/common/base/packetlevel/NarrowbandTransmitterBase.h \
  inet/physicallayer/wireless/common/base/packetlevel/TransmitterBase.h \
  inet/physicallayer/wireless/common/contract/packetlevel/ITransmitter.h \
  inet/common/packet/Packet.h inet/common/IPrintableObject.h \
  inet/common/INETDefs.h inet/common/precompiled_release.h \
- inet/opp_defines.h inet/features.h inet/common/Compat.h \
+ inet/common/precompiled.h inet/opp_defines.h inet/features.h \
+ inet/common/Compat.h /opt/omnetpp-6.0.1/include/omnetpp.h \
  inet/common/InitStages.h inet/common/InitStageRegistry.h \
  inet/common/TagBase.h inet/common/Ptr.h inet/common/IntrusivePtr.h \
  inet/common/Units.h inet/common/INETMath.h \
@@ -114,12 +113,6 @@
  inet/physicallayer/wireless/common/base/packetlevel/NarrowbandTransmissionBase.h \
  inet/LoRaPhy/LoRaPhyPreamble_m.h
 
-inet/common/precompiled_release.h:
-
-inet/common/precompiled.h:
-
-/opt/omnetpp-6.0.1/include/omnetpp.h:
-
 inet/LoRaPhy/LoRaTransmitter.h:
 
 inet/physicallayer/wireless/common/base/packetlevel/FlatTransmitterBase.h:
@@ -138,11 +131,15 @@ inet/common/INETDefs.h:
 
 inet/common/precompiled_release.h:
 
+inet/common/precompiled.h:
+
 inet/opp_defines.h:
 
 inet/features.h:
 
 inet/common/Compat.h:
+
+/opt/omnetpp-6.0.1/include/omnetpp.h:
 
 inet/common/InitStages.h:
 

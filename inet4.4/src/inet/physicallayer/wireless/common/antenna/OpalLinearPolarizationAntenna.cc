@@ -17,6 +17,7 @@
 #include "inet/common/ModuleAccess.h"
 #include "inet/mobility/base/MobilityBase.h"
 namespace inet {
+namespace physicallayer {
 simsignal_t OpalLinearPolarizationAntenna::mobilityStateChangedSignal = cComponent::registerSignal("mobilityStateChanged");
 
 Define_Module(OpalLinearPolarizationAntenna);
@@ -66,4 +67,5 @@ void OpalLinearPolarizationAntenna::receiveSignal(cComponent* source,
         }
 }
 
-} //namespace
+}
+}//namespace

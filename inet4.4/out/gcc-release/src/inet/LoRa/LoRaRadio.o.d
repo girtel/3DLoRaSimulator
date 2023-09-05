@@ -1,13 +1,13 @@
 ../out/gcc-release/src/inet/LoRa/LoRaRadio.o: inet/LoRa/LoRaRadio.cc \
- inet/common/precompiled_release.h inet/common/precompiled.h \
- /opt/omnetpp-6.0.1/include/omnetpp.h inet/LoRa/LoRaRadio.h \
+ inet/LoRa/LoRaRadio.h \
  inet/physicallayer/wireless/common/base/packetlevel/PhysicalLayerBase.h \
  inet/common/LayeredProtocolBase.h \
  inet/common/lifecycle/OperationalBase.h \
  inet/common/lifecycle/OperationalMixin.h \
  inet/common/lifecycle/ILifecycle.h inet/common/INETDefs.h \
- inet/common/precompiled_release.h inet/opp_defines.h inet/features.h \
- inet/common/Compat.h inet/common/InitStages.h \
+ inet/common/precompiled_release.h inet/common/precompiled.h \
+ inet/opp_defines.h inet/features.h inet/common/Compat.h \
+ /opt/omnetpp-6.0.1/include/omnetpp.h inet/common/InitStages.h \
  inet/common/InitStageRegistry.h inet/common/packet/Packet.h \
  inet/common/IPrintableObject.h inet/common/TagBase.h inet/common/Ptr.h \
  inet/common/IntrusivePtr.h inet/common/Units.h inet/common/INETMath.h \
@@ -156,12 +156,6 @@
  inet/LoRa/LoRaTagInfo_m.h inet/LoRa/../LoRaPhy/LoRaPhyPreamble_m.h \
  inet/physicallayer/wireless/common/contract/packetlevel/SignalTag_m.h
 
-inet/common/precompiled_release.h:
-
-inet/common/precompiled.h:
-
-/opt/omnetpp-6.0.1/include/omnetpp.h:
-
 inet/LoRa/LoRaRadio.h:
 
 inet/physicallayer/wireless/common/base/packetlevel/PhysicalLayerBase.h:
@@ -178,11 +172,15 @@ inet/common/INETDefs.h:
 
 inet/common/precompiled_release.h:
 
+inet/common/precompiled.h:
+
 inet/opp_defines.h:
 
 inet/features.h:
 
 inet/common/Compat.h:
+
+/opt/omnetpp-6.0.1/include/omnetpp.h:
 
 inet/common/InitStages.h:
 

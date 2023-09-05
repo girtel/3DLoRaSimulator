@@ -56,7 +56,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="inet/veneris|inet/linklayer/configurator/gatescheduling/z3|inet/common/selfdoc|inet/node/xmipv6|inet/networklayer/xmipv6|inet/networklayer/wiseroute|inet/visualizer/osg|inet/applications/voipstream|inet/transportlayer/tcp_nsc|inet/emulation|inet/linklayer/ext|inet/routing/extras|transport/tcp_nsc|transport/tcp_lwip" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+						<entry excluding="inet/veneris|inet/common/selfdoc|inet/linklayer/configurator/gatescheduling/z3|inet/node/xmipv6|inet/networklayer/xmipv6|inet/networklayer/wiseroute|inet/visualizer/osg|inet/applications/voipstream|inet/transportlayer/tcp_nsc|inet/emulation|inet/linklayer/ext|inet/routing/extras|transport/tcp_nsc|transport/tcp_lwip" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>

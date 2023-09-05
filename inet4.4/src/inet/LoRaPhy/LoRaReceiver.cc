@@ -24,6 +24,8 @@ namespace inet {
 
 Define_Module(LoRaReceiver);
 
+simsignal_t LoRaReceiver::LoRaReceivedPower = cComponent::registerSignal("LoRaReceivedPower");
+
 LoRaReceiver::LoRaReceiver() :
     snirThreshold(NaN)
 {
@@ -36,7 +38,7 @@ void LoRaReceiver::initialize(int stage)
     {
         snirThreshold = math::dB2fraction(par("snirThreshold"));
         energyDetection = mW(math::dBmW2mW(par("energyDetection")));
-        if(strcmp(getParentModule()->getClassName(), "flora::LoRaGWRadio") == 0)
+        if(strcmp(getParentModule()->getClassName(), "inet::LoRaGWRadio") == 0)
         {
             iAmGateway = true;
         } else iAmGateway = false;
@@ -70,9 +72,36 @@ bool LoRaReceiver::computeIsReceptionPossible(const IListening *listening, const
 
 bool LoRaReceiver::computeIsReceptionPossible(const IListening *listening, const IReception *reception, IRadioSignal::SignalPart part) const
 {
+    const LoRaReception *loRaReception = check_and_cast<const LoRaReception *>(reception);
+    W power = loRaReception->getPower();
+
+    double powerdBm = 10 * log10(power.get()) + 30;
+    // To Register Power Always
+    cModule *radioModuleTx = const_cast<cModule *>(check_and_cast<const cModule *>(reception->getTransmission()->getTransmitter()));
+    cModule *radioModuleRx = const_cast<cModule *>(check_and_cast<const cModule *>(reception->getReceiver()));
+    int IdTx = getContainingNode(radioModuleTx)->par("id");
+    int IdRx = getContainingNode(radioModuleRx)->par("id");
+    int IdSignal = IdRx*100 + IdTx;
+    //std::cout << IdTx << " to " << IdRx << " with " << powerdBm << " dBm" <<std::endl;
+    auto s = signalMap.find(IdSignal);
+    if(s != signalMap.end()) {
+        // Exist
+        const_cast<LoRaReceiver* >(this)->emit(s->second, powerdBm);
+    }
+    else {
+        // Doesnt exist
+        char signalName[32];
+        sprintf(signalName, "LoRaRP%dFrom%d", IdRx, IdTx);
+        simsignal_t signal = registerSignal(signalName);
+        cProperty *statisticTemplate = getProperties()->get("statisticTemplate", "LoRaRP");
+        getEnvir()->addResultRecorders(const_cast<LoRaReceiver* >(this), signal, signalName,  statisticTemplate);
+        signalMap.insert(std::pair<int, simsignal_t>(IdSignal, signal));
+        const_cast<LoRaReceiver* >(this)->emit(signal, powerdBm);
+    }
+
+
     //here we can check compatibility of LoRaTx parameters (or beeing a gateway) and reception above sensitivity level
     const LoRaBandListening *loRaListening = check_and_cast<const LoRaBandListening *>(listening);
-    const LoRaReception *loRaReception = check_and_cast<const LoRaReception *>(reception);
     if (iAmGateway == false && (loRaListening->getLoRaCF() != loRaReception->getLoRaCF() || loRaListening->getLoRaBW() != loRaReception->getLoRaBW() || loRaListening->getLoRaSF() != loRaReception->getLoRaSF())) {
         return false;
     } else {
@@ -262,7 +291,7 @@ const IListening *LoRaReceiver::createListening(const IRadio *radio, const simti
     if(iAmGateway == false)
     {
         auto node = getContainingNode(this);
-//        auto loRaApp = check_and_cast<SimpleLoRaApp *>(node->getSubmodule("SimpleLoRaApp"));
+        // auto loRaApp = check_and_cast<SimpleLoRaApp *>(node->getSubmodule("SimpleLoRaApp"));
         auto loRaRadio = check_and_cast<LoRaRadio *>(node->getSubmodule("LoRaNic")->getSubmodule("radio"));
         return new LoRaBandListening(radio, startTime, endTime, startPosition, endPosition, loRaRadio->loRaCF, loRaRadio->loRaBW, loRaRadio->loRaSF);
     }

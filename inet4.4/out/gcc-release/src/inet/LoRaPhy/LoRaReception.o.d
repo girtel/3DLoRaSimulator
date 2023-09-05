@@ -1,7 +1,5 @@
 ../out/gcc-release/src/inet/LoRaPhy/LoRaReception.o: \
- inet/LoRaPhy/LoRaReception.cc inet/common/precompiled_release.h \
- inet/common/precompiled.h /opt/omnetpp-6.0.1/include/omnetpp.h \
- inet/LoRaPhy/LoRaReception.h \
+ inet/LoRaPhy/LoRaReception.cc inet/LoRaPhy/LoRaReception.h \
  inet/physicallayer/wireless/common/analogmodel/packetlevel/ScalarReception.h \
  inet/physicallayer/wireless/common/base/packetlevel/FlatReceptionBase.h \
  inet/physicallayer/wireless/common/base/packetlevel/NarrowbandReceptionBase.h \
@@ -10,8 +8,9 @@
  inet/physicallayer/wireless/common/contract/packetlevel/IWirelessSignal.h \
  inet/physicallayer/wireless/common/contract/packetlevel/IArrival.h \
  inet/common/IPrintableObject.h inet/common/INETDefs.h \
- inet/common/precompiled_release.h inet/opp_defines.h inet/features.h \
- inet/common/Compat.h inet/common/InitStages.h \
+ inet/common/precompiled_release.h inet/common/precompiled.h \
+ inet/opp_defines.h inet/features.h inet/common/Compat.h \
+ /opt/omnetpp-6.0.1/include/omnetpp.h inet/common/InitStages.h \
  inet/common/InitStageRegistry.h inet/common/geometry/common/Coord.h \
  inet/common/INETMath.h inet/common/geometry/common/Quaternion.h \
  inet/common/geometry/common/EulerAngles.h inet/common/Units.h \
@@ -62,12 +61,6 @@
  inet/physicallayer/wireless/common/contract/packetlevel/ISnir.h \
  inet/physicallayer/wireless/common/contract/packetlevel/ITransmitter.h
 
-inet/common/precompiled_release.h:
-
-inet/common/precompiled.h:
-
-/opt/omnetpp-6.0.1/include/omnetpp.h:
-
 inet/LoRaPhy/LoRaReception.h:
 
 inet/physicallayer/wireless/common/analogmodel/packetlevel/ScalarReception.h:
@@ -90,11 +83,15 @@ inet/common/INETDefs.h:
 
 inet/common/precompiled_release.h:
 
+inet/common/precompiled.h:
+
 inet/opp_defines.h:
 
 inet/features.h:
 
 inet/common/Compat.h:
+
+/opt/omnetpp-6.0.1/include/omnetpp.h:
 
 inet/common/InitStages.h:
 

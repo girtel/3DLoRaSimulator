@@ -26,7 +26,11 @@ namespace inet::physicallayer {
             }
         }
     W OpalLoRaAnalogModel::computeReceptionPower(const IRadio *receiver, const ITransmission *transmission, const IArrival *arrival) const {
-        W power = analogModel->opalComputeReception(receiver, transmission);
-        return power;
+        // std::cout << "Enter to OpalLoRaAnalogModel::computeReceptionPower" << std::endl;
+        auto reception =  analogModel->opalComputeReception(receiver, transmission);
+        //const  ScalarReception *loRaReception = check_and_cast<const ScalarReception *>(reception);
+        //W power = loRaReception->getPower();
+        //std::cout << power << std::endl;
+        return reception;
     }
 }

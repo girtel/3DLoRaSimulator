@@ -56,6 +56,7 @@ private:
     bool alohaChannelModel;
 
     simsignal_t LoRaReceptionCollision;
+    static simsignal_t LoRaReceivedPower;
 
     int nonOrthDelta[6][6] = {
        {1, -8, -9, -9, -9, -9},
@@ -69,6 +70,9 @@ private:
     //statistics
     long numCollisions;
     long rcvBelowSensitivity;
+
+public:
+    mutable std::map<int, simsignal_t> signalMap;
 
 public:
   LoRaReceiver();

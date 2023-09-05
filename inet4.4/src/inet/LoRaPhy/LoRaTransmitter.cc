@@ -41,7 +41,7 @@ void LoRaTransmitter::initialize(int stage)
         bandwidth = Hz(par("bandwidth"));
         LoRaTransmissionCreated = registerSignal("LoRaTransmissionCreated");
 
-        if(strcmp(getParentModule()->getClassName(), "flora::LoRaGWRadio") == 0)
+        if(strcmp(getParentModule()->getClassName(), "inet::LoRaGWRadio") == 0)
         {
             iAmGateway = true;
         } else iAmGateway = false;

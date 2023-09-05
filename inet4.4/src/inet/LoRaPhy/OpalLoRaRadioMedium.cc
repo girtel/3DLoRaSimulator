@@ -21,7 +21,7 @@
 #include "util.h"
 
 
-#include "inet/veneris/opal/OpalLinearPolarizationAntenna.h"
+#include "inet/physicallayer/wireless/common/antenna/OpalLinearPolarizationAntenna.h"
 #include "inet/common/ModuleAccess.h"
 #include "inet/mobility/base/MobilityBase.h"
 #include "inet/physicallayer/wireless/common/communicationcache/VectorCommunicationCache.h"
@@ -53,6 +53,7 @@ namespace inet::physicallayer {
         this->lastTransmitterId=-1;
         this->hasReceivedPower=false;
         this->transmission=nullptr;
+        this->hitFilesPath=".";
         //Set the callback to be called among the suitable members of this class, or add your own custom callback
         this->myCallback=std::bind(&inet::physicallayer::OpalReceiverCallback::createReception, this, std::placeholders::_1,std::placeholders::_2);
         this->extendedCallback=std::bind(&inet::physicallayer::OpalReceiverCallback::getField, this, std::placeholders::_1,std::placeholders::_2);
@@ -109,6 +110,31 @@ namespace inet::physicallayer {
 
         }
     }
+    void OpalReceiverCallback::saveHits(ResultRecord rr, int id) {
+        std::string path=this->hitFilesPath+"/"+std::to_string(this->opalReceiverId)+"-"+std::to_string(id)+"-"+std::to_string(this->transmission->getId())+"-hits.csv";
+        std::ofstream myfile;
+        myfile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
+        try {
+            myfile.open(path);
+            myfile<<"txId,rxId,E.re,E.im,unfolded_path,doa.x,doa.y,doa.z,dod.x,dod.y,dod.z,diff"<<endl;
+            for (auto r: rr.hitRecords) {
+                int type=0;
+                if (r.diffraction) {
+                    type=1;
+                }
+               // std::cout<<id<<","<<opalReceiverId<<","<<r.E.x<<","<<r.E.y<<","<<r.unfoldedPath<<","<<r.directionOfArrival.x<<","<<r.directionOfArrival.y<<","<<r.directionOfArrival.z<<","<<r.directionOfDeparture.x<<","<<r.directionOfDeparture.y<<","<<r.directionOfDeparture.z<<","<<type<<endl;
+
+                myfile<<id<<","<<opalReceiverId<<","<<r.E.x<<","<<r.E.y<<","<<r.unfoldedPath<<","<<r.directionOfArrival.x<<","<<r.directionOfArrival.y<<","<<r.directionOfArrival.z<<","<<r.directionOfDeparture.x<<","<<r.directionOfDeparture.y<<","<<r.directionOfDeparture.z<<","<<type<<endl;
+            }
+            myfile.close();
+
+        }   catch (std::ifstream::failure e) {
+
+            throw cRuntimeError("Exception opening/reading/closing hit file (%s) for rx=%d and tx=%d\n",path,opalReceiverId,id);
+        }
+    }
+
+
     void  OpalReceiverCallback::reset() {
         this->lastPower=0.0f;
         this->lastTransmitterId=-1;
@@ -119,14 +145,14 @@ namespace inet::physicallayer {
 
 
 
-    OpalLoRaRadioMedium::OpalLoRaRadioMedium() : RadioMedium(), OpalSceneManager()
+    OpalLoRaRadioMedium::OpalLoRaRadioMedium() : LoRaMedium(), OpalSceneManager()
     {
         std::cout<<"OpalLoRaRadioMedium() with global called"<<std::endl;
     }
 
     void OpalLoRaRadioMedium::initialize(int stage)
     {
-        RadioMedium::initialize(stage);
+        LoRaMedium::initialize(stage);
         if (stage == INITSTAGE_LOCAL) {
             //First, set the environment to read the CUDA program files from our custom directory.
             std::string pf(cudaDir);
@@ -163,6 +189,8 @@ namespace inet::physicallayer {
             switchCoordinates =par("switchCoordinates").boolValue();
             useExtendedCallback=par("recordElectricField").boolValue();
             isStatic = par("isStatic");
+            recordHits=par("recordHits").boolValue();
+            hitFilesPath = par("hitFilesPath").stdstringValue();
             if (isStatic) {
                 //With static we store all the information as ResultRecord in the map, so we have to use extended callback
                 useExtendedCallback=true;
@@ -170,6 +198,8 @@ namespace inet::physicallayer {
                 std::cout<<"Assuming static environment"<<std::endl;
                 EV<<"Assuming static environment"<<std::endl;
             }
+
+
             //Enable multichannel since each transmitter may use different frequencies
             enableMultiChannel();
 
@@ -249,7 +279,9 @@ namespace inet::physicallayer {
             if (useAntennaGain) {
                 loadAntennaGainFiles();
             }
-
+            if (recordHits) {
+                setRecordHits(recordHits);
+            }
 
             std::cout<<"Opal initContext called"<<endl;
 
@@ -293,9 +325,9 @@ namespace inet::physicallayer {
             }
             //Print configuration
 
-            std::cout<<"RadioMedium configuration:"<<getCompleteStringRepresentation()<<std::endl;
-            std::cout<< check_and_cast<inet::IPrintableObject*>(getModuleByPath(".backgroundNoise"))->getCompleteStringRepresentation()<<std::endl;
-            std::cout<< check_and_cast<inet::IPrintableObject*>(getModuleByPath(".mediumLimitCache"))->getCompleteStringRepresentation()<<std::endl;
+            // std::cout<<"RadioMedium configuration:"<<getCompleteStringRepresentation()<<std::endl;
+            // std::cout<< check_and_cast<inet::IPrintableObject*>(getModuleByPath(".backgroundNoise"))->getCompleteStringRepresentation()<<std::endl;
+            // std::cout<< check_and_cast<inet::IPrintableObject*>(getModuleByPath(".mediumLimitCache"))->getCompleteStringRepresentation()<<std::endl;
         }
     }
 
@@ -674,7 +706,7 @@ namespace inet::physicallayer {
     void OpalLoRaRadioMedium::addRadio(const IRadio *radio)
     {
 
-        RadioMedium::addRadio(radio);
+        LoRaMedium::addRadio(radio);
         IMobility* mob= radio->getAntenna()->getMobility();
         if (mob) {
             Coord c=mob->getCurrentPosition();
@@ -694,6 +726,7 @@ namespace inet::physicallayer {
 
 
             if (useAntennaGain) {
+                std::cout << radio->getAntenna()->getInfoStringRepresentation() << std::endl;
                 const OpalLinearPolarizationAntenna* antenna= check_and_cast<const OpalLinearPolarizationAntenna*>(radio->getAntenna());
                 addReceiver(id,posrx,getOpalCoordinates(antenna->getPolarization()),rxRadius,(rc->myCallback));
                 if (antenna->useGain()) {
@@ -718,6 +751,10 @@ namespace inet::physicallayer {
 
 
             }
+            if (recordHits) {
+                rc->hitFilesPath=this->hitFilesPath;
+                setReceiverExtendedCallback(id,std::bind(&inet::physicallayer::OpalReceiverCallback::saveHits, rc, std::placeholders::_1,std::placeholders::_2));
+            }
 
 
         } else {
@@ -732,7 +769,7 @@ namespace inet::physicallayer {
 
 
 
-        RadioMedium::removeRadio(radio);
+        LoRaMedium::removeRadio(radio);
         OpalReceiverCallback* rc;
         try {
             rc=receiversRadios.at(radio);
@@ -813,6 +850,9 @@ namespace inet::physicallayer {
                         callback=receiversRadios.at(rx->first);
                         callback->createReception(rx->second.power, txOpalid);
                         callback->getField(rx->second.rr, txOpalid);
+                        if (recordHits) {
+                            callback->saveHits(rx->second.rr, txOpalid);
+                        }
                         //std::cout<<"transmitPacket() -> Reception created between "<< txOpalid << " and " << receiversRadios.at(rx->first)->opalReceiverId << " . Power: "<< rx->second <<endl;
 
                     } catch (std::out_of_range &e) {
@@ -882,11 +922,10 @@ namespace inet::physicallayer {
         //std::cout<<simTime()<<":Opal radio id="<<id<<" transmitting. txid="<<transmission->getTransmitterId()<<"txPower="<<transmissionPower.get()<<endl;
         //std::cout<<simTime()<<":"<<transmission <<endl;
 
+        // const NarrowbandTransmissionBase *narrowbandTransmission = check_and_cast<const NarrowbandTransmissionBase *>(transmission);
+        // auto centerFrequency = narrowbandTransmission->getCenterFrequency();
 
-        const NarrowbandTransmissionBase *narrowbandTransmission = check_and_cast<const NarrowbandTransmissionBase *>(transmission);
-        auto centerFrequency = narrowbandTransmission->getCenterFrequency();
-
-        transmit(id, (float) transmissionPower.get(),postx,polarization, centerFrequency.get(),false,false);
+        transmit(id, (float) transmissionPower.get(),postx,polarization, carrierFrequency,false,false);
 
 
     }
@@ -912,7 +951,7 @@ namespace inet::physicallayer {
 
 
             //Set this transmission in callback
-            std::cout<<"OpalLoRaRadioMedium::sendToRadio(): transmission"<<transmission<<endl;
+            // std::cout<<"OpalLoRaRadioMedium::sendToRadio(): transmission"<<transmission<<endl;
             OpalReceiverCallback* callback;
             try  {
                 callback=receiversRadios.at(receiver);
@@ -945,6 +984,8 @@ namespace inet::physicallayer {
     //Executed in the callbacks when power is received
 
     const W OpalLoRaRadioMedium::opalComputeReception(const IRadio *receiver, const ITransmission *transmission) const {
+        std::cout << "Enter to OpalLoRaRadioMedimu::opalComputeReception" << std::endl;
+
         receptionComputationCount++;
         //Create a RadioScalar directly, no need for ScalarAnalogModel at the moment
         const IArrival* arrival= getArrival(receiver, transmission);
@@ -955,7 +996,6 @@ namespace inet::physicallayer {
         const Quaternion receptionEndOrientation = arrival->getEndOrientation();
         const Coord receptionStartPosition = arrival->getStartPosition();
         const Coord receptionEndPosition = arrival->getEndPosition();
-
 
         //Get power from callback
         OpalReceiverCallback* ocb=nullptr;
@@ -1046,7 +1086,7 @@ namespace inet::physicallayer {
         }
         W receptionPower(p);
         return receptionPower;
-        //return new ScalarReception(receiver, transmission, receptionStartTime, receptionEndTime, receptionStartPosition, receptionEndPosition, receptionStartOrientation, receptionEndOrientation, narrowbandSignalAnalogModel->getCenterFrequency(), narrowbandSignalAnalogModel->getBandwidth(), receptionPower);
+        // return new ScalarReception(receiver, transmission, receptionStartTime, receptionEndTime, receptionStartPosition, receptionEndPosition, receptionStartOrientation, receptionEndOrientation, narrowbandSignalAnalogModel->getCenterFrequency(), narrowbandSignalAnalogModel->getBandwidth(), receptionPower);
 
     }
     void OpalLoRaRadioMedium::updateCachedRecord(const IRadio *receiver, const ITransmission *transmission, ResultRecord record) {
@@ -1064,8 +1104,8 @@ namespace inet::physicallayer {
                     //ocb=receiversRadios.at(receiver);
                     //int idrx = ocb->opalReceiverId;
                     //std::cout<<"opalComputeReception() -> Power between "<< idrx << " and " << idtx << " doesnt exist. Inserting power: "<< (float)receptionPower.get() <<endl;
-                   // CachedPowerData cpd;
-                   // cpd.power=p;
+                    // CachedPowerData cpd;
+                    // cpd.power=p;
 
                     //CPE->insert(std::pair<const IRadio*,CachedPowerData>(receiver, cpd ));
                 }
@@ -1106,13 +1146,18 @@ namespace inet::physicallayer {
                 rdnRays=par("rdnRays");
                 setRayRange(initElevation,endElevation,initAzimuth,endAzimuth,rdnRays,rdnRays);
                 ((RayDensityNormalizationSimulation*)sim)->setInitialDensity(getRaySphere().rayCount,initAzimuth,endAzimuth,initElevation,endElevation);
-                ((RayDensityNormalizationSimulation*)sim)->setFiltering(par("rndFiltering"));
+                ((RayDensityNormalizationSimulation*)sim)->setFiltering(par("rdnFiltering"));
             } else {
 
                 createRaySphere2D(initElevation,elevationDelta, endElevation,initAzimuth, azimuthDelta,endAzimuth);
 
             }
         }
+
+
+        //setPrintEnabled(1024*1024*1024);
+
+
 
         WATCH_MAP(receiversRadios);
         EV_INFO << "Initialized " << printSceneReport() << endl;
@@ -1137,12 +1182,14 @@ namespace inet::physicallayer {
                     optix::float3 polarization=getOpalCoordinates(pol);
                     //If used with GUI, every time the refreshDisplay is called, a getCoordinate is called which emits a mobilityStateChanged for the node
                     //This function is going to be called many times
-                   //std::cout<<simTime()<<":OpalLoRaRadioMedium::receiveSignal() Updating position of "<<id<<" to "<<p<<" and polarization="<<pol<<endl;
+                    //std::cout<<simTime()<<":OpalLoRaRadioMedium::receiveSignal() Updating position of "<<id<<" to "<<p<<" and polarization="<<pol<<endl;
                     updateReceiver(id,pos,polarization,it->second->rxRadius);
-//Clear cache. Directly clearing all cache, instead for looking for specific changes
+                    //Clear cache. Directly clearing all cache, instead for looking for specific changes
                     if (isStatic) {
                         clearPowerCache();
                     }
+
+
                     break;
                 }
             }
@@ -1151,17 +1198,17 @@ namespace inet::physicallayer {
 
 
         } else {
-            RadioMedium::receiveSignal(source,signal,value,details);
+            LoRaMedium::receiveSignal(source,signal,value,details);
         }
 
     }
-   void  OpalLoRaRadioMedium::clearPowerCache() {
-       auto it = mapReceptions.begin();
-       while (it!=mapReceptions.end()) {
-           it->second->clear();
-           delete it->second;
-           it=mapReceptions.erase(it);
-       }
+    void  OpalLoRaRadioMedium::clearPowerCache() {
+        auto it = mapReceptions.begin();
+        while (it!=mapReceptions.end()) {
+            it->second->clear();
+            delete it->second;
+            it=mapReceptions.erase(it);
+        }
     }
 
     int OpalLoRaRadioMedium::getAntennaGainId(std::string path)

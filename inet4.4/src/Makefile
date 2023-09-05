@@ -2,7 +2,7 @@
 # OMNeT++/OMNEST Makefile for $(LIB_PREFIX)INET
 #
 # This file was generated with the command:
-#  opp_makemake --make-so -f --deep -o INET -O out -pINET -I/opt/optix-6.5/include -I/opt/optix-6.5/SDK/opal -I/usr/local/cuda-10.2/include -I. -I/usr/local/cuda-10.2/include -I/opt/optix-6.5/SDK/opal -I/opt/optix-6.5/include -L/usr/local/cuda-10.2/lib64 -L/opt/optix-6.5/SDK/lib -L/opt/optix-6.5/lib64 -Xinet/applications/voipstream -Xinet/common/selfdoc -Xinet/emulation -Xinet/linklayer/configurator/gatescheduling/z3 -Xinet/networklayer/wiseroute -Xinet/networklayer/xmipv6 -Xinet/node/xmipv6 -Xinet/veneris -Xinet/visualizer/osg
+#  opp_makemake --make-so -f --deep -o INET -O out -pINET -I/opt/optix-6.5/include -I/opt/optix-6.5/SDK/opal -I/usr/local/cuda-10.2/include -I. -I/usr/local/cuda-10.2/include -I/opt/optix-6.5/SDK/opal -I/opt/optix-6.5/include -L/usr/local/cuda-10.2/lib64 -L/opt/optix-6.5/SDK/lib -L/opt/optix-6.5/lib64 -lopal_s -lboost_system -Xinet/applications/voipstream -Xinet/common/selfdoc -Xinet/emulation -Xinet/linklayer/configurator/gatescheduling/z3 -Xinet/networklayer/wiseroute -Xinet/networklayer/xmipv6 -Xinet/node/xmipv6 -Xinet/visualizer/osg
 #
 
 # Name of target to be created (-o option)
@@ -27,7 +27,7 @@ INCLUDE_PATH = \
 EXTRA_OBJS =
 
 # Additional libraries (-L, -l options)
-LIBS = $(LDFLAG_LIBPATH)/usr/local/cuda-10.2/lib64 $(LDFLAG_LIBPATH)/opt/optix-6.5/SDK/lib $(LDFLAG_LIBPATH)/opt/optix-6.5/lib64
+LIBS = $(LDFLAG_LIBPATH)/usr/local/cuda-10.2/lib64 $(LDFLAG_LIBPATH)/opt/optix-6.5/SDK/lib $(LDFLAG_LIBPATH)/opt/optix-6.5/lib64  -lopal_s -lboost_system
 
 # Output directory
 PROJECT_OUTPUT_DIR = ../out

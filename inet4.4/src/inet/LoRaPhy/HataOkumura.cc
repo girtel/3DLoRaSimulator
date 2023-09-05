@@ -17,8 +17,6 @@
 
 namespace inet {
 
-namespace physicallayer {
-
 Define_Module(HataOkumura);
 
 HataOkumura::HataOkumura()
@@ -95,8 +93,6 @@ double HataOkumura::computePathLoss(mps propagationSpeed, Hz frequency, m distan
 
     // build based on documentation from Actility
     return math::dB2fraction(-PL_db);
-}
-
 }
 
 }

@@ -13,11 +13,12 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-#ifndef __INET4_OPALLORARADIOMEDIUM_H_
-#define __INET4_OPALLORARADIOMEDIUM_H_
+#ifndef __INET4_OpalLoRaRadioMedium_H_
+#define __INET4_OpalLoRaRadioMedium_H_
 
 #include <omnetpp.h>
 #include "inet/physicallayer/wireless/common/medium/RadioMedium.h"
+#include "LoRaMedium.h"
 #include "inet/physicallayer/wireless/common/analogmodel/packetlevel/ScalarReception.h"
 #include "inet/common/IPrintableObject.h"
 #include "Opal.h"
@@ -51,11 +52,13 @@ namespace inet::physicallayer {
         int lastTransmitterId;
         float rxRadius;
         const ITransmission *transmission;
+        std::string hitFilesPath;
         //Callback methods
         void operator()(float p, int id);
         void getPower(float p, int id);
         void createReception(float p, int id);
         void getField(ResultRecord r, int id);
+        void saveHits(ResultRecord rr, int id);
         void reset();
         const IRadio* radio;
         virtual std::ostream& printToStream(std::ostream& stream, int level) const {
@@ -72,7 +75,7 @@ namespace inet::physicallayer {
     //parallel requires further changes and it is complex in the INET context (if possible at all) since it requires delayed
     //computation of received power. But then one cannot know if the radio should change to reception mode...
 
-    class INET_API OpalLoRaRadioMedium : public RadioMedium, public OpalSceneManager
+    class INET_API OpalLoRaRadioMedium : public LoRaMedium, public OpalSceneManager
     {
 
 
@@ -111,6 +114,8 @@ namespace inet::physicallayer {
         bool logTrace;
         bool switchCoordinates;
         bool useExtendedCallback;
+        bool recordHits;
+        std::string hitFilesPath;
 
 
         std::map<const IRadio*, OpalReceiverCallback*> receiversRadios;
@@ -163,8 +168,6 @@ namespace inet::physicallayer {
         optix::float4 readFloat4(std::string line);
         optix::int4 readInt4(std::string line);
         //Transmission methods
-
-        //virtual const IReception *computeReception(const IRadio *receiver, const ITransmission *transmission) const override;
 
         virtual  void sendToAffectedRadios(IRadio *transmitter, const IWirelessSignal *signal) override;
 

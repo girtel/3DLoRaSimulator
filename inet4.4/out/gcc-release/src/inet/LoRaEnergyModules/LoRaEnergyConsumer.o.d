@@ -1,12 +1,11 @@
 ../out/gcc-release/src/inet/LoRaEnergyModules/LoRaEnergyConsumer.o: \
  inet/LoRaEnergyModules/LoRaEnergyConsumer.cc \
- inet/common/precompiled_release.h inet/common/precompiled.h \
- /opt/omnetpp-6.0.1/include/omnetpp.h \
  inet/LoRaEnergyModules/LoRaEnergyConsumer.h \
  inet/physicallayer/wireless/common/energyconsumer/StateBasedEpEnergyConsumer.h \
  inet/common/ModuleRefByPar.h inet/common/ModuleAccess.h \
  inet/common/INETDefs.h inet/common/precompiled_release.h \
- inet/opp_defines.h inet/features.h inet/common/Compat.h \
+ inet/common/precompiled.h inet/opp_defines.h inet/features.h \
+ inet/common/Compat.h /opt/omnetpp-6.0.1/include/omnetpp.h \
  inet/common/InitStages.h inet/common/InitStageRegistry.h \
  inet/physicallayer/wireless/common/contract/packetlevel/IRadio.h \
  inet/physicallayer/wireless/common/contract/packetlevel/IWirelessSignal.h \
@@ -124,12 +123,6 @@
  inet/common/packet/chunk/EncryptedChunk.h \
  inet/common/packet/chunk/FieldsChunk.h
 
-inet/common/precompiled_release.h:
-
-inet/common/precompiled.h:
-
-/opt/omnetpp-6.0.1/include/omnetpp.h:
-
 inet/LoRaEnergyModules/LoRaEnergyConsumer.h:
 
 inet/physicallayer/wireless/common/energyconsumer/StateBasedEpEnergyConsumer.h:
@@ -142,11 +135,15 @@ inet/common/INETDefs.h:
 
 inet/common/precompiled_release.h:
 
+inet/common/precompiled.h:
+
 inet/opp_defines.h:
 
 inet/features.h:
 
 inet/common/Compat.h:
+
+/opt/omnetpp-6.0.1/include/omnetpp.h:
 
 inet/common/InitStages.h:
 

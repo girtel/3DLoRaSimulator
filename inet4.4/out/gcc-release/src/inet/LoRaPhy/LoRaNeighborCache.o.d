@@ -1,11 +1,10 @@
 ../out/gcc-release/src/inet/LoRaPhy/LoRaNeighborCache.o: \
- inet/LoRaPhy/LoRaNeighborCache.cc inet/common/precompiled_release.h \
- inet/common/precompiled.h /opt/omnetpp-6.0.1/include/omnetpp.h \
- inet/LoRaPhy/LoRaNeighborCache.h \
+ inet/LoRaPhy/LoRaNeighborCache.cc inet/LoRaPhy/LoRaNeighborCache.h \
  inet/physicallayer/wireless/common/medium/RadioMedium.h \
  inet/common/IntervalTree.h inet/common/INETDefs.h \
- inet/common/precompiled_release.h inet/opp_defines.h inet/features.h \
- inet/common/Compat.h inet/common/InitStages.h \
+ inet/common/precompiled_release.h inet/common/precompiled.h \
+ inet/opp_defines.h inet/features.h inet/common/Compat.h \
+ /opt/omnetpp-6.0.1/include/omnetpp.h inet/common/InitStages.h \
  inet/common/InitStageRegistry.h \
  inet/environment/contract/IMaterialRegistry.h \
  inet/environment/common/Material.h inet/environment/contract/IMaterial.h \
@@ -102,12 +101,6 @@
  inet/common/packet/chunk/EncryptedChunk.h \
  inet/common/packet/chunk/FieldsChunk.h
 
-inet/common/precompiled_release.h:
-
-inet/common/precompiled.h:
-
-/opt/omnetpp-6.0.1/include/omnetpp.h:
-
 inet/LoRaPhy/LoRaNeighborCache.h:
 
 inet/physicallayer/wireless/common/medium/RadioMedium.h:
@@ -118,11 +111,15 @@ inet/common/INETDefs.h:
 
 inet/common/precompiled_release.h:
 
+inet/common/precompiled.h:
+
 inet/opp_defines.h:
 
 inet/features.h:
 
 inet/common/Compat.h:
+
+/opt/omnetpp-6.0.1/include/omnetpp.h:
 
 inet/common/InitStages.h:
 

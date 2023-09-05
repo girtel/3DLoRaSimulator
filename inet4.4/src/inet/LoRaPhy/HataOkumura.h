@@ -18,9 +18,11 @@
 
 #include "inet/physicallayer/wireless/common/pathloss/FreeSpacePathLoss.h"
 
+
+using namespace inet;
+using namespace inet::physicallayer;
 namespace inet {
 
-namespace physicallayer {
 
 /**
  * This class implements the LoRaHataOkumura.
@@ -43,9 +45,6 @@ class INET_API HataOkumura : public FreeSpacePathLoss
     virtual std::ostream& printToStream(std::ostream& stream, int level, int evFlags = 0) const override;
     virtual double computePathLoss(mps propagationSpeed, Hz frequency, m distance) const override;
 };
-
-} // namespace physicallayer
-
 } // namespace inet
 
 #endif /* LORAPHY_LORAHATAOKUMURA_H_ */

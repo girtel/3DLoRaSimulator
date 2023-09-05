@@ -1,11 +1,10 @@
 ../out/gcc-release/src/inet/LoRaPhy/LoRaMedium.o: \
- inet/LoRaPhy/LoRaMedium.cc inet/common/precompiled_release.h \
- inet/common/precompiled.h /opt/omnetpp-6.0.1/include/omnetpp.h \
- inet/LoRaPhy/LoRaMedium.h \
+ inet/LoRaPhy/LoRaMedium.cc inet/LoRaPhy/LoRaMedium.h \
  inet/physicallayer/wireless/common/medium/RadioMedium.h \
  inet/common/IntervalTree.h inet/common/INETDefs.h \
- inet/common/precompiled_release.h inet/opp_defines.h inet/features.h \
- inet/common/Compat.h inet/common/InitStages.h \
+ inet/common/precompiled_release.h inet/common/precompiled.h \
+ inet/opp_defines.h inet/features.h inet/common/Compat.h \
+ /opt/omnetpp-6.0.1/include/omnetpp.h inet/common/InitStages.h \
  inet/common/InitStageRegistry.h \
  inet/environment/contract/IMaterialRegistry.h \
  inet/environment/common/Material.h inet/environment/contract/IMaterial.h \
@@ -120,12 +119,6 @@
  inet/physicallayer/wireless/common/contract/packetlevel/SignalTag_m.h \
  inet/physicallayer/wireless/common/contract/packetlevel/IErrorModel.h
 
-inet/common/precompiled_release.h:
-
-inet/common/precompiled.h:
-
-/opt/omnetpp-6.0.1/include/omnetpp.h:
-
 inet/LoRaPhy/LoRaMedium.h:
 
 inet/physicallayer/wireless/common/medium/RadioMedium.h:
@@ -136,11 +129,15 @@ inet/common/INETDefs.h:
 
 inet/common/precompiled_release.h:
 
+inet/common/precompiled.h:
+
 inet/opp_defines.h:
 
 inet/features.h:
 
 inet/common/Compat.h:
+
+/opt/omnetpp-6.0.1/include/omnetpp.h:
 
 inet/common/InitStages.h:
 

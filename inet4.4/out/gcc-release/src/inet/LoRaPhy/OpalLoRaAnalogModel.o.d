@@ -1,11 +1,10 @@
 ../out/gcc-release/src/inet/LoRaPhy/OpalLoRaAnalogModel.o: \
- inet/LoRaPhy/OpalLoRaAnalogModel.cc inet/common/precompiled_release.h \
- inet/common/precompiled.h /opt/omnetpp-6.0.1/include/omnetpp.h \
- inet/LoRaPhy/OpalLoRaAnalogModel.h \
+ inet/LoRaPhy/OpalLoRaAnalogModel.cc inet/LoRaPhy/OpalLoRaAnalogModel.h \
  inet/physicallayer/wireless/common/medium/RadioMedium.h \
  inet/common/IntervalTree.h inet/common/INETDefs.h \
- inet/common/precompiled_release.h inet/opp_defines.h inet/features.h \
- inet/common/Compat.h inet/common/InitStages.h \
+ inet/common/precompiled_release.h inet/common/precompiled.h \
+ inet/opp_defines.h inet/features.h inet/common/Compat.h \
+ /opt/omnetpp-6.0.1/include/omnetpp.h inet/common/InitStages.h \
  inet/common/InitStageRegistry.h \
  inet/environment/contract/IMaterialRegistry.h \
  inet/environment/common/Material.h inet/environment/contract/IMaterial.h \
@@ -104,7 +103,16 @@
  inet/physicallayer/wireless/common/radio/packetlevel/BandListening.h \
  inet/physicallayer/wireless/common/base/packetlevel/ListeningBase.h \
  inet/LoRaPhy/LoRaBandListening.h inet/LoRaPhy/OpalLoRaRadioMedium.h \
- /opt/optix-6.5/SDK/opal/Opal.h /opt/optix-6.5/SDK/opal/tutils.h \
+ inet/LoRaPhy/LoRaMedium.h inet/LoRa/LoRaRadio.h \
+ inet/physicallayer/wireless/common/base/packetlevel/NarrowbandRadioBase.h \
+ inet/LoRaPhy/../LoRa/LoRaMacFrame_m.h \
+ inet/linklayer/common/MacAddress_m.h inet/common/packet/chunk/Chunk_m.h \
+ inet/common/packet/chunk/BitCountChunk.h \
+ inet/common/packet/chunk/ByteCountChunk.h \
+ inet/common/packet/chunk/cPacketChunk.h \
+ inet/common/packet/chunk/EncryptedChunk.h \
+ inet/common/packet/chunk/FieldsChunk.h /opt/optix-6.5/SDK/opal/Opal.h \
+ /opt/optix-6.5/SDK/opal/tutils.h \
  /usr/local/cuda-10.2/include/cuda_runtime.h \
  /usr/local/cuda-10.2/include/crt/host_config.h \
  /usr/local/cuda-10.2/include/builtin_types.h \
@@ -609,12 +617,6 @@
  /opt/optix-6.5/SDK/opal/transmitterManager.h \
  /opt/optix-6.5/SDK/opal/raySphere.h /opt/optix-6.5/SDK/opal/results.h
 
-inet/common/precompiled_release.h:
-
-inet/common/precompiled.h:
-
-/opt/omnetpp-6.0.1/include/omnetpp.h:
-
 inet/LoRaPhy/OpalLoRaAnalogModel.h:
 
 inet/physicallayer/wireless/common/medium/RadioMedium.h:
@@ -625,11 +627,15 @@ inet/common/INETDefs.h:
 
 inet/common/precompiled_release.h:
 
+inet/common/precompiled.h:
+
 inet/opp_defines.h:
 
 inet/features.h:
 
 inet/common/Compat.h:
+
+/opt/omnetpp-6.0.1/include/omnetpp.h:
 
 inet/common/InitStages.h:
 
@@ -862,6 +868,28 @@ inet/physicallayer/wireless/common/base/packetlevel/ListeningBase.h:
 inet/LoRaPhy/LoRaBandListening.h:
 
 inet/LoRaPhy/OpalLoRaRadioMedium.h:
+
+inet/LoRaPhy/LoRaMedium.h:
+
+inet/LoRa/LoRaRadio.h:
+
+inet/physicallayer/wireless/common/base/packetlevel/NarrowbandRadioBase.h:
+
+inet/LoRaPhy/../LoRa/LoRaMacFrame_m.h:
+
+inet/linklayer/common/MacAddress_m.h:
+
+inet/common/packet/chunk/Chunk_m.h:
+
+inet/common/packet/chunk/BitCountChunk.h:
+
+inet/common/packet/chunk/ByteCountChunk.h:
+
+inet/common/packet/chunk/cPacketChunk.h:
+
+inet/common/packet/chunk/EncryptedChunk.h:
+
+inet/common/packet/chunk/FieldsChunk.h:
 
 /opt/optix-6.5/SDK/opal/Opal.h:
 

@@ -28,7 +28,7 @@ network CartagenaOPAL
         }
         loRaGW[numberOfGateways]: OpalLoRaGW {
             @display("p=143,149;is=s");
-            id = numberOfNodes+1+index;
+            id = parent.numberOfNodes+1+index;
         }
         OpalLoRaRadioMedium: OpalLoRaRadioMedium {
             @display("p=791,93");

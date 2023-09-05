@@ -24,6 +24,12 @@ import inet.physicallayer.wireless.common.base.packetlevel.NarrowbandReceiverBas
  module LoRaReceiver extends NarrowbandReceiverBase
  {
         parameters:
+        @signal[LoRaReceivedPower](type=double); // Potencia recibida
+        @statistic[LoRaReceivedPower](source=LoRaReceivedPower; record=mean,vector);
+        
+        @signal[LoRaRP*From*](type=double); // note the wildcard
+		@statisticTemplate[LoRaRP](record=mean,vector);  
+		
         @signal[LoRaReceptionCollision](type=bool); // optional
         @statistic[LoRaReceptionCollision](source=LoRaReceptionCollision; record=count);
         errorModel.typename = default("");

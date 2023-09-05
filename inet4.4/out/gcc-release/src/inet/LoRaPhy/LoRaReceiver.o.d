@@ -1,13 +1,12 @@
 ../out/gcc-release/src/inet/LoRaPhy/LoRaReceiver.o: \
- inet/LoRaPhy/LoRaReceiver.cc inet/common/precompiled_release.h \
- inet/common/precompiled.h /opt/omnetpp-6.0.1/include/omnetpp.h \
- inet/LoRaPhy/LoRaReceiver.h \
+ inet/LoRaPhy/LoRaReceiver.cc inet/LoRaPhy/LoRaReceiver.h \
  inet/physicallayer/wireless/common/contract/packetlevel/IRadioMedium.h \
  inet/physicallayer/wireless/common/contract/packetlevel/IWirelessSignal.h \
  inet/physicallayer/wireless/common/contract/packetlevel/IArrival.h \
  inet/common/IPrintableObject.h inet/common/INETDefs.h \
- inet/common/precompiled_release.h inet/opp_defines.h inet/features.h \
- inet/common/Compat.h inet/common/InitStages.h \
+ inet/common/precompiled_release.h inet/common/precompiled.h \
+ inet/opp_defines.h inet/features.h inet/common/Compat.h \
+ /opt/omnetpp-6.0.1/include/omnetpp.h inet/common/InitStages.h \
  inet/common/InitStageRegistry.h inet/common/geometry/common/Coord.h \
  inet/common/INETMath.h inet/common/geometry/common/Quaternion.h \
  inet/common/geometry/common/EulerAngles.h inet/common/Units.h \
@@ -150,12 +149,6 @@
  inet/LoRaPhy/../LoRaApp/SimpleLoRaApp.h inet/LoRaPhy/LoRaPhyPreamble_m.h \
  inet/physicallayer/wireless/common/contract/packetlevel/SignalTag_m.h
 
-inet/common/precompiled_release.h:
-
-inet/common/precompiled.h:
-
-/opt/omnetpp-6.0.1/include/omnetpp.h:
-
 inet/LoRaPhy/LoRaReceiver.h:
 
 inet/physicallayer/wireless/common/contract/packetlevel/IRadioMedium.h:
@@ -170,11 +163,15 @@ inet/common/INETDefs.h:
 
 inet/common/precompiled_release.h:
 
+inet/common/precompiled.h:
+
 inet/opp_defines.h:
 
 inet/features.h:
 
 inet/common/Compat.h:
+
+/opt/omnetpp-6.0.1/include/omnetpp.h:
 
 inet/common/InitStages.h:
 

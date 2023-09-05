@@ -44,7 +44,7 @@ std::ostream& LoRaLogNormalShadowing::printToStream(std::ostream& stream, int le
     return stream;
 }
 
-double LoRaLogNormalShadowing::computePathLoss(mps propagationSpeed, Hz frequency, m distance, double transmitterHeight, double receiverHeight) const
+double LoRaLogNormalShadowing::computePathLoss(mps propagationSpeed, Hz frequency, m distance) const
 {
     // parameters taken from paper "Do LoRa Low-Power Wide-Area Networks Scale?"
     double PL_d0_db = -91.74;

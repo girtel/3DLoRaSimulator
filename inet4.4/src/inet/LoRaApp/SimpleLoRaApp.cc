@@ -43,11 +43,18 @@ void SimpleLoRaApp::initialize(int stage)
         isOperational = (!nodeStatus) || nodeStatus->getState() == NodeStatus::UP;
         if (!isOperational)
             throw cRuntimeError("This module doesn't support starting in node DOWN state");
+
+        /*
         do {
             timeToFirstPacket = par("timeToFirstPacket");
             EV << "Wylosowalem czas :" << timeToFirstPacket << endl;
             //if(timeToNextPacket < 5) error("Time to next packet must be grater than 3");
         } while(timeToFirstPacket <= 5);
+
+        */
+
+        int IdRx = getContainingNode(this)->par("id");
+        timeToFirstPacket = 5*IdRx;
 
         //timeToFirstPacket = par("timeToFirstPacket");
         sendMeasurements = new cMessage("sendMeasurements");
@@ -118,6 +125,10 @@ void SimpleLoRaApp::handleMessage(cMessage *msg)
             delete msg;
             if(numberOfPacketsToSend == 0 || sentPackets < numberOfPacketsToSend)
             {
+                timeToNextPacket = 10*578;
+
+                /*
+
                 double time;
                 int loRaSF = getSF();
                 if(loRaSF == 7) time = 7.808;
@@ -130,6 +141,9 @@ void SimpleLoRaApp::handleMessage(cMessage *msg)
                     timeToNextPacket = par("timeToNextPacket");
                     //if(timeToNextPacket < 3) error("Time to next packet must be grater than 3");
                 } while(timeToNextPacket <= time);
+
+                */
+
                 sendMeasurements = new cMessage("sendMeasurements");
                 scheduleAt(simTime() + timeToNextPacket, sendMeasurements);
             }
