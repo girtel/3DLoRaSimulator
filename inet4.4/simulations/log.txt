@@ -1,8 +1,0 @@
-OMNeT++ Discrete Event Simulation  (C) 1992-2022 Andras Varga, OpenSim Ltd.
-Version: 6.0.1, build: 220831-e4f07d04b8, edition: Academic Public License -- NOT FOR COMMERCIAL USE
-See the license for distribution terms and warranty disclaimer
-
-
-<!> Error: Cannot load library '../src//libINET.so': ../src//libINET.so: undefined symbol: _ZTIN4opal16OpalSceneManagerE
-
-End.

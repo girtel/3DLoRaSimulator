@@ -1,0 +1,10 @@
+opp_run -m -r 0 -u Cmdenv -n ../examples:../showcases:.:../src:../tutorials --image-path=../images -l ../src/INET ../simulations/1_OPAL_CARTAGENA.ini >log 2>error
+opp_run -m -r 1 -u Cmdenv -n ../examples:../showcases:.:../src:../tutorials --image-path=../images -l ../src/INET ../simulations/1_OPAL_CARTAGENA.ini
+opp_run -m -r 2 -u Cmdenv -n ../examples:../showcases:.:../src:../tutorials --image-path=../images -l ../src/INET ../simulations/1_OPAL_CARTAGENA.ini
+opp_run -m -r 3 -u Cmdenv -n ../examples:../showcases:.:../src:../tutorials --image-path=../images -l ../src/INET ../simulations/1_OPAL_CARTAGENA.ini
+opp_run -m -r 4 -u Cmdenv -n ../examples:../showcases:.:../src:../tutorials --image-path=../images -l ../src/INET ../simulations/1_OPAL_CARTAGENA.ini
+opp_run -m -r 5 -u Cmdenv -n ../examples:../showcases:.:../src:../tutorials --image-path=../images -l ../src/INET ../simulations/1_OPAL_CARTAGENA.ini
+opp_run -m -r 6 -u Cmdenv -n ../examples:../showcases:.:../src:../tutorials --image-path=../images -l ../src/INET ../simulations/1_OPAL_CARTAGENA.ini
+opp_run -m -r 7 -u Cmdenv -n ../examples:../showcases:.:../src:../tutorials --image-path=../images -l ../src/INET ../simulations/1_OPAL_CARTAGENA.ini
+opp_run -m -r 8 -u Cmdenv -n ../examples:../showcases:.:../src:../tutorials --image-path=../images -l ../src/INET ../simulations/1_OPAL_CARTAGENA.ini
+opp_run -m -r 9 -u Cmdenv -n ../examples:../showcases:.:../src:../tutorials --image-path=../images -l ../src/INET ../simulations/1_OPAL_CARTAGENA.ini

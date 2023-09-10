@@ -186,6 +186,7 @@ void LoRaMac::handleUpperPacket(cMessage *msg)
         popTxQueue();
         handleWithFsm(currentTxFrame);
     }
+
 }
 #endif
 void LoRaMac::handleUpperPacket(Packet *packet)

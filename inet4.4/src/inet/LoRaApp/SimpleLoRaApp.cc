@@ -120,11 +120,15 @@ void SimpleLoRaApp::handleMessage(cMessage *msg)
         if (msg == sendMeasurements)
         {
             sendJoinRequest();
-            if (simTime() >= getSimulation()->getWarmupPeriod())
+            if (simTime() >= getSimulation()->getWarmupPeriod()) {
                 sentPackets++;
+            }
+
             delete msg;
+            //std::cout << sentPackets << "/" << numberOfPacketsToSend << std::endl;
             if(numberOfPacketsToSend == 0 || sentPackets < numberOfPacketsToSend)
             {
+
                 timeToNextPacket = 10*578;
 
                 /*

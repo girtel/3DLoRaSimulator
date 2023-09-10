@@ -30,7 +30,7 @@ namespace inet::physicallayer {
         auto reception =  analogModel->opalComputeReception(receiver, transmission);
         //const  ScalarReception *loRaReception = check_and_cast<const ScalarReception *>(reception);
         //W power = loRaReception->getPower();
-        //std::cout << power << std::endl;
+        //std::cout << reception << std::endl;
         return reception;
     }
 }

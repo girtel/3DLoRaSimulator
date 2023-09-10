@@ -90,7 +90,7 @@ double HataOkumura::computePathLoss(mps propagationSpeed, Hz frequency, m distan
     //PL_db = 127.09 + 35.74 * log10(distance.get()/1000);
 
     //std::cout << "-- Hata Okumura --" << "\n-- Distance: " << distance.get()/1000 << "\n-- Freq: "<< frequency.get()/1000000 <<" \n-- receiverHeight: " << rH << " \n-- transmitterHeight: " << tH << " \n-- power: " << math::dB2fraction(-PL_db) << std::endl;
-
+    // std::cout << "HO" << std::endl;
     // build based on documentation from Actility
     return math::dB2fraction(-PL_db);
 }

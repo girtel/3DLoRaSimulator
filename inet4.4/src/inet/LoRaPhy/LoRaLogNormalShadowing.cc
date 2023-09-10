@@ -53,7 +53,7 @@ double LoRaLogNormalShadowing::computePathLoss(mps propagationSpeed, Hz frequenc
     // double PL_db = - 10 * gamma * log10(distance.get()) + normal(0.0, sigma) - 57.1769779;
     // double PL_db = -65.1709 - 10 * gamma * log10(distance.get()) + normal(0.0, sigma) - 64.8435;
 
-    double PL_db = -14 - 10 * gamma * log10(distance.get()) - 5.881 + normal(0.0, sigma);
+    double PL_db = -14 - 10 * gamma * log10(distance.get()) - 5.881; //+ normal(0.0, sigma);
     // double PL_db = PL_d0_db + 10 * gamma * log10(unit(distance / d0).get()) + normal(0.0, sigma);
     // std::cout << PL_db << std::endl;
     return math::dB2fraction(PL_db);

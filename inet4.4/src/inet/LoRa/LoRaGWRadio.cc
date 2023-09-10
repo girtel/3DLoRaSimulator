@@ -257,8 +257,11 @@ void LoRaGWRadio::endReception(cMessage *timer)
             take(macFrame);
             emit(packetSentToUpperSignal, macFrame);
             emit(LoRaGWRadioReceptionFinishedCorrect, true);
-            if (simTime() >= getSimulation()->getWarmupPeriod())
+            if (simTime() >= getSimulation()->getWarmupPeriod()){
                 LoRaGWRadioReceptionFinishedCorrect_counter++;
+                // std::cout << "Reception decisison: " << isReceptionSuccessful << std::endl;
+            }
+
             EV << macFrame->getCompleteStringRepresentation(evFlags) << endl;
             sendUp(macFrame);
         }
