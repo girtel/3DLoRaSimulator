@@ -1,0 +1,1002 @@
+OMNeT++ Discrete Event Simulation  (C) 1992-2022 Andras Varga, OpenSim Ltd.
+Version: 6.0.1, build: 220831-e4f07d04b8, edition: Academic Public License -- NOT FOR COMMERCIAL USE
+See the license for distribution terms and warranty disclaimer
+
+Setting up Cmdenv...
+
+Loading NED files from ../examples:  186
+Loading NED files from ../showcases:  75
+Loading NED files from .:  3
+Loading NED files from ../src:  1193
+Loading NED files from ../tutorials:  20
+
+Preparing for running configuration General, run #0...
+Scenario: $0="avg", $repetition=0
+Assigned runID=General-0-20230912-11:22:57-414149
+Setting up network "inet.simulations.CartagenaOPAL"...
+-- System information --  
+OptiX 6.8.6
+Number of Devices = 1
+
+Device 0: NVIDIA GeForce RTX 4090
+  Compute Support: 8.9
+  Total Memory: 25393692672
+  Clock Rate: 2535000 kHz
+  Max. Threads per Block: 1024
+  Streaming Multiprocessor Count: 128
+  Execution Timeout Enabled: 1
+  Max. Hardware Texture Count: 1048576
+  TCC Driver enabled: 0
+  CUDA Device Ordinal: 0
+------  
+OpalLoRaRadioMedium() with global called
+Initializing...
+Assuming static environment
+Initializing generators
+Setting optix program directory to /opt/optix-6.5/SDK/opal/optix/polarization/rdn
+Using power_mem.cu
+SingleDiffraction::init() diffractionEntryIndex=1diffractionRayIndex=1
+Opal initContext called
+Parsing JSON file /home/simulations/scenarios/lora-empty-meas-dec22.json
+Setting receivedFieldBuffer for (552,1)
+	 Using antenna gains
+Validating the context ...
+--- Check your configuration and assumptions --
+	 - maxReflections=30
+ 	 - Context is using local device 0: NVIDIA GeForce RTX 4090
+	 - Using multichannel. Default channel parameters set below
+	 - Frequency (Hz) =8.68e+08
+	 - Speed of light, c= 299792458.0 m/s
+	 - Wavelength (m) =0.345383
+	 - Fast math disabled
+--- Simulation Type ---
+	Using RayDensityNormalizationSimulation with depolarization
+	 Using NOMEM
+	Using  power trace
+-----
+	 - CUDA programs directory: /opt/optix-6.5/SDK/opal/optix
+--- Simulation Type---
+	Using SingleDiffraction
+	 - CUDA programs directory: /opt/optix-6.5/SDK/opal/optix
+--- Scene Summary ---
+	 numberOfFaces=251361. globalFaces = 251361. minEpsilon= 0.001. maxReflections=30. useExactSpeedOfLight=1
+	 Receivers=552
+	 RayCount=0. azimuthSteps=0. elevationSteps=0
+	 **Options: Generate rays on launch enabled.
+	 **Options: Multi channel enabled.
+-- Scene Graph
+	 rootGroup. Children=2
+	 max_interactions=30
+	 Static meshes loaded on GPU=4279
+	 Face ids used in scene: 251361
+	 Number of edges loaded: 85026
+	 Number of receivers loaded on GPU: 552
+--OpalSceneManager Internal buffers--
+	 txOriginBuffer=(1). size=0.109375 KiB
+	 Total memory in OpalSceneManager internal buffers:  0.000106812 MiB
+
+	 RDN receivedFieldBuffer=(552). size=35328 bytes
+	 RDN parametersBuffer=(1). size=32 bytes
+
+	 hitBuffer=(85026,552,1). size=2864.65 MiB
+	 receiverPositionsBuffer=(552). size=0.00842285 MiB
+	 edgeBuffer=(85026). size=11.6765 MiB
+Total memory in SingleDiffraction internal buffers:  2876.33 MiB
+
+Context: Num CPU Threads: 32
+Context: RTX mode enabled: 1
+
+-----
+
+
+Running simulation...
+** Event #0   t=0   Elapsed: 9e-06s (0m 00s)  0% completed  (0% total)
+     Speed:     ev/sec=0   simsec/sec=0   ev/simsec=0
+     Messages:  created: 9460   present: 9460   in FES: 554
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=5635
+Diffraction launch time=1.62972
+*** Launch results ***
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=5656
+Diffraction launch time=0.877856
+*** Launch results ***
+** Event #1280   t=5.00000057193   Elapsed: 2.91273s (0m 02s)  0% completed  (0% total)
+     Speed:     ev/sec=439.794   simsec/sec=1.71661   ev/simsec=256.2
+     Messages:  created: 12362   present: 10672   in FES: 1104
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=5526
+Diffraction launch time=1.02107
+*** Launch results ***
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=5229
+Diffraction launch time=1.0023
+*** Launch results ***
+** Event #3584   t=15.00000063097   Elapsed: 5.24028s (0m 05s)  0% completed  (0% total)
+     Speed:     ev/sec=989.882   simsec/sec=4.29636   ev/simsec=230.4
+     Messages:  created: 15726   present: 10690   in FES: 1102
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=4335
+Diffraction launch time=1.32689
+*** Launch results ***
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=2029
+Diffraction launch time=1.39555
+*** Launch results ***
+** Event #5888   t=25.00000077015   Elapsed: 8.26671s (0m 08s)  0% completed  (0% total)
+     Speed:     ev/sec=761.294   simsec/sec=3.30423   ev/simsec=230.4
+     Messages:  created: 19090   present: 10708   in FES: 1100
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=1892
+Diffraction launch time=1.35084
+*** Launch results ***
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=1877
+Diffraction launch time=1.35885
+*** Launch results ***
+** Event #8192   t=35.00000082146   Elapsed: 11.2817s (0m 11s)  0% completed  (0% total)
+     Speed:     ev/sec=764.179   simsec/sec=3.31675   ev/simsec=230.4
+     Messages:  created: 22454   present: 10726   in FES: 1098
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=1916
+Diffraction launch time=1.23072
+*** Launch results ***
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=1780
+Diffraction launch time=0.931992
+*** Launch results ***
+** Event #10496   t=45.00000088297   Elapsed: 13.7633s (0m 13s)  0% completed  (0% total)
+     Speed:     ev/sec=928.44   simsec/sec=4.02969   ev/simsec=230.4
+     Messages:  created: 25818   present: 10744   in FES: 1096
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=1843
+Diffraction launch time=0.883805
+*** Launch results ***
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=1772
+Diffraction launch time=1.00069
+*** Launch results ***
+** Event #12800   t=55.00000092262   Elapsed: 15.9688s (0m 15s)  1% completed  (1% total)
+     Speed:     ev/sec=1044.66   simsec/sec=4.53413   ev/simsec=230.4
+     Messages:  created: 29182   present: 10762   in FES: 1094
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=1825
+Diffraction launch time=0.955709
+*** Launch results ***
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=160
+Diffraction launch time=0.880826
+*** Launch results ***
+** Event #15104   t=65.00000099301   Elapsed: 18.1569s (0m 18s)  1% completed  (1% total)
+     Speed:     ev/sec=1052.96   simsec/sec=4.57016   ev/simsec=230.4
+     Messages:  created: 32546   present: 10780   in FES: 1092
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=202
+Diffraction launch time=0.972188
+*** Launch results ***
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=509
+Diffraction launch time=1.2863
+*** Launch results ***
+** Event #17408   t=75.0000009982   Elapsed: 20.7736s (0m 20s)  1% completed  (1% total)
+     Speed:     ev/sec=880.5   simsec/sec=3.82162   ev/simsec=230.4
+     Messages:  created: 35910   present: 10798   in FES: 1090
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=528
+Diffraction launch time=0.955112
+*** Launch results ***
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=213
+Diffraction launch time=0.970828
+*** Launch results ***
+** Event #19456   t=85.000000129   Elapsed: 23.044s (0m 23s)  1% completed  (1% total)
+     Speed:     ev/sec=902.052   simsec/sec=4.40455   ev/simsec=204.8
+     Messages:  created: 39018   present: 10560   in FES: 1088
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=3741
+Diffraction launch time=0.980671
+*** Launch results ***
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=5292
+Diffraction launch time=1.07148
+*** Launch results ***
+** Event #21760   t=95.00000017905   Elapsed: 25.5043s (0m 25s)  1% completed  (1% total)
+     Speed:     ev/sec=936.454   simsec/sec=4.06447   ev/simsec=230.4
+     Messages:  created: 42382   present: 10578   in FES: 1086
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=4471
+Diffraction launch time=1.03054
+*** Launch results ***
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=4057
+Diffraction launch time=1.10018
+*** Launch results ***
+** Event #24064   t=105.00000025174   Elapsed: 27.944s (0m 27s)  2% completed  (2% total)
+     Speed:     ev/sec=944.395   simsec/sec=4.09894   ev/simsec=230.4
+     Messages:  created: 45746   present: 10596   in FES: 1084
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=3721
+Diffraction launch time=1.22439
+*** Launch results ***
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=3233
+Diffraction launch time=1.15092
+*** Launch results ***
+** Event #26368   t=115.00000036869   Elapsed: 30.6452s (0m 30s)  2% completed  (2% total)
+     Speed:     ev/sec=852.931   simsec/sec=3.70196   ev/simsec=230.4
+     Messages:  created: 49110   present: 10614   in FES: 1082
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=2495
+Diffraction launch time=0.977847
+*** Launch results ***
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=1826
+Diffraction launch time=1.27959
+*** Launch results ***
+** Event #28672   t=125.00000047971   Elapsed: 33.2155s (0m 33s)  2% completed  (2% total)
+     Speed:     ev/sec=896.4   simsec/sec=3.89063   ev/simsec=230.4
+     Messages:  created: 52474   present: 10632   in FES: 1080
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=3837
+Diffraction launch time=1.04465
+*** Launch results ***
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=4443
+Diffraction launch time=0.962102
+*** Launch results ***
+** Event #30976   t=135.00000041382   Elapsed: 35.6258s (0m 35s)  2% completed  (2% total)
+     Speed:     ev/sec=955.895   simsec/sec=4.14885   ev/simsec=230.4
+     Messages:  created: 55828   present: 10622   in FES: 1078
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=4176
+Diffraction launch time=1.14604
+*** Launch results ***
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=4268
+Diffraction launch time=1.13331
+*** Launch results ***
+** Event #33280   t=145.00000055391   Elapsed: 38.215s (0m 38s)  2% completed  (2% total)
+     Speed:     ev/sec=889.86   simsec/sec=3.86224   ev/simsec=230.4
+     Messages:  created: 59192   present: 10640   in FES: 1076
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=4249
+Diffraction launch time=1.10917
+*** Launch results ***
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=4034
+Diffraction launch time=0.984701
+*** Launch results ***
+** Event #35584   t=155.00000058368   Elapsed: 40.6244s (0m 40s)  3% completed  (3% total)
+     Speed:     ev/sec=956.264   simsec/sec=4.15045   ev/simsec=230.4
+     Messages:  created: 62556   present: 10658   in FES: 1074
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=4202
+Diffraction launch time=1.16943
+*** Launch results ***
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=4209
+Diffraction launch time=1.05374
+*** Launch results ***
+** Event #37888   t=165.00000060396   Elapsed: 43.2408s (0m 43s)  3% completed  (3% total)
+     Speed:     ev/sec=880.593   simsec/sec=3.82202   ev/simsec=230.4
+     Messages:  created: 65920   present: 10676   in FES: 1072
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=4241
+Diffraction launch time=1.19812
+*** Launch results ***
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=4150
+Diffraction launch time=1.01637
+*** Launch results ***
+** Event #40192   t=175.00000070514   Elapsed: 45.8595s (0m 45s)  3% completed  (3% total)
+     Speed:     ev/sec=879.823   simsec/sec=3.81868   ev/simsec=230.4
+     Messages:  created: 69284   present: 10694   in FES: 1070
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=4256
+Diffraction launch time=1.0856
+*** Launch results ***
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=4255
+Diffraction launch time=1.20643
+*** Launch results ***
+** Event #42496   t=185.00000075542   Elapsed: 48.5671s (0m 48s)  3% completed  (3% total)
+     Speed:     ev/sec=850.955   simsec/sec=3.69338   ev/simsec=230.4
+     Messages:  created: 72648   present: 10712   in FES: 1068
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=4210
+Diffraction launch time=1.2414
+*** Launch results ***
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=4120
+Diffraction launch time=1.08468
+*** Launch results ***
+** Event #44800   t=195.00000078737   Elapsed: 51.2776s (0m 51s)  3% completed  (3% total)
+     Speed:     ev/sec=850.006   simsec/sec=3.68926   ev/simsec=230.4
+     Messages:  created: 76012   present: 10730   in FES: 1066
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=4290
+Diffraction launch time=1.25888
+*** Launch results ***
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=4365
+Diffraction launch time=1.17739
+*** Launch results ***
+** Event #47104   t=205.00000081836   Elapsed: 54.0708s (0m 54s)  4% completed  (4% total)
+     Speed:     ev/sec=824.875   simsec/sec=3.58019   ev/simsec=230.4
+     Messages:  created: 79376   present: 10748   in FES: 1064
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=4267
+Diffraction launch time=1.22921
+*** Launch results ***
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=4072
+Diffraction launch time=1.19772
+*** Launch results ***
+** Event #49408   t=215.00000085444   Elapsed: 56.7895s (0m 56s)  4% completed  (4% total)
+     Speed:     ev/sec=847.446   simsec/sec=3.67815   ev/simsec=230.4
+     Messages:  created: 82740   present: 10766   in FES: 1062
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=3650
+Diffraction launch time=1.18346
+*** Launch results ***
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=3985
+Diffraction launch time=1.19417
+*** Launch results ***
+** Event #51456   t=225.00000007507   Elapsed: 59.4375s (0m 59s)  4% completed  (4% total)
+     Speed:     ev/sec=773.417   simsec/sec=3.77645   ev/simsec=204.8
+     Messages:  created: 85848   present: 10528   in FES: 1060
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=3939
+Diffraction launch time=1.29564
+*** Launch results ***
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=3773
+Diffraction launch time=1.04703
+*** Launch results ***
+** Event #53760   t=235.00000015966   Elapsed: 62.059s (1m 02s)  4% completed  (4% total)
+     Speed:     ev/sec=878.895   simsec/sec=3.81465   ev/simsec=230.4
+     Messages:  created: 89212   present: 10546   in FES: 1058
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=3800
+Diffraction launch time=1.16442
+*** Launch results ***
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=3676
+Diffraction launch time=0.998242
+*** Launch results ***
+** Event #56064   t=245.00000034409   Elapsed: 64.4891s (1m 04s)  4% completed  (4% total)
+     Speed:     ev/sec=948.088   simsec/sec=4.11496   ev/simsec=230.4
+     Messages:  created: 92576   present: 10564   in FES: 1056
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=3649
+Diffraction launch time=1.00887
+*** Launch results ***
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=3640
+Diffraction launch time=1.08511
+*** Launch results ***
+** Event #58368   t=255.00000028787   Elapsed: 66.8341s (1m 06s)  5% completed  (5% total)
+     Speed:     ev/sec=982.516   simsec/sec=4.26439   ev/simsec=230.4
+     Messages:  created: 95930   present: 10554   in FES: 1054
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=4479
+Diffraction launch time=1.05499
+*** Launch results ***
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=4989
+Diffraction launch time=1.26948
+*** Launch results ***
+** Event #60672   t=265.00000034192   Elapsed: 69.431s (1m 09s)  5% completed  (5% total)
+     Speed:     ev/sec=887.227   simsec/sec=3.85081   ev/simsec=230.4
+     Messages:  created: 99294   present: 10572   in FES: 1052
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=5339
+Diffraction launch time=1.13813
+*** Launch results ***
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=3407
+Diffraction launch time=1.10564
+*** Launch results ***
+** Event #62976   t=275.00000038487   Elapsed: 71.9973s (1m 11s)  5% completed  (5% total)
+     Speed:     ev/sec=897.775   simsec/sec=3.89659   ev/simsec=230.4
+     Messages:  created: 102658   present: 10590   in FES: 1050
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=3694
+Diffraction launch time=1.14137
+*** Launch results ***
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=3939
+Diffraction launch time=1.03805
+*** Launch results ***
+** Event #65280   t=285.00000048743   Elapsed: 74.5s (1m 14s)  5% completed  (5% total)
+     Speed:     ev/sec=920.618   simsec/sec=3.99574   ev/simsec=230.4
+     Messages:  created: 106022   present: 10608   in FES: 1048
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=4024
+Diffraction launch time=1.08053
+*** Launch results ***
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=2576
+Diffraction launch time=1.38254
+*** Launch results ***
+** Event #67584   t=295.00000059298   Elapsed: 77.3331s (1m 17s)  5% completed  (5% total)
+     Speed:     ev/sec=813.261   simsec/sec=3.52978   ev/simsec=230.4
+     Messages:  created: 109386   present: 10626   in FES: 1046
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=1838
+Diffraction launch time=1.19115
+*** Launch results ***
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=1539
+Diffraction launch time=1.14278
+*** Launch results ***
+** Event #69888   t=305.00000069692   Elapsed: 80.0492s (1m 20s)  6% completed  (6% total)
+     Speed:     ev/sec=848.255   simsec/sec=3.68166   ev/simsec=230.4
+     Messages:  created: 112750   present: 10644   in FES: 1044
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=150
+Diffraction launch time=1.05382
+*** Launch results ***
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=99
+Diffraction launch time=0.91083
+*** Launch results ***
+** Event #72192   t=315.00000088508   Elapsed: 82.4356s (1m 22s)  6% completed  (6% total)
+     Speed:     ev/sec=965.464   simsec/sec=4.19038   ev/simsec=230.4
+     Messages:  created: 116114   present: 10662   in FES: 1042
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=63
+Diffraction launch time=1.10648
+*** Launch results ***
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=2827
+Diffraction launch time=1.24068
+*** Launch results ***
+** Event #74496   t=325.00000111134   Elapsed: 85.1559s (1m 25s)  6% completed  (6% total)
+     Speed:     ev/sec=846.966   simsec/sec=3.67607   ev/simsec=230.4
+     Messages:  created: 119479   present: 10681   in FES: 1040
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=2516
+Diffraction launch time=1.17561
+*** Launch results ***
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=2518
+Diffraction launch time=1.00611
+*** Launch results ***
+** Event #76800   t=335.00000120379   Elapsed: 87.6954s (1m 27s)  6% completed  (6% total)
+     Speed:     ev/sec=907.268   simsec/sec=3.93779   ev/simsec=230.4
+     Messages:  created: 122843   present: 10699   in FES: 1038
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=2689
+Diffraction launch time=0.989359
+*** Launch results ***
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=2686
+Diffraction launch time=0.964947
+*** Launch results ***
+** Event #79104   t=345.00000123596   Elapsed: 90.0173s (1m 30s)  6% completed  (6% total)
+     Speed:     ev/sec=992.314   simsec/sec=4.30692   ev/simsec=230.4
+     Messages:  created: 126207   present: 10717   in FES: 1036
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=2695
+Diffraction launch time=1.28268
+*** Launch results ***
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=2666
+Diffraction launch time=1.10809
+*** Launch results ***
+** Event #81408   t=355.00000127403   Elapsed: 92.7991s (1m 32s)  7% completed  (7% total)
+     Speed:     ev/sec=828.23   simsec/sec=3.59475   ev/simsec=230.4
+     Messages:  created: 129571   present: 10735   in FES: 1034
+Transmitter transform pol=[[1, 0, 0, 0][0, 1, 0, 0][0, 0, 1, 0][0, 0, 0, 1]]
+Executing transmit launch
+Setting initial density to 7.95775e+06
+Setting filtering density to not dividing low density
+Transmitting RDN with NOMEM (receivedFieldBuffer) with el=10000az=10000
+Diffraction. Launch [85026,552,1]
+processDiffractionLaunch() nrx=552
+	 Diffraction hits=2523
+Diffraction launch time=1.01933
+*** Launch results ***
+** Event #82309   t=360   Elapsed: 94.0206s (1m 34s)  7% completed  (7% total)
+     Speed:     ev/sec=736.791   simsec/sec=4.09328   ev/simsec=180
+     Messages:  created: 131002   present: 10493   in FES: 1034
+
+<!> SIGINT or SIGTERM received, exiting -- at t=360s, event #82309
+
+Calling finish() at end of Run #0...
+[INFO]	Radio signal arrival computation count = 40223
+[INFO]	Transmission count = 73
+[INFO]	Signal send count = 40223
+[INFO]	Reception computation count = 80446
+[INFO]	Interference computation count = 1125
+[INFO]	Reception decision computation count = 143
+[INFO]	Listening decision computation count = 839
+[INFO]	Reception cache hit = 50.2775 %
+[INFO]	Interference cache hit = 66.6667 %
+[INFO]	Noise cache hit = 0 %
+[INFO]	SNIR cache hit = 50 %
+[INFO]	Reception decision cache hit = 50 %
+[INFO]	Reception result cache hit = 0 %
+[INFO]	CartagenaOPAL.networkServer.tcp: finishing with 0 connections open.
+[INFO]	** Signal at T=360 to CartagenaOPAL.nsRouter.ipv4.routingTable: interfaceStateChanged eth0 ID:102 MTU:1500 UP BROADCAST NOCARRIER MULTICAST macAddr:0A-AA-00-00-02-2C Ipv4:{inet_addr:10.0.0.10/30 mcastgrps:224.0.0.1,224.0.0.2} changed field: 0
+[INFO]	 
+[INFO]	** Signal at T=360 to CartagenaOPAL.nsRouter.ipv4.configurator: interfaceStateChanged eth0 ID:102 MTU:1500 UP BROADCAST NOCARRIER MULTICAST macAddr:0A-AA-00-00-02-2C Ipv4:{inet_addr:10.0.0.10/30 mcastgrps:224.0.0.1,224.0.0.2} changed field: 0
+[INFO]	 
+[INFO]	** Signal at T=360 to CartagenaOPAL.nsRouter.ipv4.routingTable: interfaceConfigChanged eth0 ID:102 MTU:1500 UP BROADCAST NOCARRIER MULTICAST macAddr:0A-AA-00-00-02-2C Ipv4:{inet_addr:10.0.0.10/30 mcastgrps:224.0.0.1,224.0.0.2} changed field: 10
+[INFO]	 
+[INFO]	** Signal at T=360 to CartagenaOPAL.networkServer.ipv4.routingTable: interfaceStateChanged eth0 ID:101 MTU:1500 UP BROADCAST NOCARRIER MULTICAST macAddr:0A-AA-00-00-02-2A Ipv4:{inet_addr:10.0.0.9/30 mcastgrps:224.0.0.1} changed field: 0
+[INFO]	 
+[INFO]	** Signal at T=360 to CartagenaOPAL.networkServer.ipv4.configurator: interfaceStateChanged eth0 ID:101 MTU:1500 UP BROADCAST NOCARRIER MULTICAST macAddr:0A-AA-00-00-02-2A Ipv4:{inet_addr:10.0.0.9/30 mcastgrps:224.0.0.1} changed field: 0
+[INFO]	 
+[INFO]	** Signal at T=360 to CartagenaOPAL.networkServer.ipv4.routingTable: interfaceConfigChanged eth0 ID:101 MTU:1500 UP BROADCAST NOCARRIER MULTICAST macAddr:0A-AA-00-00-02-2A Ipv4:{inet_addr:10.0.0.9/30 mcastgrps:224.0.0.1} changed field: 10
+[INFO]	 
+[INFO]	Clear all sockets
+[INFO]	** Signal at T=360 to CartagenaOPAL.nsRouter.ipv4.routingTable: interfaceStateChanged ppp0 ID:101 MTU:4470 UP NOCARRIER MULTICAST POINTTOPOINT macAddr:n/a Ipv4:{inet_addr:10.0.0.14/30 mcastgrps:224.0.0.1,224.0.0.2} changed field: 0
+[INFO]	 
+[INFO]	** Signal at T=360 to CartagenaOPAL.nsRouter.ipv4.configurator: interfaceStateChanged ppp0 ID:101 MTU:4470 UP NOCARRIER MULTICAST POINTTOPOINT macAddr:n/a Ipv4:{inet_addr:10.0.0.14/30 mcastgrps:224.0.0.1,224.0.0.2} changed field: 0
+[INFO]	 
+[INFO]	** Signal at T=360 to CartagenaOPAL.internetCloud.ipv4.routingTable: interfaceStateChanged ppp0 ID:100 MTU:4470 UP NOCARRIER MULTICAST POINTTOPOINT macAddr:n/a Ipv4:{inet_addr:10.0.0.13/30 mcastgrps:224.0.0.1,224.0.0.2} changed field: 0
+[INFO]	 
+[INFO]	** Signal at T=360 to CartagenaOPAL.internetCloud.ipv4.configurator: interfaceStateChanged ppp0 ID:100 MTU:4470 UP NOCARRIER MULTICAST POINTTOPOINT macAddr:n/a Ipv4:{inet_addr:10.0.0.13/30 mcastgrps:224.0.0.1,224.0.0.2} changed field: 0
+[INFO]	 
+[INFO]	** Signal at T=360 to CartagenaOPAL.gwRouter[0].ipv4.routingTable: interfaceStateChanged ppp0 ID:101 MTU:4470 UP NOCARRIER MULTICAST POINTTOPOINT macAddr:n/a Ipv4:{inet_addr:10.0.0.18/30 mcastgrps:224.0.0.1,224.0.0.2} changed field: 0
+[INFO]	 
+[INFO]	** Signal at T=360 to CartagenaOPAL.gwRouter[0].ipv4.configurator: interfaceStateChanged ppp0 ID:101 MTU:4470 UP NOCARRIER MULTICAST POINTTOPOINT macAddr:n/a Ipv4:{inet_addr:10.0.0.18/30 mcastgrps:224.0.0.1,224.0.0.2} changed field: 0
+[INFO]	 
+[INFO]	** Signal at T=360 to CartagenaOPAL.internetCloud.ipv4.routingTable: interfaceStateChanged ppp1 ID:101 MTU:4470 UP NOCARRIER MULTICAST POINTTOPOINT macAddr:n/a Ipv4:{inet_addr:10.0.0.17/30 mcastgrps:224.0.0.1,224.0.0.2} changed field: 0
+[INFO]	 
+[INFO]	** Signal at T=360 to CartagenaOPAL.internetCloud.ipv4.configurator: interfaceStateChanged ppp1 ID:101 MTU:4470 UP NOCARRIER MULTICAST POINTTOPOINT macAddr:n/a Ipv4:{inet_addr:10.0.0.17/30 mcastgrps:224.0.0.1,224.0.0.2} changed field: 0
+[INFO]	 
+[INFO]	** Signal at T=360 to CartagenaOPAL.gwRouter[0].ipv4.routingTable: interfaceStateChanged eth0 ID:102 MTU:1500 UP BROADCAST NOCARRIER MULTICAST macAddr:0A-AA-00-00-02-2B Ipv4:{inet_addr:10.0.0.6/30 mcastgrps:224.0.0.1,224.0.0.2} changed field: 0
+[INFO]	 
+[INFO]	** Signal at T=360 to CartagenaOPAL.gwRouter[0].ipv4.configurator: interfaceStateChanged eth0 ID:102 MTU:1500 UP BROADCAST NOCARRIER MULTICAST macAddr:0A-AA-00-00-02-2B Ipv4:{inet_addr:10.0.0.6/30 mcastgrps:224.0.0.1,224.0.0.2} changed field: 0
+[INFO]	 
+[INFO]	** Signal at T=360 to CartagenaOPAL.gwRouter[0].ipv4.routingTable: interfaceConfigChanged eth0 ID:102 MTU:1500 UP BROADCAST NOCARRIER MULTICAST macAddr:0A-AA-00-00-02-2B Ipv4:{inet_addr:10.0.0.6/30 mcastgrps:224.0.0.1,224.0.0.2} changed field: 10
+[INFO]	 
+[INFO]	** Signal at T=360 to CartagenaOPAL.loRaGW[0].ipv4.routingTable: interfaceStateChanged eth0 ID:101 MTU:1500 UP BROADCAST NOCARRIER MULTICAST macAddr:0A-AA-00-00-02-29 Ipv4:{inet_addr:10.0.0.5/30 mcastgrps:224.0.0.1} changed field: 0
+[INFO]	 
+[INFO]	** Signal at T=360 to CartagenaOPAL.loRaGW[0].routingTable: interfaceStateChanged eth0 ID:101 MTU:1500 UP BROADCAST NOCARRIER MULTICAST macAddr:0A-AA-00-00-02-29 Ipv4:{inet_addr:10.0.0.5/30 mcastgrps:224.0.0.1} changed field: 0
+[INFO]	 
+[INFO]	** Signal at T=360 to CartagenaOPAL.loRaGW[0].ipv4.configurator: interfaceStateChanged eth0 ID:101 MTU:1500 UP BROADCAST NOCARRIER MULTICAST macAddr:0A-AA-00-00-02-29 Ipv4:{inet_addr:10.0.0.5/30 mcastgrps:224.0.0.1} changed field: 0
+[INFO]	 
+[INFO]	** Signal at T=360 to CartagenaOPAL.loRaGW[0].ipv4.routingTable: interfaceConfigChanged eth0 ID:101 MTU:1500 UP BROADCAST NOCARRIER MULTICAST macAddr:0A-AA-00-00-02-29 Ipv4:{inet_addr:10.0.0.5/30 mcastgrps:224.0.0.1} changed field: 10
+[INFO]	 
+[INFO]	** Signal at T=360 to CartagenaOPAL.loRaGW[0].routingTable: interfaceConfigChanged eth0 ID:101 MTU:1500 UP BROADCAST NOCARRIER MULTICAST macAddr:0A-AA-00-00-02-29 Ipv4:{inet_addr:10.0.0.5/30 mcastgrps:224.0.0.1} changed field: 10
+[INFO]	 
+[INFO]	Clear all sockets
+
+End.
