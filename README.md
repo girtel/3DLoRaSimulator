@@ -2,6 +2,11 @@
 
 [![DOI](https://zenodo.org/badge/685559585.svg)](https://zenodo.org/badge/latestdoi/685559585)
 
+
+### Citations
+
+Pending publication (Already accepted). Soon.
+
 ### Abstract
 
 Introducing a robust simulation framework designed for accurately modeling the performance of LoRaWAN communication technology in various IoT deployments. This tool uniquely integrates a network simulator, a 3D engine, and a ray-tracing tool, providing a realistic representation of network scenarios, especially in complex urban environments. When compared to traditional models like Okumura-Hata, our framework, utilizing open geographical information system data, demonstrated a notable improvement in signal strength estimation accuracy in challenging urban contexts, as validated through [experimental campaigns](https://github.com/girtel/Res_3DLoRaSimulator/tree/main) in Cartagena, Spain.
