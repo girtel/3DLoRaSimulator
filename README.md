@@ -59,16 +59,16 @@ Download this repository and open it as a project with OMNeT++ 6.0.1. Install Op
 
 Go to `Project` > `Project Features` > `C/C++ General` > `Paths and Symbols`
 - `Includes` > `GNU C++`
-  - */cuda10.2/include
-  - */optix6.5/SDK/opal
-  - */optix6.5/include
+  - `*/cuda10.2/include`
+  - `*/optix6.5/SDK/opal`
+  - `*/optix6.5/include`
 - `Libraries`
-  - */x86_64-linux-gnu/libboost_system.so
-  - */cuda10.2/lib64/libcudart.so
-  - */optix6.5/lib64/liboptix.so
-  - */optix6.5/lib64/liboptixu.so
-  - */optix6.5/SDK/lib64/libopal_s.so
+  - `*/x86_64-linux-gnu/libboost_system.so`
+  - `*/cuda10.2/lib64/libcudart.so`
+  - `*/optix6.5/lib64/liboptix.so`
+  - `*/optix6.5/lib64/liboptixu.so`
+  - `*/optix6.5/SDK/lib64/libopal_s.so`
 - `Library Paths`
-  - */cuda10.2/lib64
-  - */optix6.5/SDK/lib
-  - */optix6.5/lib64
+  - `*/cuda10.2/lib64`
+  - `*/optix6.5/SDK/lib`
+  - `*/optix6.5/lib64`
