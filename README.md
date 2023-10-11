@@ -40,3 +40,35 @@ Simulation results as coverage map
   </tr>
 </tbody>
 </table>
+
+
+### Requirements
+
+- OMNeT++ 6.0.1:
+  - Linux: https://github.com/omnetpp/omnetpp/releases/download/omnetpp-6.0.1/omnetpp-6.0.1-linux-x86_64.tgz
+  - Windows: https://github.com/omnetpp/omnetpp/releases/download/omnetpp-6.0.1/omnetpp-6.0.1-windows-x86_64.zip
+  - Core: https://github.com/omnetpp/omnetpp/releases/download/omnetpp-6.0.1/omnetpp-6.0.1-core.tgz
+- Cuda 10.2: https://developer.nvidia.com/cuda-10.2-download-archive
+- OptiX 6.5: https://developer.nvidia.com/designworks/optix/downloads/6.5.0/linux64
+- Opal: https://gitlab.com/esteban.egea/opal (Software outdated)
+- Veneris: https://gitlab.com/esteban.egea/veneris (To create the 3D environment)
+
+### Installation
+
+Download this repository and open it as a project with OMNeT++ 6.0.1. Install Opal.
+
+Go to `Project` > `Project Features` > `C/C++ General` > `Paths and Symbols`
+- `Includes` > `GNU C++`
+  - */cuda10.2/include
+  - */optix6.5/SDK/opal
+  - */optix6.5/include
+- `Libraries`
+  - */x86_64-linux-gnu/libboost_system.so
+  - */cuda10.2/lib64/libcudart.so
+  - */optix6.5/lib64/liboptix.so
+  - */optix6.5/lib64/liboptixu.so
+  - */optix6.5/SDK/lib64/libopal_s.so
+- `Library Paths`
+  - */cuda10.2/lib64
+  - */optix6.5/SDK/lib
+  - */optix6.5/lib64
