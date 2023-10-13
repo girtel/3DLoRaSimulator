@@ -4,7 +4,7 @@
 
 [![GitHub issues](https://img.shields.io/github/issues/girtel/3DLoRaSimulator)](https://github.com/girtel/3DLoRaSimulator/issues) [![GitHub pull requests](https://img.shields.io/github/issues-pr/girtel/3DLoRaSimulator)](https://github.com/girtel/3DLoRaSimulator/pulls)
 
-### Cite
+## Cite 📘
 
 - Internet of Things. Elsevier. Q1 (2021-2022) [In Press, Journal Pre-proof.](https://doi.org/10.1016/j.iot.2023.100964)
 
@@ -23,7 +23,7 @@ abstract = {The adoption of Low-Power Wide-Area Networks (LP-WAN) for interconne
 }
 ```
 
-### Abstract
+## Abstract 📑
 
 Introducing a robust simulation framework designed for accurately modeling the performance of LoRaWAN communication technology in various IoT deployments. This tool uniquely integrates a network simulator, a 3D engine, and a ray-tracing tool, providing a realistic representation of network scenarios, especially in complex urban environments. When compared to traditional models like Okumura-Hata, our framework, utilizing open geographical information system data, demonstrated a notable improvement in signal strength estimation accuracy in challenging urban contexts, as validated through [experimental campaigns](https://github.com/girtel/Res_3DLoRaSimulator/tree/main) in Cartagena, Spain.
 
@@ -32,7 +32,7 @@ Introducing a robust simulation framework designed for accurately modeling the p
 <img src="https://github.com/girtel/3DLoRaSimulator/assets/40019177/59a3ced7-cd84-49b8-b9db-1a83c8bf9a7d" width="50%"/>
 </div>
 
-### Simulation results
+## Simulation results 📝
 
 Simulation results as coverage map
 
@@ -58,7 +58,7 @@ Simulation results as coverage map
 </table>
 
 
-### Requirements
+## Requirements ⚙️
 
 - OMNeT++ 6.0.1:
   - Linux: https://github.com/omnetpp/omnetpp/releases/download/omnetpp-6.0.1/omnetpp-6.0.1-linux-x86_64.tgz
@@ -90,7 +90,7 @@ To create the 3D environment you should install [QGIS](https://www.qgis.org/es/s
   6. When the process finish, align Terrain Model with City Model (are usually small adjustments).
   7. Finally you can save the scenario on `Opal` > `File` > `Save Scenario as JSON`
 
-### Installation
+## Installation 💻
 
 Download this repository and open it as a project with OMNeT++ 6.0.1. Install Opal.
 
