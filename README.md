@@ -2,6 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/685559585.svg)](https://zenodo.org/badge/latestdoi/685559585)
 
+[![GitHub issues](https://img.shields.io/github/issues/girtel/3DLoRaSimulator)](https://github.com/girtel/3DLoRaSimulator/issues) [![GitHub pull requests](https://img.shields.io/github/issues-pr/girtel/3DLoRaSimulator)](https://github.com/girtel/3DLoRaSimulator/pulls)
 
 ### Citations
 
