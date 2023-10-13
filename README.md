@@ -4,7 +4,7 @@
 
 [![GitHub issues](https://img.shields.io/github/issues/girtel/3DLoRaSimulator)](https://github.com/girtel/3DLoRaSimulator/issues) [![GitHub pull requests](https://img.shields.io/github/issues-pr/girtel/3DLoRaSimulator)](https://github.com/girtel/3DLoRaSimulator/pulls)
 
-### Citations
+### Cite
 
 - Internet of Things. Elsevier. Q1 (2021-2022) [In Press, Journal Pre-proof.](https://doi.org/10.1016/j.iot.2023.100964)
 
