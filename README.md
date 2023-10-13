@@ -5,7 +5,7 @@
 
 ### Citations
 
-In Press, Journal Pre-proof.
+[In Press, Journal Pre-proof.](https://doi.org/10.1016/j.iot.2023.100964)
 
 ```
 @article{RUZNIETO2023100964,
