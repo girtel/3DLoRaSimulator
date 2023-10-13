@@ -67,6 +67,27 @@ Simulation results as coverage map
 - OptiX 6.5: https://developer.nvidia.com/designworks/optix/downloads/6.5.0/linux64
 - Opal: https://gitlab.com/esteban.egea/opal (Software outdated)
 - Veneris: https://gitlab.com/esteban.egea/veneris (To create the 3D environment)
+- Unity 2017.3.030f: https://download.unity3d.com/download_unity/b84f5794ed91/UnityDownloadAssistant-2017.3.0f1.exe
+
+### Create 3D environment (Spain)
+To create the 3D environment you should install [QGIS](https://www.qgis.org/es/site/) w/[Spanish Inspire Catastral Downloader](https://plugins.qgis.org/plugins/Spanish_Inspire_Catastral_Downloader/), [dem2mesh](https://github.com/OpenDroneMap/dem2mesh) and [MeshLab](https://www.meshlab.net/)
+
+1. Terrain model
+	1. Go to [CNIG](https://centrodedescargas.cnig.es/CentroDescargas/index.jsp), select "MODELOS DIGITALES DEL TERRENO" and inside it select MTD02. After that you can download the zone where you want simulate.
+ 	2. Open the files in QGIS and crop the zone that you want to generate. Save it on GeoTIF format.
+ 	3. With dem2mesh convert this TIF image to PLY and with MeshLab you can open the PLY file, process the 3D environment (if needed) and export it to OBJ file.
+2. City model
+	1. With "Spanish Inspire Catastral Downloader" in QGIS you can download the different zones of Spanish Cadastre, select the zone that you want to simulate and download it. After that you need to crop the zone that you want to generate (usually the same that in Terrain Model).
+ 2. Execute the Python script (not available yet) on QGIS to generate q JSON file.
+
+3.  JSON OMNeT generation
+	1. Open Unity and import veneris package.
+	2. Load Terrain Model.
+ 	3. Click on `Veneris` > `Load SUMO Network in Editor` and click on `SumoBuilderOnEditor`.
+  4. Select `Use custom JSON` and add JSON file cliking on `Select polygons file`. After click on `Create EnvironmentBuilder`.
+  5. Go to `SumoEnvironmentBuilderOnEditor` and click on `Build Environment`.
+  6. When the process finish, align Terrain Model with City Model (are usually small adjustments).
+  7. Finally you can save the scenario on `Opal` > `File` > `Save Scenario as JSON`
 
 ### Installation
 
