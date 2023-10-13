@@ -6,7 +6,7 @@
 
 ### Citations
 
-[In Press, Journal Pre-proof.](https://doi.org/10.1016/j.iot.2023.100964)
+- Internet of Things. Elsevier. Q1 (2021-2022) [In Press, Journal Pre-proof.](https://doi.org/10.1016/j.iot.2023.100964)
 
 ```
 @article{RUZNIETO2023100964,
