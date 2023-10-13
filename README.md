@@ -70,7 +70,7 @@ Simulation results as coverage map
 - Veneris: https://gitlab.com/esteban.egea/veneris (To create the 3D environment)
 - Unity 2017.3.030f: https://download.unity3d.com/download_unity/b84f5794ed91/UnityDownloadAssistant-2017.3.0f1.exe
 
-### Create 3D environment (Spain)
+## Create 3D environment (Spain) 🌍
 To create the 3D environment you should install [QGIS](https://www.qgis.org/es/site/) w/[Spanish Inspire Catastral Downloader](https://plugins.qgis.org/plugins/Spanish_Inspire_Catastral_Downloader/), [dem2mesh](https://github.com/OpenDroneMap/dem2mesh) and [MeshLab](https://www.meshlab.net/)
 
 1. Terrain model
