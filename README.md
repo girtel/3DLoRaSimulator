@@ -1,7 +1,5 @@
 # A 3D Simulation Framework with Ray-Tracing Propagation for LoRaWAN Communication
 
-CODE: [![DOI](https://zenodo.org/badge/685559585.svg)](https://zenodo.org/doi/10.5281/zenodo.8428321)
-
 [![GitHub issues](https://img.shields.io/github/issues/girtel/3DLoRaSimulator)](https://github.com/girtel/3DLoRaSimulator/issues) [![GitHub pull requests](https://img.shields.io/github/issues-pr/girtel/3DLoRaSimulator)](https://github.com/girtel/3DLoRaSimulator/pulls) [![GitHub forks](https://img.shields.io/github/forks/girtel/3DLoRaSimulator)](#) [![GitHub Repo stars](https://img.shields.io/github/stars/girtel/3DLoRaSimulator)
 ](#)
 
